@@ -3,19 +3,21 @@
 import Image from "next/image";
 import {
   ShieldCheck,
-  UserCheck,
-  HeartHandshake,
   Clock,
-  Lock
+  Users,
+  Sparkles,
+  Lock,
+  Stethoscope
 } from "lucide-react";
+
 
 export default function WhyAyoni() {
   return (
     <section className="w-full bg-[#F8FCFC] py-16 px-4" id="why-ayoni">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-[90%] mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#4DA6A6]">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#800000]">
             Why Patients Trust Us
           </h2>
           <p className="mt-3 text-sm md:text-base text-gray-600 uppercase tracking-wide">
@@ -27,38 +29,51 @@ export default function WhyAyoni() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: Points */}
           <div className="space-y-6">
+            
+          <div className="space-y-6">
+
+<div className="flex items-start gap-4">
+  <Stethoscope className="text-[#4DA6A6] mt-1" size={32} />
+  <p className="text-[#264231] text-xl">
+    20+ Years of Experience in Gynecology & Women’s Wellness
+  </p>
+</div>
+
+<div className="flex items-start gap-4">
+  <Users className="text-[#4DA6A6] mt-1" size={32} />
+  <p className="text-[#264231] text-xl">
+    Trusted gynecologist in Gurgaon for over 5,000+ patients
+  </p>
+</div>
+
+<div className="flex items-start gap-4">
+  <Sparkles className="text-[#4DA6A6] mt-1" size={32} />
+  <p className="text-[#264231] text-xl">
+    Laser (non-surgical) and surgical intimate treatments
+  </p>
+</div>
+
+<div className="flex items-start gap-4">
+  <ShieldCheck className="text-[#4DA6A6] mt-1" size={32} />
+  <p className="text-[#264231] text-xl">
+    Advanced Laser Technology – Safe & Effective
+  </p>
+</div>
+
+</div>
+
+
             <div className="flex items-start gap-4">
-              <UserCheck className="text-[#4DA6A6] mt-1" size={22} />
-              <p className="text-[#264231]">
-                Lady gynaecologist with advanced training
+              <Clock className="text-[#4DA6A6] mt-1" size={32} />
+              <p className="text-[#264231] text-xl">
+                No Rushed Consultations
               </p>
             </div>
 
             <div className="flex items-start gap-4">
-              <ShieldCheck className="text-[#4DA6A6] mt-1" size={22} />
-              <p className="text-[#264231]">
-                Calm, premium & hygienic clinic setup
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <HeartHandshake className="text-[#4DA6A6] mt-1" size={22} />
-              <p className="text-[#264231]">
-                Proper listening & clear explanation
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <Clock className="text-[#4DA6A6] mt-1" size={22} />
-              <p className="text-[#264231]">
-                No rushed consultations
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <Lock className="text-[#4DA6A6] mt-1" size={22} />
-              <p className="text-[#264231]">
-                Confidential & respectful care
+              <Lock className="text-[#4DA6A6] mt-1" size={32} />
+              <p className="text-[#264231] text-xl">
+                Confidential & Respectful care
               </p>
             </div>
 
