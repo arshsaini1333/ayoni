@@ -15,11 +15,11 @@ export default function Hero() {
       <div className="relative w-[80%] ml-6  px-4">
         <div className="max-w-3xl space-y-6">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-[#264231]">
-          Women’s Health &  Gynaecology Care in Gurugram
+          Women’s Health &  Gynecology Care in Gurugram
           </h1>
 
           <h2 className="text-lg w-[80%] md:text-xl font-medium text-[#4DA6A6]">
-          Consult a senior gynaecologist for appointment-based care near M3M Avenue
+          Consult a senior gynaecologist for appointment-based care near M3M 65th Avenue Sector 65
 
           </h2>
 

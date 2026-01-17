@@ -77,13 +77,13 @@ export default function ServicesInclude() {
           </h3>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Pregnancy care" />
+            <ServiceCard image="/IMG_2321.png" title="Pregnancy care" />
             <ServiceCard
-              image="/PCOS-and-PCOD.jpg"
+              image="/IMG_2323.png"
               title="Normal & Caesarean delivery"
             />
-            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Breast related issues" />
-            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Ultrasound & diagnostics" />
+            <ServiceCard image="/IMG_2322.png" title="Breast related issues" />
+            <ServiceCard image="/IMG_2324.png" title="Ultrasound & diagnostics" />
           </div>
         </div>
 
