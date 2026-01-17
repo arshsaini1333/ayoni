@@ -17,7 +17,7 @@ export default function WhyAyoni() {
       <div className="w-[90%] mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#800000]">
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#800000]">
             Why Patients Trust Us
           </h2>
           <p className="mt-3 text-sm md:text-base text-gray-600 uppercase tracking-wide">
