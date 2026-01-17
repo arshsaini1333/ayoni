@@ -56,15 +56,15 @@ export default function ServicesInclude() {
           </h3>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <ServiceCard image="/IMG_2313.png" title="PCOS / PCOD" />
-            <ServiceCard image="/IMG_2314.png" title="Abnormal bleeding" />
-            <ServiceCard image="/IMG_2318.png" title="Fibroids" />
-            <ServiceCard image="/IMG_2315.png" title="Ovarian cyst" />
-            <ServiceCard image="/IMG_2316.png" title="Endometriosis" />
-            <ServiceCard image="/IMG_2317.png" title="Menopause" />
-            <ServiceCard image="/IMG_2319.png" title="Urine related issues" />
+            <ServiceCard image="/IMG_2313.PNG" title="PCOS / PCOD" />
+            <ServiceCard image="/IMG_2314.PNG" title="Abnormal bleeding" />
+            <ServiceCard image="/IMG_2318.PNG" title="Fibroids" />
+            <ServiceCard image="/IMG_2315.PNG" title="Ovarian cyst" />
+            <ServiceCard image="/IMG_2316.PNG" title="Endometriosis" />
+            <ServiceCard image="/IMG_2317.PNG" title="Menopause" />
+            <ServiceCard image="/IMG_2319.PNG" title="Urine related issues" />
             <ServiceCard
-              image="/IMG_2320.png"
+              image="/IMG_2320.PNG"
               title="Vaginal Tightening & Intimate Wellness"
             />
           </div>
@@ -77,13 +77,13 @@ export default function ServicesInclude() {
           </h3>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <ServiceCard image="/IMG_2321.png" title="Pregnancy care" />
+            <ServiceCard image="/IMG_2321.PNG" title="Pregnancy care" />
             <ServiceCard
-              image="/IMG_2323.png"
+              image="/IMG_2323.PNG"
               title="Normal & Caesarean delivery"
             />
-            <ServiceCard image="/IMG_2322.png" title="Breast related issues" />
-            <ServiceCard image="/IMG_2324.png" title="Ultrasound & diagnostics" />
+            <ServiceCard image="/IMG_2322.PNG" title="Breast related issues" />
+            <ServiceCard image="/IMG_2324.PNG" title="Ultrasound & diagnostics" />
           </div>
         </div>
 
