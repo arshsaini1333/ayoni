@@ -1,21 +1,26 @@
 "use client";
 
-import { CalendarCheck } from "lucide-react";
-import { Stethoscope, Award, GraduationCap } from "lucide-react";
+import { CalendarCheck, Stethoscope, Award, GraduationCap } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-[#F8FCFC] py-20">
-      <div className="w-[95%] mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-8">
+    <section
+      className="relative w-full py-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/gyne.jpg')" }}
+    >
+      {/* OVERLAY */}
+      <div className="absolute inset-0 "></div>
 
-        {/* LEFT CONTENT */}
-        <div className="w-full md:w-1/2 space-y-6">
+      {/* CONTENT */}
+      <div className="relative w-[80%] ml-6  px-4">
+        <div className="max-w-3xl space-y-6">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-[#264231]">
-            Expert Gynaecology Care for Every Stage of a Woman’s Life
+          Women’s Health &  Gynaecology Care in Gurugram
           </h1>
 
-          <h2 className="text-lg md:text-xl font-medium text-[#4DA6A6]">
-            Struggling with PCOS, pregnancy issues, or hormonal problems?
+          <h2 className="text-lg w-[80%] md:text-xl font-medium text-[#4DA6A6]">
+          Consult a senior gynaecologist for appointment-based care near M3M Avenue
+
           </h2>
 
           {/* Doctor Info */}
@@ -43,7 +48,7 @@ export default function Hero() {
           </div>
 
           {/* CTA */}
-          <div className="pt-4">
+          <div className="pt-2">
             <button
               className="inline-flex items-center gap-3 
                          bg-[#264231] 
@@ -55,23 +60,12 @@ export default function Hero() {
                          transition"
             >
               <CalendarCheck size={20} />
-              Book Private Consultation
+               BOOK APPOINTMENT
             </button>
+            <p className="text-red-600 text-sm mt-2 ml-2">* Consultations by prior appointment only
+</p>
           </div>
         </div>
-
-        {/* RIGHT IMAGE */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#4DA6A6]/10 rounded-2xl blur-2xl"></div>
-            <img
-              src="/doc3.jpeg" // replace with actual image
-              alt="Dr. Gaayatri Juneja"
-              className="relative w-65 md:w-135 rounded-2xl object-cover shadow-lg"
-            />
-          </div>
-        </div>
-
       </div>
     </section>
   );

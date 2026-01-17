@@ -11,7 +11,7 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#4DA6A6] mt-2">
-            Meet Your Specialist
+          Care That Understands Women’s Health
           </h2>
           <p className="text-[#264231] mt-3 text-lg">
             Senior Gynecologist - Women’s Health Expert
@@ -19,21 +19,21 @@ export default function About() {
         </div>
 
         {/* Content */}
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row  w-full gap-30">
+        <div className="max-w-7xl mx-auto px-3 flex flex-col md:flex-row  w-full gap-30">
 
           {/* Doctor Image */}
-          <div className="flex justify-center w-[45%]">
-            <div className="relative w-75 h-95 md:w-95 md:h-120 
-                            rounded-2xl overflow-hidden 
-                            border-4 border-[#CFAA75] shadow-lg">
-              <Image
-                src="/doc2.png"
-                alt="Senior Gynecologist"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <div className="flex justify-center ">
+       <div className="relative flex items-center justify-center">
+    <Image
+      src="/doc3.jpeg"
+      alt="Senior Gynecologist"
+      width={600}
+      height={600}
+      className="rounded-4xl"
+    />
+  </div>
+</div>
+
 
           {/* Info */}
           <div className="space-y-6 w-[55%]">

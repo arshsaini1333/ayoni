@@ -9,34 +9,34 @@ import {
 
 export default function QuickTrustBar() {
   return (
-    <section className="w-full bg-[#264231] mt-5 py-5">
-      <div className="max-w-7xl mx-auto px-1 py-4">
-        <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 text-[#CFAA75]">
+    <section className="w-full  mt-5 py-5">
+      <div className="w-[95%] mx-auto px-1 py-4">
+        <div className="flex justify-center md:justify-between items-center gap-1 text-[#264231]">
           
-          <div className="flex items-center gap-2">
-            <Stethoscope size={20} />
-            <span className="text-lg  font-medium">
+          <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg">
+            <Stethoscope size={40} />
+            <span className="text-xl font-semibold">
               25+ Years Experience
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Award size={20} />
-            <span className="text-lg font-medium">
+          <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg">
+            <Award size={40} />
+            <span className="text-xl font-semibold">
               Multiple Medical Certifications
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Building2 size={20} />
-            <span className="text-lg font-medium">
+          <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg">
+            <Building2 size={40} />
+            <span className="text-xl font-semibold">
               Premium Clinic in Sec 65, Gurugram
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <MessageCircle size={20} />
-            <span className="text-lg font-medium">
+          <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg">
+            <MessageCircle size={40} />
+            <span className="text-xl font-semibold">
               Personal One-to-One Consultation
             </span>
           </div>

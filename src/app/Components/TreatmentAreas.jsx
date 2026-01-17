@@ -1,41 +1,34 @@
 "use client";
 
-import {
-  Activity,
-  Droplets,
-  HeartPulse,
-  CircleDot,
-  Waves,
-  Droplet,
-  Baby,
-  Stethoscope,
-  Scan,
-  Heart,
-} from "lucide-react";
-import { HeartHandshake } from "lucide-react";
+import Image from "next/image";
 
-
-const ServiceCard = ({ icon: Icon, title }) => (
+const ServiceCard = ({ image, title }) => (
   <div
-    className="bg-[#F9F9F6] 
-               rounded-2xl 
-               p-6 
-               w-56
-               flex flex-col items-center 
-               justify-center 
-               border border-[#CFAA75]/30 
-               shadow-sm 
-               hover:shadow-md 
+    className="bg-[#F9F9F6]
+               rounded-2xl
+               w-[22%]
+               h-[15rem]
+               flex flex-col
+               items-center
+               justify-between
+               pb-3
+               border border-[#CFAA75]/30
+               shadow-sm
+               hover:shadow-md
                transition"
   >
-    <div className="w-12 h-12 rounded-full 
-                    border-2 border-[#4DA6A6] 
-                    flex items-center justify-center 
-                    text-[#4DA6A6] mb-3">
-      <Icon size={22} />
+    {/* Image */}
+    <div className="relative w-full h-[85%] rounded-2xl overflow-hidden bg-white">
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className="object-contain p-4 scale-130"
+      />
     </div>
 
-    <h4 className="text-center text-base font-medium text-[#264231]">
+    {/* Title */}
+    <h4 className="text-center text-base font-medium text-[#264231] mt-3 leading-snug">
       {title}
     </h4>
   </div>
@@ -44,7 +37,7 @@ const ServiceCard = ({ icon: Icon, title }) => (
 export default function ServicesInclude() {
   return (
     <section className="bg-white py-20" id="services">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full mx-auto px-4">
 
         {/* Main Heading */}
         <div className="text-center mb-16">
@@ -63,14 +56,17 @@ export default function ServicesInclude() {
           </h3>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <ServiceCard icon={Activity} title="PCOS / PCOD" />
-            <ServiceCard icon={Droplets} title="Abnormal bleeding" />
-            <ServiceCard icon={HeartPulse} title="Fibroids" />
-            <ServiceCard icon={CircleDot} title="Ovarian cyst" />
-            <ServiceCard icon={Waves} title="Endometriosis" />
-            <ServiceCard icon={Heart} title="Menopause" />
-            <ServiceCard icon={Droplet} title="Urine related issues" />
-            <ServiceCard icon={HeartHandshake} title="Vaginal Tightening treatment & Intimate Wellness" />
+            <ServiceCard image="/IMG_2313.png" title="PCOS / PCOD" />
+            <ServiceCard image="/IMG_2314.png" title="Abnormal bleeding" />
+            <ServiceCard image="/IMG_2318.png" title="Fibroids" />
+            <ServiceCard image="/IMG_2315.png" title="Ovarian cyst" />
+            <ServiceCard image="/IMG_2316.png" title="Endometriosis" />
+            <ServiceCard image="/IMG_2317.png" title="Menopause" />
+            <ServiceCard image="/IMG_2319.png" title="Urine related issues" />
+            <ServiceCard
+              image="/IMG_2320.png"
+              title="Vaginal Tightening & Intimate Wellness"
+            />
           </div>
         </div>
 
@@ -81,13 +77,13 @@ export default function ServicesInclude() {
           </h3>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <ServiceCard icon={Baby} title="Pregnancy care" />
+            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Pregnancy care" />
             <ServiceCard
-              icon={Stethoscope}
+              image="/PCOS-and-PCOD.jpg"
               title="Normal & Caesarean delivery"
             />
-            <ServiceCard icon={Heart} title="Breast related issues" />
-            <ServiceCard icon={Scan} title="Ultrasound & diagnostics" />
+            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Breast related issues" />
+            <ServiceCard image="/PCOS-and-PCOD.jpg" title="Ultrasound & diagnostics" />
           </div>
         </div>
 
