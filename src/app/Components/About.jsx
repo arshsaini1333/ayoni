@@ -11,7 +11,7 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#4DA6A6] mt-2">
-          Care That Understands Women’s Health
+          Meet Your Specialist Now
           </h2>
           <p className="text-[#264231] mt-3 text-lg">
             Senior Gynecologist - Women’s Health Expert

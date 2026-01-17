@@ -18,12 +18,12 @@ const ServiceCard = ({ image, title }) => (
                transition"
   >
     {/* Image */}
-    <div className="relative w-full h-[85%] rounded-2xl overflow-hidden bg-white">
+    <div className="relative w-full h-[90%] rounded-2xl overflow-hidden bg-white">
       <Image
         src={image}
         alt={title}
         fill
-        className="object-contain p-4 scale-130"
+        className="object-contain p-4"
       />
     </div>
 
