@@ -38,24 +38,26 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="#home" className="hover:text-white">Home</Link></li>
-              <li><Link href="#about" className="hover:text-white">About</Link></li>
-              <li><Link href="#doctor" className="hover:text-white">Meet the Doctor</Link></li>
+              
+              <li><Link href="#about" className="hover:text-white">Meet the Doctor</Link></li>
               <li><Link href="#services" className="hover:text-white">Our Services</Link></li>
               <li><Link href="#testimonials" className="hover:text-white">Patient Stories</Link></li>
               <li><Link href="#contact" className="hover:text-white">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>Pregnancy & Antenatal Care</li>
-              <li>PCOS & Hormonal Disorders</li>
-              <li>Menopause Care</li>
-              <li>Ultrasound & Diagnostics</li>
-              <li>Women Wellness & Aesthetics</li>
-            </ul>
+          {/* Map */}
+          <div className="md:col-span-1">
+            <h4 className="text-white font-semibold mb-4">Our Location</h4>
+            <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.44913864288!2d77.06523880000002!3d28.4057015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d230c54e29edf%3A0xacdb209ab3a6424e!2sAyoni%20Clinic!5e0!3m2!1sen!2sin!4v1768747725151!5m2!1sen!2sin"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           {/* Contact + Social */}
@@ -65,8 +67,8 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Phone size={16} />
-                <a href="tel:+918920884466" className="hover:text-white">
-                  +91 89208 84466
+                <a href="tel:+919315991400" className="hover:text-white">
+                  +91 9315991400
                 </a>
               </div>
 
@@ -75,6 +77,7 @@ export default function Footer() {
                 <a
                   href="https://ayoniclinic.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white"
                 >
                   www.ayoniclinic.com
@@ -83,9 +86,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-3">
                 <MapPin size={16} />
-                <span>
-                  Delhi NCR, India
-                </span>
+                <span>Delhi NCR, India</span>
               </div>
             </div>
 

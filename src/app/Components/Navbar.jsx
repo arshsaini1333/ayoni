@@ -6,10 +6,10 @@ import { Phone } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-[#264231] px-4 z-50 overflow-visible">
-      <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+    <nav className="w-full bg-[#264231] px-4 z-50">
+      <div className="max-w-7xl mx-auto relative flex items-center justify-center md:justify-between">
 
-        {/* Left: Why Ayoni (desktop only) */}
+        {/* Left (desktop only) */}
         <div className="hidden md:flex flex-1 justify-start">
           <Link
             href="#why-ayoni"
@@ -19,33 +19,43 @@ export default function Navbar() {
           </Link>
         </div>
 
-       {/* Center: Logo (always visible) */}
-<div className="relative top-10 z-50 flex justify-center bg-[#264231] w-40 h-26 rounded-xl pb-1.5">
+        {/* Center Logo (mobile + desktop) */}
+        <div className="
+          relative 
+          z-50 
+          flex 
+          justify-center 
+          items-center
+          w-32 
+          h-16
+          top-10
+          md:w-40 
+          md:h-20
+          md:top-10
+          bg-[#264231]
+          rounded-xl
+        ">
+          <Link href="/" className="relative w-full h-full">
+            <Image
+              src="/Ayoni.png"
+              alt="Company Logo"
+              fill
+              priority
+              className="object-contain"
+            />
+          </Link>
+        </div>
 
-  <Link href="/" className="flex items-center w-full h-full">
-    <div className="relative w-full h-full ">
-      <Image
-        src="/Ayoni.png"
-        alt="Company Logo"
-        fill
-        priority
-        className="object-contain"
-      />
-    </div>
-  </Link>
-</div>
-
-
-        {/* Right: Call Now (desktop only) */}
+        {/* Right (desktop only) */}
         <div className="hidden md:flex flex-1 justify-end">
           <a
             href="tel:+911234567890"
-            className="flex items-center gap-2 px-6 py-1.5 
-                       border border-[#CFAA75] 
-                       text-[#CFAA75] 
-                       rounded-md 
+            className="flex items-center gap-2 px-6 py-1.5
+                       border border-[#CFAA75]
+                       text-[#CFAA75]
+                       rounded-md
                        text-lg font-bold
-                       hover:bg-[#CFAA75]/10 
+                       hover:bg-[#CFAA75]/10
                        transition"
           >
             <Phone size={16} />

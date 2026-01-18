@@ -12,11 +12,11 @@ import {
 
 export default function WhyAyoni() {
   return (
-    <section className="w-full bg-[#F8FCFC] py-16 px-4" id="why-ayoni">
-      <div className="w-[90%] mx-auto">
+    <section className="w-full bg-[#F8FCFC] py-12 md:py-16 px-4" id="why-ayoni">
+      <div className="w-full md:w-[90%] mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-semibold text-[#800000]">
             Why Patients Trust Us
           </h2>
@@ -26,74 +26,56 @@ export default function WhyAyoni() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
           {/* Left */}
-          <div className="space-y-6">
+          <div className="space-y-5 md:space-y-6">
 
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <Stethoscope size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                20+ Years of Experience in Gynecology & Women’s Wellness
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <Users size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                Trusted gynecologist in Gurgaon for over 5,000+ patients
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <Sparkles size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                Laser (non-surgical) and surgical intimate treatments
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <ShieldCheck size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                Advanced Laser Technology – Safe & Effective
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <Clock size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                No Rushed Consultations
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-1">
-                <Lock size={22} className="text-[#264231]" />
-              </span>
-              <p className="text-[#264231] text-xl">
-                Confidential & Respectful Care
-              </p>
-            </div>
+            {[
+              { icon: <Stethoscope size={20} />, text: "25+ Years of Experience in Gynecology & Women’s Wellness" },
+              { icon: <Users size={20} />, text: "Trusted gynecologist in Gurgaon for over 5,000+ patients" },
+              { icon: <Sparkles size={20} />, text: "Laser (non-surgical) and surgical intimate treatments" },
+              { icon: <ShieldCheck size={20} />, text: "Advanced Laser Technology – Safe & Effective" },
+              { icon: <Clock size={20} />, text: "No Rushed Consultations" },
+              { icon: <Lock size={20} />, text: "Confidential & Respectful Care" }
+            ].map((item, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <span className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-0.5 text-[#264231]">
+                  {item.icon}
+                </span>
+                <p className="text-[#264231] text-base md:text-xl leading-snug">
+                  {item.text}
+                </p>
+              </div>
+            ))}
 
             {/* CTA */}
-            <div className="pt-6 flex flex-wrap gap-4">
-              <button className="inline-flex items-center gap-3 bg-[#264231] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
-                <CalendarCheck size={20} />
+            <div className="pt-6 flex flex-col sm:flex-row gap-4">
+              <button
+                className="
+                  w-full sm:w-[240px]
+                  inline-flex items-center justify-center gap-3
+                  bg-[#264231] text-white
+                  px-6 py-3
+                  rounded-lg font-medium
+                  hover:opacity-90 transition
+                "
+              >
+                <CalendarCheck size={18} />
                 Book Private Consultation
               </button>
 
-              <button className="inline-flex items-center gap-3 bg-[#800000] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
-                <PhoneCall size={20} />
+              <button
+                className="
+                  w-full sm:w-[240px]
+                  inline-flex items-center justify-center gap-3
+                  bg-[#800000] text-white
+                  px-6 py-3
+                  rounded-lg font-medium
+                  hover:opacity-90 transition
+                "
+              >
+                <PhoneCall size={18} />
                 Call Now
               </button>
             </div>
@@ -101,7 +83,7 @@ export default function WhyAyoni() {
           </div>
 
           {/* Right */}
-          <div className="relative w-full h-[320px] md:h-[420px] rounded-xl overflow-hidden">
+          <div className="relative w-full h-[260px] sm:h-[320px] md:h-[420px] rounded-xl overflow-hidden">
             <Image
               src="/pregnant.jpg"
               alt="Ayoni Clinic Consultation"

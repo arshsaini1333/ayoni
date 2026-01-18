@@ -22,7 +22,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-white" id="testimonials">
       {/* Heading */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <h2

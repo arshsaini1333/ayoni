@@ -4,31 +4,36 @@ import Image from "next/image";
 
 const ServiceCard = ({ image, title }) => (
   <div
-    className="bg-[#F9F9F6]
-               rounded-2xl
-               w-[22%]
-               h-[15rem]
-               flex flex-col
-               items-center
-               justify-between
-               pb-3
-               border border-[#CFAA75]/30
-               shadow-sm
-               hover:shadow-md
-               transition"
+    className="
+      bg-[#F9F9F6]
+      rounded-2xl
+      w-full
+      sm:w-[48%]
+      md:w-[30%]
+      lg:w-[22%]
+      h-[14rem]
+      flex flex-col
+      items-center
+      justify-between
+      pb-3
+      border border-[#CFAA75]/30
+      shadow-sm
+      hover:shadow-md
+      transition
+    "
   >
     {/* Image */}
-    <div className="relative w-full h-[95%] rounded-2xl overflow-hidden bg-white">
+    <div className="relative w-full h-[70%] rounded-2xl overflow-hidden bg-white">
       <Image
         src={image}
         alt={title}
         fill
-        className="object-contain p-4 scale-110"
+        className="object-contain p-4"
       />
     </div>
 
     {/* Title */}
-    <h4 className="text-center text-base font-medium text-[#264231] mt-3 leading-snug">
+    <h4 className="text-center text-sm md:text-base font-medium text-[#264231] px-2 leading-snug">
       {title}
     </h4>
   </div>

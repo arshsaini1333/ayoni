@@ -1,14 +1,10 @@
-import { Geist_Mono, Playfair_Display } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "700", "900"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -18,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={playfair.className}>
-      <body className={`antialiased ${geistMono.variable}`}>
+    <html lang="en" className={lato.className}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

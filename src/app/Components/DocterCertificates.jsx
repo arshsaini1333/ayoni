@@ -13,11 +13,11 @@ const certificates = [
 
 export default function DoctorCertificates() {
   return (
-    <section className="w-full bg-white py-16 px-4">
-      <div className="w-[90%] mx-auto">
+    <section className="w-full bg-white py-12 md:py-16 px-4">
+      <div className="w-full md:w-[90%] mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-semibold text-[#800000]">
             Certifications & Accreditations
           </h2>
@@ -27,7 +27,7 @@ export default function DoctorCertificates() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {certificates.map((cert, index) => (
             <a
               key={index}
@@ -36,7 +36,7 @@ export default function DoctorCertificates() {
               rel="noopener noreferrer"
               className="group relative rounded-xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition"
             >
-              <div className="relative w-full h-[220px]">
+              <div className="relative w-full h-[240px] sm:h-[220px] md:h-[220px]">
                 <Image
                   src={cert.img}
                   alt={`Doctor Certificate ${index + 1}`}
