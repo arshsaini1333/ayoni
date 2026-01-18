@@ -7,6 +7,7 @@ import ServicesInclude from "./Components/TreatmentAreas";
 import WhyAyoni from "./Components/WhyAyoni";
 import Testimonials from "./Components/Testimonials";
 import ContactUs from "./Components/ContactUs";
+import DoctorCertificates from "./Components/DocterCertificates";
 import Footer from "./Components/Footer";
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
    <WhyAyoni/>
    <Testimonials/>
    {/* <DoctorInfo/> */}
+   <DoctorCertificates/>
    <ContactUs/>
    <Footer/>
  </>
