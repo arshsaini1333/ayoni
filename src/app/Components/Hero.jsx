@@ -8,7 +8,7 @@ import {
   PhoneCall
 } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({openModal}) {
   return (
     <section
       className="relative w-full min-h-[95vh] bg-cover bg-center flex items-center"
@@ -89,6 +89,7 @@ export default function Hero() {
                 font-medium
                 hover:bg-[#1f3628] transition
               "
+              onClick={openModal}
             >
               <CalendarCheck size={18} />
               BOOK APPOINTMENT
@@ -103,6 +104,7 @@ export default function Hero() {
                 font-medium
                 hover:bg-[#660000] transition
               "
+              onClick={() => window.open("tel:+919315991400")}
             >
               <PhoneCall size={18} />
               CALL NOW

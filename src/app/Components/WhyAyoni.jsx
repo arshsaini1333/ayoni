@@ -10,7 +10,7 @@ import {
   PhoneCall
 } from "lucide-react";
 
-export default function WhyAyoni() {
+export default function WhyAyoni({openModal}) {
   return (
     <section className="w-full bg-[#F8FCFC] py-12 md:py-16 px-4" id="why-ayoni">
       <div className="w-full md:w-[90%] mx-auto">
@@ -53,13 +53,14 @@ export default function WhyAyoni() {
             <div className="pt-6 flex flex-col sm:flex-row gap-4">
               <button
                 className="
-                  w-full sm:w-[240px]
+                  w-full sm:w-[300px]
                   inline-flex items-center justify-center gap-3
                   bg-[#264231] text-white
                   px-6 py-3
                   rounded-lg font-medium
                   hover:opacity-90 transition
                 "
+                onClick={openModal}
               >
                 <CalendarCheck size={18} />
                 Book Private Consultation
@@ -74,6 +75,8 @@ export default function WhyAyoni() {
                   rounded-lg font-medium
                   hover:opacity-90 transition
                 "
+                onClick={() => window.open("tel:+919315991400")}
+
               >
                 <PhoneCall size={18} />
                 Call Now
