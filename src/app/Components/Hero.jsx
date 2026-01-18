@@ -18,7 +18,7 @@ export default function Hero() {
           Women’s Health &  Gynecology Care in Gurugram
           </h1>
 
-          <h2 className="text-lg w-[80%] md:text-xl font-medium text-[#4DA6A6]">
+          <h2 className="text-lg w-[80%] md:text-xl font-medium text-[#800000]">
           Consult a senior gynaecologist for appointment-based care near M3M 65th Avenue Sector 65
 
           </h2>
@@ -31,17 +31,17 @@ export default function Hero() {
 
             <div className="space-y-2 text-base md:text-lg text-[#3b5f4b]">
               <div className="flex items-center gap-2">
-                <Stethoscope size={18} className="text-[#4DA6A6]" />
+                <Stethoscope size={18} className="text-[#800000]" />
                 Third-Generation Gynecologist
               </div>
 
               <div className="flex items-center gap-2">
-                <Award size={18} className="text-[#4DA6A6]" />
+                <Award size={18} className="text-[#800000]" />
                 25+ Years Experience
               </div>
 
               <div className="flex items-center gap-2">
-                <GraduationCap size={18} className="text-[#4DA6A6]" />
+                <GraduationCap size={18} className="text-[#800000]" />
                 MBBS, DGO, DNB (Obs & Gynae), MRCOG
               </div>
             </div>

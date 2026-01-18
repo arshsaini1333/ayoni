@@ -32,7 +32,7 @@ export default function ContactUs() {
 
           {/* Right Side – Form */}
           <div className="p-6 md:p-10">
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#4DA6A6]">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#800000]">
               Book Your Private Consultation
             </h2>
 
@@ -41,19 +41,19 @@ export default function ContactUs() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#4DA6A6]"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#800000]"
               />
 
               {/* Phone */}
               <input
                 type="tel"
                 placeholder="Phone Number"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#4DA6A6]"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#800000]"
               />
 
               {/* Concern Dropdown */}
               <select
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:border-[#4DA6A6]"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:border-[#800000]"
               >
                 <option value="">Select Your Concern</option>
                 <option>PCOS / Irregular Periods</option>
@@ -66,7 +66,7 @@ export default function ContactUs() {
               {/* CTA */}
               <button
                 type="submit"
-                className="w-full bg-[#4DA6A6] text-white py-3 rounded-lg font-medium hover:opacity-90 transition"
+                className="w-full bg-[#800000] text-white py-3 rounded-lg font-medium hover:opacity-90 transition"
               >
                 Book Confidential Appointment
               </button>

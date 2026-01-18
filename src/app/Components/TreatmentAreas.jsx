@@ -41,7 +41,7 @@ export default function ServicesInclude() {
 
         {/* Main Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#4DA6A6]">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#800000]">
             Women’s Health Problems We Help With
           </h2>
           <p className="text-[#1C2B39]/70 mt-3 max-w-2xl mx-auto">

@@ -33,28 +33,28 @@ export default function WhyAyoni() {
           <div className="space-y-6">
 
 <div className="flex items-start gap-4">
-  <Stethoscope className="text-[#4DA6A6] mt-1" size={32} />
+  <Stethoscope className="text-[#800000] mt-1" size={32} />
   <p className="text-[#264231] text-xl">
     20+ Years of Experience in Gynecology & Women’s Wellness
   </p>
 </div>
 
 <div className="flex items-start gap-4">
-  <Users className="text-[#4DA6A6] mt-1" size={32} />
+  <Users className="text-[#800000] mt-1" size={32} />
   <p className="text-[#264231] text-xl">
     Trusted gynecologist in Gurgaon for over 5,000+ patients
   </p>
 </div>
 
 <div className="flex items-start gap-4">
-  <Sparkles className="text-[#4DA6A6] mt-1" size={32} />
+  <Sparkles className="text-[#800000] mt-1" size={32} />
   <p className="text-[#264231] text-xl">
     Laser (non-surgical) and surgical intimate treatments
   </p>
 </div>
 
 <div className="flex items-start gap-4">
-  <ShieldCheck className="text-[#4DA6A6] mt-1" size={32} />
+  <ShieldCheck className="text-[#800000] mt-1" size={32} />
   <p className="text-[#264231] text-xl">
     Advanced Laser Technology – Safe & Effective
   </p>
@@ -64,14 +64,14 @@ export default function WhyAyoni() {
 
 
             <div className="flex items-start gap-4">
-              <Clock className="text-[#4DA6A6] mt-1" size={32} />
+              <Clock className="text-[#800000] mt-1" size={32} />
               <p className="text-[#264231] text-xl">
                 No Rushed Consultations
               </p>
             </div>
 
             <div className="flex items-start gap-4">
-              <Lock className="text-[#4DA6A6] mt-1" size={32} />
+              <Lock className="text-[#800000] mt-1" size={32} />
               <p className="text-[#264231] text-xl">
                 Confidential & Respectful care
               </p>
@@ -79,7 +79,7 @@ export default function WhyAyoni() {
 
             {/* CTA */}
             <div className="pt-6">
-              <button className="bg-[#4DA6A6] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition cursor-pointer">
+              <button className="bg-[#800000] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition cursor-pointer">
                 Book Private Consultation
               </button>
             </div>
