@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarCheck, Stethoscope, Award, GraduationCap } from "lucide-react";
+import { CalendarCheck, Stethoscope, Award, GraduationCap,PhoneCall } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -30,41 +30,62 @@ export default function Hero() {
             </div>
 
             <div className="space-y-2 text-base md:text-lg text-[#3b5f4b]">
-              <div className="flex items-center gap-2">
-                <Stethoscope size={18} className="text-[#800000]" />
-                Third-Generation Gynecologist
-              </div>
+  <div className="flex items-center gap-3">
+    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#E6D3A3]">
+      <Stethoscope size={18} className="text-[#264231]" />
+    </span>
+    Third-Generation Gynecologist
+  </div>
 
-              <div className="flex items-center gap-2">
-                <Award size={18} className="text-[#800000]" />
-                25+ Years Experience
-              </div>
+  <div className="flex items-center gap-3">
+    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#E6D3A3]">
+      <Award size={18} className="text-[#264231]" />
+    </span>
+    25+ Years Experience
+  </div>
 
-              <div className="flex items-center gap-2">
-                <GraduationCap size={18} className="text-[#800000]" />
-                MBBS, DGO, DNB (Obs & Gynae), MRCOG
-              </div>
-            </div>
-          </div>
+  <div className="flex items-center gap-3">
+    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#E6D3A3]">
+      <GraduationCap size={18} className="text-[#264231]" />
+    </span>
+    MBBS, DGO, DNB (Obs & Gynae), MRCOG
+  </div>
+</div>
+</div>
 
           {/* CTA */}
-          <div className="pt-2">
-            <button
-              className="inline-flex items-center gap-3 
-                         bg-[#264231] 
-                         text-[#F9F9F6] 
-                         px-8 py-3 
-                         rounded-md 
-                         font-medium 
-                         hover:bg-[#1f3628] 
-                         transition"
-            >
-              <CalendarCheck size={20} />
-               BOOK APPOINTMENT
-            </button>
-            <p className="text-red-600 text-sm mt-2 ml-2">* Consultations by prior appointment only
-</p>
-          </div>
+
+<div className="pt-2 flex flex-wrap gap-4">
+  <button
+    className="inline-flex items-center gap-3 
+               bg-[#264231] 
+               text-[#F9F9F6] 
+               px-8 py-3 
+               rounded-md 
+               font-medium 
+               hover:bg-[#1f3628] 
+               transition"
+  >
+    <CalendarCheck size={20} />
+    BOOK APPOINTMENT
+  </button>
+
+  <button
+    className="inline-flex items-center gap-3 
+               bg-[#800000] 
+               text-white 
+               px-8 py-3 
+               rounded-md 
+               font-medium 
+               hover:bg-[#660000] 
+               transition"
+  >
+    <PhoneCall size={20} />
+    CALL NOW
+  </button>
+</div>
+
+          <p className="text-red-600 text-sm -mt-3 ml-2">* Consultations by prior appointment only</p>
         </div>
       </div>
     </section>

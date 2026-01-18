@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function ContactUs() {
   return (
     <section className="w-full py-16 px-4 bg-[#F8FCFC]" id="contact">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-[95%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden shadow-lg bg-white">
 
           {/* Left Side – Image */}

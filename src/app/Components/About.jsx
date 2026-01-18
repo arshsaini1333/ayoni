@@ -5,12 +5,12 @@ import { MapPin, ShieldCheck, HeartPulse } from "lucide-react";
 
 export default function About() {
   return (
-    <section className="bg-white pb-8 pt-5" id="about">
+    <section className="bg-white pt-5 pb-8 pt-5" id="about">
       <div className="w-full mx-auto px-4">
 
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#800000] mt-2">
+        <div className="text-center mb-12 ">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#800000] mt-2">
           Meet Your Specialist Now
           </h2>
           <p className="text-[#264231] mt-3 text-lg">

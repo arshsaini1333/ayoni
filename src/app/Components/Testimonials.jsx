@@ -26,7 +26,7 @@ export default function Testimonials() {
       {/* Heading */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <h2
-          className="text-3xl md:text-4xl font-semibold"
+          className="text-3xl md:text-5xl font-semibold"
           style={{ color: "#800000" }}
         >
           What Our Patients Are Saying
