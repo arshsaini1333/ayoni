@@ -43,7 +43,7 @@ export default function WhyAyoni({openModal}) {
                 <span className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] mt-0.5 text-[#264231]">
                   {item.icon}
                 </span>
-                <p className="text-[#264231] text-base md:text-xl leading-snug">
+                <p className="text-[#264231] text-base md:text-xl my-auto">
                   {item.text}
                 </p>
               </div>

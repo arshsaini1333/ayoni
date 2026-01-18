@@ -55,12 +55,12 @@ export default function ServicesInclude() {
         </div>
 
         {/* Hormonal & Medical Issues */}
-        <div className="mb-20">
+        <div className="mb-20 w-full">
           <h3 className="text-2xl font-semibold text-[#264231] text-center mb-10">
             Hormonal & Medical Issues
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-3 w-full">
             <ServiceCard image="/IMG_2313.PNG" title="PCOS / PCOD" />
             <ServiceCard image="/IMG_2314.PNG" title="Abnormal bleeding" />
             <ServiceCard image="/IMG_2318.PNG" title="Fibroids" />
@@ -81,7 +81,7 @@ export default function ServicesInclude() {
             Pregnancy & Other Care
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-3">
             <ServiceCard image="/IMG_2321.PNG" title="Pregnancy care" />
             <ServiceCard
               image="/IMG_2323.PNG"
