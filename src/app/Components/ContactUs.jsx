@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export default function ContactUs() {
     concern: "",
     appointmentType: "Clinic Visit",
   });
+  const router = useRouter();
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -21,26 +23,36 @@ export default function ContactUs() {
       [name]: value,
     }));
   };
-
+   
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzfyF6w7tgPN5S3R-6QiDPpPIiBWDTQ02lal0M4SbEAqEWhn9zGOArnbx3jJIW0Dh67UA/exec"
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      setSubmitting(false);
-      alert("Thank you for visiting. Our team will connect with you soon.");
+    const postData = new FormData();
+    postData.append('name', formData.name);
+    postData.append('email', formData.email);
+    postData.append('phone', formData.phone);
+    postData.append('msg', formData.concern);
+    postData.append('apointmentType', formData.appointmentType);
+   
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        concern: "",
-        appointmentType: "",
+    fetch(scriptURL, {
+      method: 'POST',
+      body: postData,
+      mode: 'no-cors'
+    })
+      .then(() => {
+        
+        setSubmitting(false);
+        setFormData({ name: '', email: '', phone: '', concern: '', appointmentType: "" });
+        router.push("/thankyou");
+      })
+      .catch(() => {
+        
+        setSubmitting(false);
       });
-    }, 1000);
   };
 
   return (

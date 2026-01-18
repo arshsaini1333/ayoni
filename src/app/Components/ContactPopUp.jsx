@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { X } from "lucide-react";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function AppointmentModal({ open, onClose }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,6 +12,8 @@ export default function AppointmentModal({ open, onClose }) {
     appointmentType: "Clinic Visit",
     message: "",
   });
+
+  const router = useRouter();
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -25,27 +27,35 @@ export default function AppointmentModal({ open, onClose }) {
     }));
   };
 
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzfyF6w7tgPN5S3R-6QiDPpPIiBWDTQ02lal0M4SbEAqEWhn9zGOArnbx3jJIW0Dh67UA/exec"
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      setSubmitting(false);
-      alert("Thank you for visiting. Our team will connect you soon.");
+    const postData = new FormData();
+    postData.append('name', formData.name);
+    postData.append('email', formData.email);
+    postData.append('phone', formData.phone);
+    postData.append('msg', formData.message);
+    postData.append('apointmentType', formData.appointmentType);
+   
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        appointmentType: "",
-        message: "",
+    fetch(scriptURL, {
+      method: 'POST',
+      body: postData,
+      mode: 'no-cors'
+    })
+      .then(() => {
+        
+        setSubmitting(false);
+        setFormData({ name: '', email: '', phone: '', message: '', appointmentType: "" });
+        router.push("/thankyou");
+      })
+      .catch(() => {
+        
+        setSubmitting(false);
       });
-
-      // Close modal
-      onClose();
-    }, 1200);
   };
 
   return (

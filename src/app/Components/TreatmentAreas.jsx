@@ -10,8 +10,8 @@ const ServiceCard = ({ image, title }) => (
       w-full
       sm:w-[48%]
       md:w-[30%]
-      lg:w-[22%]
-      h-[14rem]
+      lg:w-[24%]
+      h-65
       flex flex-col
       items-center
       justify-between
@@ -23,7 +23,7 @@ const ServiceCard = ({ image, title }) => (
     "
   >
     {/* Image */}
-    <div className="relative w-full h-[70%] rounded-2xl overflow-hidden bg-white">
+    <div className="relative w-full h-[90%] rounded-2xl overflow-hidden bg-white">
       <Image
         src={image}
         alt={title}

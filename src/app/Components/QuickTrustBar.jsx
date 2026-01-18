@@ -21,28 +21,28 @@ export default function QuickTrustBar() {
         ">
           
           <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg text-center bg-[#E6D3A3]">
-            <Stethoscope size={32} />
+            <Stethoscope size={36} />
             <span className="text-sm md:text-2xl font-bold">
               25+ Years Experience
             </span>
           </div>
 
           <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg text-center bg-[#E6D3A3]">
-            <Award size={32} />
+            <Award size={36} />
             <span className="text-sm md:text-2xl font-semibold">
               Multiple Medical Certifications
             </span>
           </div>
 
           <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg text-center bg-[#E6D3A3]">
-            <Building2 size={32} />
+            <Building2 size={36} />
             <span className="text-sm md:text-2xl font-semibold">
               Premium Clinic in Sec 65, Gurugram
             </span>
           </div>
 
           <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg text-center bg-[#E6D3A3]">
-            <MessageCircle size={32} />
+            <MessageCircle size={36} />
             <span className="text-sm md:text-2xl font-semibold">
               Personal One-to-One Consultation
             </span>
