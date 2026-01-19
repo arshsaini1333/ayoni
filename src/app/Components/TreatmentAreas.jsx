@@ -63,9 +63,9 @@ export default function ServicesInclude() {
           <div className="flex flex-wrap justify-center gap-3 w-full">
             <ServiceCard image="/IMG_2313.PNG" title="PCOS / PCOD" />
             <ServiceCard image="/IMG_2314.PNG" title="Abnormal bleeding" />
-            <ServiceCard image="/IMG_2318.PNG" title="Fibroids" />
+            <ServiceCard image="/IMG_2316.PNG" title="Fibroids" />
             <ServiceCard image="/IMG_2315.PNG" title="Ovarian cyst" />
-            <ServiceCard image="/IMG_2316.PNG" title="Endometriosis" />
+            <ServiceCard image="/IMG_2318.PNG" title="Endometriosis" />
             <ServiceCard image="/IMG_2317.PNG" title="Menopause" />
             <ServiceCard image="/IMG_2319.PNG" title="Urine related issues" />
             <ServiceCard
