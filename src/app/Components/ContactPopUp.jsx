@@ -69,35 +69,49 @@ export default function AppointmentModal({ open, onClose }) {
     return nextDate.toISOString().split("T")[0];
   };
 
-  // 🔹 Gurgaon clinic slot logic
-  const getSlotsForDay = (day) => {
-    if (!day) return [];
-
-    let slots = [];
-
-    const addHourlySlots = (start, end) => {
-      let current = start;
-      while (current < end) {
-        slots.push(`${current}:00 - ${current + 1}:00`);
-        current++;
-      }
-    };
-
-    // Morning slots
-    if (day === "Monday" || day === "Wednesday") {
-      addHourlySlots(9, 14);
-    }
-
-    if (day === "Friday") {
-      addHourlySlots(12, 14);
-    }
-
-    // Evening slots (all days)
-    slots.push("6:30 PM - 7:30 PM");
-    slots.push("7:30 PM - 8:00 PM");
-
-    return slots;
+  const formatTo12Hour = (hour, minute = 0) => {
+    const period = hour >= 12 ? "PM" : "AM";
+    const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
+    const formattedMinute = minute.toString().padStart(2, "0");
+    return `${formattedHour}:${formattedMinute} ${period}`;
   };
+
+  // 🔹 Gurgaon clinic slot logic
+const getSlotsForDay = (day) => {
+  if (!day) return [];
+
+  let slots = [];
+
+  const addHourlySlots = (start, end) => {
+    let current = start;
+    while (current < end) {
+      const startTime = formatTo12Hour(current);
+      const endTime = formatTo12Hour(current + 1);
+      slots.push(`${startTime} - ${endTime}`);
+      current++;
+    }
+  };
+
+  // Morning slots
+  if (day === "Monday" || day === "Wednesday") {
+    addHourlySlots(9, 14); // 9 AM - 2 PM
+  }
+
+  if (day === "Friday") {
+    addHourlySlots(12, 14); // 12 PM - 2 PM
+  }
+
+  // Evening slots
+  slots.push(
+    `${formatTo12Hour(18, 30)} - ${formatTo12Hour(19, 30)}`
+  );
+  slots.push(
+    `${formatTo12Hour(19, 30)} - ${formatTo12Hour(20, 0)}`
+  );
+
+  return slots;
+};
+
 
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbxSsxgIQYLBKXapezQjL8uvWGjpcDYTeAE28R7m_dXjoBUKTD6uKoWvNdasi4xdnBKnWg/exec";
