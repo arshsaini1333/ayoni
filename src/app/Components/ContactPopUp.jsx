@@ -15,11 +15,11 @@ export default function AppointmentModal({ open, onClose }) {
     name: "",
     email: "",
     phone: "",
-    appointmentType: "Clinic Visit",
+    apointmentType: "Offline Consultation",
     day: "",
     date: "",
     slot: "",
-    reason: "",
+    msg: "",
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -52,10 +52,9 @@ export default function AppointmentModal({ open, onClose }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Get next date
+  // Get next date (Sunday removed)
   const getNextDateForDay = (selectedDay) => {
     const daysMap = {
-      Sunday: 0,
       Monday: 1,
       Tuesday: 2,
       Wednesday: 3,
@@ -195,25 +194,109 @@ export default function AppointmentModal({ open, onClose }) {
               </h3>
 
               <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-                <input name="name" value={formData.name} onChange={handleChange} required className="w-full border px-4 py-3 rounded-lg" placeholder="Name" />
-                <input name="email" value={formData.email} onChange={handleChange} required className="w-full border px-4 py-3 rounded-lg" placeholder="Email" />
-                <input name="phone" value={formData.phone} onChange={handleChange} required className="w-full border px-4 py-3 rounded-lg" placeholder="Phone" />
+                <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                  placeholder="Name"
+                />
 
-                <select name="day" value={formData.day} onChange={handleChange} required className="w-full border px-4 py-3 rounded-lg">
-                  <option value="">Select Day</option>
-                  {["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].map(d => (
-                    <option key={d}>{d}</option>
-                  ))}
+                <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                  placeholder="Email"
+                />
+
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                  placeholder="Phone"
+                />
+
+                {/* Appointment Type */}
+                <div className="flex gap-6 text-sm">
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="appointmentType"
+                      value="Online Consultation"
+                      checked={formData.apointmentType === "Online Consultation"}
+                      onChange={handleChange}
+                    />
+                    Online Consultation
+                  </label>
+
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="appointmentType"
+                      value="Offline Consultation"
+                      checked={formData.apointmentType === "Offline Consultation"}
+                      onChange={handleChange}
+                    />
+                    Offline Consultation
+                  </label>
+                </div>
+
+                {/* Concern */}
+                <select
+                  name="msg"
+                  value={formData.msg}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                >
+                  <option value="">Select Your Concern</option>
+                  <option>PCOS / Irregular Periods</option>
+                  <option>Pregnancy Care</option>
+                  <option>Menopause Issues</option>
+                  <option>Hormonal Imbalance</option>
+                  <option>General Gynaecology Consultation</option>
                 </select>
 
-                <select name="slot" value={formData.slot} onChange={handleChange} required className="w-full border px-4 py-3 rounded-lg">
+                {/* Day */}
+                <select
+                  name="day"
+                  value={formData.day}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                >
+                  <option value="">Select Day</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                </select>
+
+                {/* Slot */}
+                <select
+                  name="slot"
+                  value={formData.slot}
+                  onChange={handleChange}
+                  required
+                  className="w-full border px-4 py-3 rounded-lg"
+                >
                   <option value="">Select Slot</option>
                   {getSlotsForDay(formData.day).map((s, i) => (
                     <option key={i}>{s}</option>
                   ))}
                 </select>
 
-                <button disabled={submitting} className="w-full bg-[#800000] text-white py-3 rounded-lg">
+                <button
+                  disabled={submitting}
+                  className="w-full bg-[#800000] text-white py-3 rounded-lg"
+                >
                   {submitting ? "Submitting..." : "Book Appointment"}
                 </button>
               </form>
@@ -235,10 +318,16 @@ export default function AppointmentModal({ open, onClose }) {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <button onClick={skipPayment} className="w-1/2 border py-2 rounded">
+              <button
+                onClick={skipPayment}
+                className="w-1/2 border py-2 rounded"
+              >
                 Skip
               </button>
-              <button onClick={handlePayment} className="w-1/2 bg-[#800000] text-white py-2 rounded">
+              <button
+                onClick={handlePayment}
+                className="w-1/2 bg-[#800000] text-white py-2 rounded"
+              >
                 Pay ₹49
               </button>
             </div>
