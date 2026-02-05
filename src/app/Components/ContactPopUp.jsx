@@ -9,7 +9,7 @@ export default function AppointmentModal({ open, onClose }) {
   const router = useRouter();
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbwKje6cmlIJkp3C4-eYG2Mw114dSzU_v8ZcWrRA-qsVX9SDA03W3QJnnXG37cyT_5kdsA/exec";
+    "https://script.google.com/macros/s/AKfycbzMLfAM_N-c9q2GDcm9Q9o1iTFggrdD3aer3O3e0w5JrlWWa80fOED2yFPa0iGptcssUg/exec";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -124,7 +124,7 @@ export default function AppointmentModal({ open, onClose }) {
     const res = await fetch("/api/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: 1 }),
+      body: JSON.stringify({ amount: 49 }),
     });
 
     const order = await res.json();
@@ -318,15 +318,15 @@ export default function AppointmentModal({ open, onClose }) {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <button
+              {/* <button
                 onClick={skipPayment}
                 className="w-1/2 border py-2 rounded"
               >
                 Skip
-              </button>
+              </button> */}
               <button
                 onClick={handlePayment}
-                className="w-1/2 bg-[#800000] text-white py-2 rounded"
+                className="w-1/2 mx-auto bg-[#800000] text-white py-2 rounded"
               >
                 Pay ₹49
               </button>
