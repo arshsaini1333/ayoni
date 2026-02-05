@@ -190,8 +190,11 @@ export default function AppointmentModal({ open, onClose }) {
 
             <div className="p-6 md:p-8">
               <h3 className="text-2xl font-semibold text-[#800000]">
-              Valentines Offer 💘 Pay 49 And Get 30%
+              Book Your Appointment
               </h3>
+              <p>Valentine Special Offer
+Pay ₹49 & get Flat 30% OFF on your consultation
+</p>
 
               <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
                 <input
