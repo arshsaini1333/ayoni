@@ -47,9 +47,9 @@ export default function About() {
               postgraduate degree.
               <br /><br />
               She holds an <b>MBBS and DGO from Kasturba Medical College,
-              Manipal</b>, a DNB in Obstetrics & Gynecology from St. Stephen’s
-              Hospital, Delhi; MRCOG (UK); and a Master’s in Aesthetic
-              Gynecology from ILAMED.
+              Manipal</b>, a <b>DNB in Obstetrics & Gynecology from St. Stephen’s
+              Hospital, </b>Delhi; <b>MRCOG (UK); and a Master’s in Aesthetic
+              Gynecology from ILAMED.</b>
               <br /><br />
               Known for her compassionate, expert approach, she specializes in
               pregnancy management, menopause care, hormonal wellness,
