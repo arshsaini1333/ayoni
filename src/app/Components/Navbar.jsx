@@ -15,7 +15,7 @@ export default function Navbar() {
             href="#why-ayoni"
             className="text-[#CFAA75] text-lg font-bold hover:opacity-80 transition"
           >
-            Trusted by 7.9 Lakh Womens
+            Trusted by 10 Lakh+ Women
           </Link>
         </div>
 
