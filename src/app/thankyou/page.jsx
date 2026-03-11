@@ -1,8 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ThankYouPage() {
+
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "thankyou_page"
+    });
+  }, []);
   return (
     <section className="min-h-screen flex items-center justify-center bg-[#264231] px-4">
       <div className="w-[80%] mx-auto text-center bg-[#264231]">
