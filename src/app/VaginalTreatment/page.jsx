@@ -147,84 +147,108 @@ export default function VaginalTreatmentPage() {
       <Navbar openModal={() => setOpen(true)} />
 
       {/* ═══════════════════════ HERO SECTION ═══════════════════════ */}
-      <section
-        className="relative w-full min-h-[95vh] bg-cover bg-center flex items-center"
-        style={{ backgroundImage: "url('/gyne.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e23]/95 via-[#264231]/85 to-[#264231]/60"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6D3A3] via-[#800000] to-[#E6D3A3]"></div>
+      <section className="relative w-full min-h-[95vh] bg-[#f5f0e8] flex items-center overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-[-80px] right-[-60px] w-[300px] h-[300px] rounded-full bg-[#264231]/10"></div>
+        <div className="absolute bottom-[-50px] left-[-40px] w-[250px] h-[250px] rounded-full bg-[#800000]/5"></div>
+        <div className="absolute top-[40%] right-[20%] w-[180px] h-[180px] rounded-full bg-[#E6D3A3]/20"></div>
+        <div className="absolute bottom-[20%] right-[45%] w-[100px] h-[100px] rounded-full bg-[#264231]/5"></div>
+        <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
-        <div className="relative w-full px-6 md:px-16 lg:px-24 py-20 flex justify-center md:justify-start">
-          <div className="w-full max-w-2xl space-y-7 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 bg-[#E6D3A3]/20 border border-[#E6D3A3]/40 rounded-full px-5 py-2 backdrop-blur-sm">
-              <Sparkles size={16} className="text-[#E6D3A3]" />
-              <span className="text-sm font-medium text-[#E6D3A3] tracking-wide uppercase">
-                Advanced Gynecology Care
-              </span>
+        <div className="relative w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            {/* Left — Content */}
+            <div className="space-y-6 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-5 py-2">
+                <Sparkles size={16} className="text-[#800000]" />
+                <span className="text-sm font-medium text-[#264231] tracking-wide uppercase">
+                  Advanced Gynecology Care
+                </span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
+                Best Vaginal Treatment &{" "}
+                <span className="text-[#800000]">Hymenoplasty</span> in Gurgaon
+              </h1>
+
+              <p className="text-base sm:text-lg md:text-xl text-[#3b5f4b] max-w-xl mx-auto md:mx-0 leading-relaxed">
+                Consult an experienced gynecologist for{" "}
+                <span className="text-[#264231] font-semibold">safe</span>,{" "}
+                <span className="text-[#264231] font-semibold">confidential</span> &{" "}
+                <span className="text-[#264231] font-semibold">advanced</span> intimate
+                treatments
+              </p>
+
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#800000]"></div>
+                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { icon: <Award size={16} className="text-[#800000]" />, text: "25+ Yrs Experienced Doctor" },
+                  { icon: <ShieldCheck size={16} className="text-[#800000]" />, text: "Advanced Laser & Surgical" },
+                  { icon: <Lock size={16} className="text-[#800000]" />, text: "100% Private Consultation" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-[#264231]/10 rounded-xl px-3 py-2.5 hover:bg-white/80 transition-all duration-300">
+                    <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#800000]/10 shrink-0">
+                      {item.icon}
+                    </span>
+                    <span className="text-xs text-[#264231] font-semibold leading-tight">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <button
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#264231] text-white px-7 py-3.5 rounded-lg font-bold text-sm hover:bg-[#1a2e23] hover:shadow-lg transition-all duration-300 group"
+                  onClick={() => setOpen(true)}
+                >
+                  <CalendarCheck size={18} />
+                  Book Your Private Consultation
+                  <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] hover:shadow-lg transition-all duration-300"
+                  onClick={() => window.open("tel:+919315991400")}
+                >
+                  <PhoneCall size={16} />
+                  CALL NOW
+                </button>
+                <button
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] hover:shadow-lg transition-all duration-300"
+                  onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
+                >
+                  <MessageCircle size={16} />
+                  WHATSAPP
+                </button>
+              </div>
+
+              <p className="text-[#800000] text-sm font-semibold">
+                * Consultations by prior appointment only
+              </p>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.15] text-white">
-              Best Vaginal Treatment &{" "}
-              <span className="text-[#E6D3A3]">Hymenoplasty</span> in Gurgaon
-            </h1>
-
-            <p className="text-base sm:text-lg md:text-xl text-gray-200/90 max-w-xl mx-auto md:mx-0 leading-relaxed">
-              Consult an experienced gynecologist for{" "}
-              <span className="text-white font-semibold">safe</span>,{" "}
-              <span className="text-white font-semibold">confidential</span> &{" "}
-              <span className="text-white font-semibold">advanced</span> intimate
-              treatments
-            </p>
-
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="w-2 h-2 rounded-full bg-[#E6D3A3]"></div>
-              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+            {/* Right — vthero image in container */}
+            <div className="hidden md:flex justify-center md:justify-end">
+              <div className="relative bg-white rounded-3xl shadow-2xl shadow-[#264231]/15 p-3 border border-[#E6D3A3]/30">
+                <Image
+                  src="/vthero.png"
+                  alt="Vaginal Treatment & Hymenoplasty in Gurgaon"
+                  width={480}
+                  height={480}
+                  className="object-cover rounded-2xl max-h-[480px]"
+                  priority
+                />
+                {/* <div className="absolute -bottom-4 -left-4 bg-[#264231] text-white rounded-2xl px-5 py-3 shadow-lg">
+                  <div className="text-xl font-bold">25+</div>
+                  <div className="text-xs text-[#E6D3A3]">Years Exp.</div>
+                </div> */}
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { icon: <Award size={20} className="text-[#E6D3A3]" />, text: "25+ Years Experienced Doctor" },
-                { icon: <ShieldCheck size={20} className="text-[#E6D3A3]" />, text: "Advanced Laser & Surgical Treatments" },
-                { icon: <Lock size={20} className="text-[#E6D3A3]" />, text: "100% Private Consultation" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3.5 hover:bg-white/15 transition-all duration-300">
-                  <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3]/20 shrink-0">
-                    {item.icon}
-                  </span>
-                  <span className="text-sm md:text-base text-white font-medium leading-snug">{item.text}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E6D3A3] text-[#1a2e23] px-8 py-3.5 rounded-lg font-bold text-base hover:bg-[#d4c08f] hover:shadow-lg hover:shadow-[#E6D3A3]/20 transition-all duration-300 group"
-                onClick={() => setOpen(true)}
-              >
-                <CalendarCheck size={20} />
-                Book Your Private Consultation
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-6 py-3.5 rounded-lg font-bold text-base hover:bg-[#660000] hover:shadow-lg hover:shadow-[#800000]/30 transition-all duration-300"
-                onClick={() => window.open("tel:+919315991400")}
-              >
-                <PhoneCall size={18} />
-                CALL NOW
-              </button>
-              <button
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3.5 rounded-lg font-bold text-base hover:bg-[#1fb855] hover:shadow-lg hover:shadow-[#25D366]/30 transition-all duration-300"
-                onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
-              >
-                <MessageCircle size={18} />
-                WHATSAPP
-              </button>
-            </div>
-
-            <p className="text-red-300 text-sm font-semibold">
-              * Consultations by prior appointment only
-            </p>
           </div>
         </div>
       </section>
@@ -340,30 +364,19 @@ export default function VaginalTreatmentPage() {
       <section className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left side — content */}
+            {/* Left side — heading only */}
             <div>
               <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
                 <BadgeCheck size={16} /> Why Choose Us
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#264231] leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#264231] leading-tight mb-4">
                 Why We Are a{" "}
                 <span className="text-[#800000]">Trusted Clinic</span> in Gurgaon
               </h2>
-              <div className="w-16 h-[3px] bg-[#E6D3A3] mb-8"></div>
-
-              <ul className="space-y-4">
-                {trustedReasons.map((reason, i) => (
-                  <li key={i} className="flex items-start gap-4 group">
-                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#264231] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                      <CheckCircle2 size={16} className="text-[#E6D3A3]" />
-                    </span>
-                    <span className="text-base md:text-lg text-[#3b5f4b] font-medium">{reason}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="w-16 h-[3px] bg-[#E6D3A3]"></div>
             </div>
 
-            {/* Right side — visual stats */}
+            {/* Right side — visual stats (original) */}
             <div className="bg-gradient-to-br from-[#264231] to-[#1a2e23] rounded-3xl p-8 md:p-10 space-y-6">
               {[
                 { icon: <Award size={24} />, value: "25+ Years", desc: "of Expert Practice" },
@@ -393,78 +406,70 @@ export default function VaginalTreatmentPage() {
         <div className="absolute -top-20 right-10 w-40 h-40 rounded-full bg-[#E6D3A3]/10"></div>
         <div className="absolute -bottom-10 left-20 w-32 h-32 rounded-full bg-[#264231]/5"></div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            {/* Left — content */}
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-[#800000]/10 rounded-full px-4 py-1.5">
-                <IndianRupee size={16} className="text-[#800000]" />
-                <span className="text-sm font-semibold text-[#800000] tracking-wide uppercase">
-                  Pricing & Cost
-                </span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#264231] leading-tight">
-                Worried About{" "}
-                <span className="text-[#800000]">Treatment Cost?</span>
-              </h2>
-
-              <div className="w-14 h-[3px] bg-[#E6D3A3]"></div>
-
-              <ul className="space-y-4">
-                {costPoints.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3 group">
-                    <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#264231] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                      <CheckCircle2 size={14} className="text-[#E6D3A3]" />
-                    </span>
-                    <span className="text-base md:text-lg text-[#3b5f4b] font-medium">{point}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="relative max-w-2xl mx-auto text-center">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 bg-[#800000]/10 rounded-full px-4 py-1.5">
+              <IndianRupee size={16} className="text-[#800000]" />
+              <span className="text-sm font-semibold text-[#800000] tracking-wide uppercase">
+                Pricing & Cost
+              </span>
             </div>
 
-            {/* Right — CTA card */}
-            <div className="bg-white rounded-3xl border-2 border-[#E6D3A3]/50 shadow-xl shadow-[#E6D3A3]/10 p-8 md:p-10 text-center space-y-6">
-              <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-[#264231] to-[#1a2e23]">
-                <IndianRupee size={30} className="text-[#E6D3A3]" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#264231]">
-                Get Transparent <br /> Consultation Pricing
-              </h3>
-              <p className="text-[#3b5f4b]">
-                No hidden charges. Know the exact cost before your visit.
-              </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#264231] leading-tight">
+              Worried About{" "}
+              <span className="text-[#800000]">Treatment Cost?</span>
+            </h2>
+
+            <div className="flex items-center gap-3 justify-center">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+
+            <ul className="space-y-3 inline-block text-left">
+              {costPoints.map((point, i) => (
+                <li key={i} className="flex items-start gap-3 group">
+                  <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#264231] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                    <CheckCircle2 size={14} className="text-[#E6D3A3]" />
+                  </span>
+                  <span className="text-base md:text-lg text-[#3b5f4b] font-medium">{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="pt-2">
               <button
-                className="w-full inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] hover:shadow-xl hover:shadow-[#800000]/20 transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] hover:shadow-xl hover:shadow-[#800000]/20 transition-all duration-300 group"
                 onClick={() => setOpen(true)}
               >
                 Check Consultation Cost Now
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <div className="flex items-center justify-center gap-4 text-sm text-[#3b5f4b]">
-                <span className="flex items-center gap-1">
-                  <Lock size={14} className="text-[#800000]" /> Private
-                </span>
-                <span className="flex items-center gap-1">
-                  <ShieldCheck size={14} className="text-[#800000]" /> Safe
-                </span>
-                <span className="flex items-center gap-1">
-                  <Smile size={14} className="text-[#800000]" /> No Judgement
-                </span>
-              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 text-sm text-[#3b5f4b]">
+              <span className="flex items-center gap-1">
+                <Lock size={14} className="text-[#800000]" /> Private
+              </span>
+              <span className="flex items-center gap-1">
+                <ShieldCheck size={14} className="text-[#800000]" /> Safe
+              </span>
+              <span className="flex items-center gap-1">
+                <Smile size={14} className="text-[#800000]" /> No Judgement
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════ PREMIUM DOCTOR SECTION ═══════════════════════ */}
-      <section className="bg-white py-16 md:py-24 px-6" id="doctor">
+      <section className="bg-white pt-6 pb-16 md:pt-8 md:pb-24 px-6" id="doctor">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
+            {/* <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
               <Stethoscope size={16} /> Your Specialist
-            </span>
+            </span> */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
               Meet Your <span className="text-[#800000]">Specialist</span>
             </h2>
@@ -544,22 +549,7 @@ export default function VaginalTreatmentPage() {
                 </button>
                 <p className="text-sm text-[#3b5f4b] italic">Trusted care with complete privacy</p>
 
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <button
-                    className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-8 py-3.5 rounded-lg font-bold text-base hover:bg-[#660000] hover:shadow-lg transition-all duration-300"
-                    onClick={() => window.open("tel:+919315991400")}
-                  >
-                    <PhoneCall size={18} />
-                    Call Now
-                  </button>
-                  <button
-                    className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-base hover:bg-[#1fb855] hover:shadow-lg transition-all duration-300"
-                    onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation.", "_blank")}
-                  >
-                    <MessageCircle size={18} />
-                    WhatsApp Now
-                  </button>
-                </div>
+
               </div>
             </div>
           </div>
