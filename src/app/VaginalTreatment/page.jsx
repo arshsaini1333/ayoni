@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Navbar from "../Components/Navbar";
-import AppointmentModal from "../Components/ContactPopUp";
+import AppointmentModalVT from "../Components/ContactPopUpVT";
 import Footer from "../Components/Footer";
 import {
   CalendarCheck,
@@ -38,6 +38,23 @@ import {
 export default function VaginalTreatmentPage() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [heroScale, setHeroScale] = useState(1);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const updateScale = () => {
+      const targetWidth = 1100;
+      if (window.innerWidth < targetWidth) {
+        setHeroScale(window.innerWidth / targetWidth);
+      } else {
+        setHeroScale(1);
+      }
+    };
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbxLx9_2b7arvH3_CWDLvkX1gwSMXc_FY23BLYAn5_nwXcbHhFdXtNNP0IhrQovQtxwhLQ/exec";
@@ -147,128 +164,186 @@ export default function VaginalTreatmentPage() {
       <Navbar openModal={() => setOpen(true)} />
 
       {/* ═══════════════════════ HERO SECTION ═══════════════════════ */}
-      <section className="relative w-full min-h-[95vh] bg-[#f5f0e8] flex items-center overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute top-[-80px] right-[-60px] w-[300px] h-[300px] rounded-full bg-[#264231]/10"></div>
-        <div className="absolute bottom-[-50px] left-[-40px] w-[250px] h-[250px] rounded-full bg-[#800000]/5"></div>
-        <div className="absolute top-[40%] right-[20%] w-[180px] h-[180px] rounded-full bg-[#E6D3A3]/20"></div>
-        <div className="absolute bottom-[20%] right-[45%] w-[100px] h-[100px] rounded-full bg-[#264231]/5"></div>
-        <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
+      <style>{`
+        body { overflow-x: hidden; width: 100%; max-width: 100vw; }
+      `}</style>
+      <div
+        className="w-full bg-[#f5f0e8] overflow-hidden"
+        style={{ height: isClient && heroScale < 1 ? `calc(95vh * ${heroScale})` : 'auto' }}
+        suppressHydrationWarning
+      >
+        <div
+          className="origin-top-left"
+          style={{
+            width: isClient && heroScale < 1 ? '1100px' : '100%',
+            transform: isClient && heroScale < 1 ? `scale(${heroScale})` : 'none',
+          }}
+          suppressHydrationWarning
+        >
+          <section
+            className="relative w-full min-h-[95vh] bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
+            style={{ backgroundImage: "url('/vthero2.png')" }}
+          >
+            {/* Transparent gradient overlay explicitly set as desktop orientation */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/95 to-transparent pointer-events-none"></div>
 
-        <div className="relative w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            {/* Decorative background elements on the left side */}
+            <div className="absolute top-[-80px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#264231]/5"></div>
+            <div className="absolute bottom-[-50px] left-[10%] w-[250px] h-[250px] rounded-full bg-[#E6D3A3]/20"></div>
+            <div className="absolute top-[35%] left-[-30px] w-[180px] h-[180px] rounded-full border border-[#264231]/10"></div>
+            <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
-            {/* Left — Content */}
-            <div className="space-y-6 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-5 py-2">
-                <Sparkles size={16} className="text-[#800000]" />
-                <span className="text-sm font-medium text-[#264231] tracking-wide uppercase">
-                  Advanced Gynecology Care
-                </span>
-              </div>
+            <div className="relative w-full max-w-7xl mx-auto px-12 lg:px-16 py-16">
+              <div className="max-w-2xl relative z-20 space-y-6 text-left">
+                <div className="inline-flex items-center gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-5 py-2">
+                  <Sparkles size={16} className="text-[#800000] w-[16px] h-[16px]" />
+                  <span className="text-sm font-medium text-[#264231] tracking-wide uppercase">
+                    Advanced Gynecology Care
+                  </span>
+                </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
-                Best Vaginal Treatment &{" "}
-                <span className="text-[#800000]">Hymenoplasty</span> in Gurgaon
-              </h1>
+                <h1 className="text-[3.2rem] lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
+                  Best Vaginal Treatment &{" "}
+                  <span className="text-[#800000] inline">Hymenoplasty</span> <span className="inline">in Gurgaon</span>
+                </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-[#3b5f4b] max-w-xl mx-auto md:mx-0 leading-relaxed">
-                Consult an experienced gynecologist for{" "}
-                <span className="text-[#264231] font-semibold">safe</span>,{" "}
-                <span className="text-[#264231] font-semibold">confidential</span> &{" "}
-                <span className="text-[#264231] font-semibold">advanced</span> intimate
-                treatments
-              </p>
+                <p className="text-xl text-[#3b5f4b] max-w-[100%] mx-0 leading-relaxed px-0">
+                  Consult an experienced gynecologist for{" "}
+                  <span className="text-[#264231] font-semibold">safe</span>,{" "}
+                  <span className="text-[#264231] font-semibold">confidential</span> &{" "}
+                  <span className="text-[#264231] font-semibold">advanced</span> intimate
+                  treatments
+                </p>
 
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-                <div className="w-2 h-2 rounded-full bg-[#800000]"></div>
-                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-              </div>
+                <div className="flex items-center gap-3 justify-start">
+                  <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#800000]"></div>
+                  <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+                </div>
 
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { icon: <Award size={16} className="text-[#800000]" />, text: "25+ Yrs Experienced Doctor" },
-                  { icon: <ShieldCheck size={16} className="text-[#800000]" />, text: "Advanced Laser & Surgical" },
-                  { icon: <Lock size={16} className="text-[#800000]" />, text: "100% Private Consultation" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-[#264231]/10 rounded-xl px-3 py-2.5 hover:bg-white/80 transition-all duration-300">
-                    <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#800000]/10 shrink-0">
-                      {item.icon}
-                    </span>
-                    <span className="text-xs text-[#264231] font-semibold leading-tight">{item.text}</span>
+                <div className="flex flex-row flex-wrap gap-2 justify-start w-full">
+                  {[
+                    { icon: <Award size={16} className="text-[#800000]" />, text: "25+ Yrs Experienced Doctor" },
+                    { icon: <ShieldCheck size={16} className="text-[#800000]" />, text: "Advanced Laser & Surgical" },
+                    { icon: <Lock size={16} className="text-[#800000]" />, text: "100% Private Consultation" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-[#264231]/10 rounded-xl px-4 py-2.5 hover:bg-white/90 transition-all duration-300 w-auto text-left">
+                      <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#800000]/10 shrink-0">
+                        {item.icon}
+                      </span>
+                      <span className="text-xs lg:text-[13px] text-[#264231] font-semibold leading-tight">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-2 flex flex-row flex-wrap gap-3 justify-start w-full max-w-none">
+                  <button
+                    className="w-auto inline-flex items-center justify-center gap-2.5 bg-[#264231] text-white px-7 py-3.5 rounded-lg font-bold text-sm lg:text-[15px] hover:bg-[#1a2e23] transition-all duration-300 group"
+                    onClick={() => setOpen(true)}
+                  >
+                    <CalendarCheck size={18} />
+                    Book Your Private Consultation
+                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+
+                  <div className="flex flex-row gap-3 w-auto">
+                    <button
+                      className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] transition-all duration-300"
+                      onClick={() => window.open("tel:+919315991400")}
+                    >
+                      <PhoneCall size={16} />
+                      CALL NOW
+                    </button>
+                    <button
+                      className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] transition-all duration-300"
+                      onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
+                    >
+                      <MessageCircle size={15} />
+                      WHATSAPP
+                    </button>
                   </div>
-                ))}
-              </div>
+                </div>
 
-              <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <button
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#264231] text-white px-7 py-3.5 rounded-lg font-bold text-sm hover:bg-[#1a2e23] hover:shadow-lg transition-all duration-300 group"
-                  onClick={() => setOpen(true)}
-                >
-                  <CalendarCheck size={18} />
-                  Book Your Private Consultation
-                  <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] hover:shadow-lg transition-all duration-300"
-                  onClick={() => window.open("tel:+919315991400")}
-                >
-                  <PhoneCall size={16} />
-                  CALL NOW
-                </button>
-                <button
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] hover:shadow-lg transition-all duration-300"
-                  onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
-                >
-                  <MessageCircle size={16} />
-                  WHATSAPP
-                </button>
+                <p className="text-[#800000] text-sm font-semibold pt-1">
+                  * Consultations by prior appointment only
+                </p>
               </div>
-
-              <p className="text-[#800000] text-sm font-semibold">
-                * Consultations by prior appointment only
-              </p>
             </div>
+          </section>
+        </div>
+      </div>
 
-            {/* Right — vthero image in container */}
-            <div className="hidden md:flex justify-center md:justify-end">
-              <div className="relative bg-white rounded-3xl shadow-2xl shadow-[#264231]/15 p-3 border border-[#E6D3A3]/30">
-                <Image
-                  src="/vthero.png"
-                  alt="Vaginal Treatment & Hymenoplasty in Gurgaon"
-                  width={480}
-                  height={480}
-                  className="object-cover rounded-2xl max-h-[480px]"
-                  priority
+      {/* ═══════════════════════ MOBILE QUICK COST CALCULATOR ═══════════════════════ */}
+      {/* This form is explicitly hidden on tablet/desktop devices (md:hidden) */}
+      <section className="block md:hidden bg-[#f5f0e8] px-5 pt-10 pb-10">
+        <div className="w-full max-w-md mx-auto space-y-5">
+          {/* Top Call Button (Pill shaped, matching color scheme) */}
+          <button
+            onClick={() => window.open("tel:+919315991400")}
+            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors duration-300 hover:bg-[#d4c08f]"
+          >
+            <PhoneCall className="w-[18px] h-[18px]" />
+            Talk to an Expert for Free
+          </button>
+
+          {/* Form Card */}
+          <div className="bg-[#fcfbf9] rounded-[24px] p-6 border border-[#E6D3A3]/60">
+            <h3 className="text-xl font-bold text-center text-[#264231] mb-5">
+              Cost Calculator
+            </h3>
+
+            <form className="space-y-4" onSubmit={handleFormSubmit}>
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  placeholder="Your Name *"
+                  required
+                  className="w-full border border-gray-300 rounded-full px-5 py-3.5 text-sm text-[#264231] focus:border-[#264231] focus:outline-none transition-colors bg-white"
                 />
-                {/* <div className="absolute -bottom-4 -left-4 bg-[#264231] text-white rounded-2xl px-5 py-3 shadow-lg">
-                  <div className="text-xl font-bold">25+</div>
-                  <div className="text-xs text-[#E6D3A3]">Years Exp.</div>
-                </div> */}
               </div>
-            </div>
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleFormChange}
+                  placeholder="Mobile Number *"
+                  required
+                  className="w-full border border-gray-300 rounded-full px-5 py-3.5 text-sm text-[#264231] focus:border-[#264231] focus:outline-none transition-colors bg-white"
+                />
+              </div>
 
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full bg-[#800000] text-white py-4 rounded-full font-bold text-[15px] hover:bg-[#660000] transition-colors duration-300 mt-2 disabled:opacity-60"
+              >
+                {submitting ? "Submitting..." : "Get Cost Estimate Now"}
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════ STATS STRIP ═══════════════════════ */}
       <section className="relative bg-[#264231] border-t-4 border-[#E6D3A3]">
-        <div className="max-w-6xl mx-auto px-6 py-8 md:py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="max-w-6xl mx-auto px-2 sm:px-6 py-6 md:py-10">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-6 md:gap-8">
             {[
-              { icon: <Users size={26} />, value: "10,000+", label: "Happy Patients" },
-              { icon: <Clock size={26} />, value: "25+", label: "Years Experience" },
-              { icon: <Heart size={26} />, value: "100%", label: "Confidential Care" },
-              { icon: <Zap size={26} />, value: "Advanced", label: "Laser Treatments" },
+              { icon: <Users className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "10,000+", label: "Happy Patients" },
+              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "25+", label: "Years Experience" },
+              { icon: <Heart className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "100%", label: "Confidential Care" },
+              { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Advanced", label: "Laser Treatments" },
             ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center text-center group">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#E6D3A3]/15 mb-3 text-[#E6D3A3] group-hover:scale-110 transition-transform duration-300">
+              <div key={i} className="flex flex-col items-center text-center group px-0.5">
+                <div className="w-9 h-9 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-[#E6D3A3]/15 mb-2 md:mb-3 text-[#E6D3A3] group-hover:scale-110 transition-transform duration-300">
                   {stat.icon}
                 </div>
-                <span className="text-3xl md:text-4xl font-bold text-white">{stat.value}</span>
-                <span className="text-sm md:text-base text-[#E6D3A3] font-medium mt-1">{stat.label}</span>
+                <span className="text-[13px] sm:text-2xl md:text-4xl font-bold text-white leading-tight">{stat.value}</span>
+                <span className="text-[9px] sm:text-xs md:text-base text-[#E6D3A3] font-medium mt-0.5 leading-[1.2]">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -276,9 +351,9 @@ export default function VaginalTreatmentPage() {
       </section>
 
       {/* ═══════════════════════ SPECIALIZED TREATMENTS ═══════════════════════ */}
-      <section className="bg-[#F9F9F6] py-16 md:py-24 px-6">
+      <section className="bg-[#F9F9F6] pt-8 pb-16 md:pt-20 md:pb-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-14">
             <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
               <Flower2 size={16} /> What We Offer
             </span>
@@ -341,19 +416,19 @@ export default function VaginalTreatmentPage() {
             </span>
           </div>
 
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="pt-4 flex flex-row gap-3 sm:gap-4 justify-center w-full max-w-2xl mx-auto">
             <button
-              className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#660000] hover:shadow-xl hover:shadow-[#800000]/30 transition-all duration-300"
+              className="flex-1 inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#800000] text-white px-2 sm:px-10 py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-lg hover:bg-[#660000] transition-all duration-300 whitespace-nowrap"
               onClick={() => window.open("tel:+919315991400")}
             >
-              <PhoneCall size={20} />
+              <PhoneCall className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]" />
               Call Now
             </button>
             <button
-              className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#1fb855] hover:shadow-xl hover:shadow-[#25D366]/30 transition-all duration-300"
+              className="flex-1 inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#25D366] text-white px-2 sm:px-10 py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-lg hover:bg-[#1fb855] transition-all duration-300 whitespace-nowrap"
               onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation.", "_blank")}
             >
-              <MessageCircle size={20} />
+              <MessageCircle className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]" />
               WhatsApp Now
             </button>
           </div>
@@ -402,7 +477,6 @@ export default function VaginalTreatmentPage() {
       {/* ═══════════════════════ COST + INTENT SECTION ═══════════════════════ */}
       <section className="relative bg-gradient-to-br from-[#fdf6e3] via-[#fef9ef] to-[#fff8e7] py-16 md:py-24 px-6 overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#E6D3A3] via-[#800000] to-[#E6D3A3]"></div>
         <div className="absolute -top-20 right-10 w-40 h-40 rounded-full bg-[#E6D3A3]/10"></div>
         <div className="absolute -bottom-10 left-20 w-32 h-32 rounded-full bg-[#264231]/5"></div>
 
@@ -439,7 +513,7 @@ export default function VaginalTreatmentPage() {
 
             <div className="pt-2">
               <button
-                className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] hover:shadow-xl hover:shadow-[#800000]/20 transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group"
                 onClick={() => setOpen(true)}
               >
                 Check Consultation Cost Now
@@ -500,10 +574,10 @@ export default function VaginalTreatmentPage() {
                   />
                 </div>
                 {/* Experience badge */}
-                <div className="absolute -bottom-4 -right-4 bg-[#264231] text-white rounded-2xl px-5 py-3 shadow-lg">
+                {/* <div className="absolute -bottom-4 -right-4 bg-[#264231] text-white rounded-2xl px-5 py-3 shadow-lg">
                   <div className="text-2xl font-bold text-[#E6D3A3]">25+</div>
                   <div className="text-xs font-medium">Years Exp.</div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -540,7 +614,7 @@ export default function VaginalTreatmentPage() {
               {/* Doctor CTA */}
               <div className="pt-4 space-y-3">
                 <button
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E6D3A3] text-[#1a2e23] px-8 py-3.5 rounded-lg font-bold text-base hover:bg-[#d4c08f] hover:shadow-lg transition-all duration-300 group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E6D3A3] text-[#1a2e23] px-8 py-3.5 rounded-lg font-bold text-base hover:bg-[#d4c08f] transition-all duration-300 group"
                   onClick={() => setOpen(true)}
                 >
                   <CalendarCheck size={20} />
@@ -653,7 +727,7 @@ export default function VaginalTreatmentPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[#800000] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#660000] hover:shadow-lg transition-all duration-300 disabled:opacity-60 flex items-center justify-center gap-3"
+                  className="w-full bg-[#800000] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 disabled:opacity-60 flex items-center justify-center gap-3"
                 >
                   {submitting ? "Submitting..." : (
                     <>
@@ -676,7 +750,8 @@ export default function VaginalTreatmentPage() {
       <Footer />
 
       {/* Modal */}
-      <AppointmentModal open={open} onClose={() => setOpen(false)} />
+      {/* <AppointmentModal open={open} onClose={() => setOpen(false)} /> */}
+      <AppointmentModalVT open={open} onClose={() => setOpen(false)} />
     </>
   );
 }

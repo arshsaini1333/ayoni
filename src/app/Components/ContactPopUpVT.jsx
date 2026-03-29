@@ -5,18 +5,7 @@ import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function AppointmentModal({
-  open,
-  onClose,
-  concerns = [
-    "PCOS / Irregular Periods",
-    "Pregnancy Care",
-    "Menopause Issues",
-    "Hormonal Imbalance",
-    "General Gynaecology Consultation",
-  ],
-  concernLabel = "Select Your Concern",
-}) {
+export default function AppointmentModalVT({ open, onClose }) {
   const router = useRouter();
 
   const scriptURL =
@@ -213,12 +202,13 @@ export default function AppointmentModal({
                   required
                   className="w-full border px-4 py-3 rounded-lg"
                 >
-                  <option value="">Select Your Concern</option>
-                  <option>PCOS / Irregular Periods</option>
-                  <option>Pregnancy Care</option>
-                  <option>Menopause Issues</option>
-                  <option>Hormonal Imbalance</option>
-                  <option>General Gynaecology Consultation</option>
+                  <option value="">Select Treatment</option>
+                  <option>Laser Vaginal Tightening</option>
+                  <option>Surgical Tightening (Vaginoplasty)</option>
+                  <option>Hymen Repair (Hymenoplasty)</option>
+                  <option>Sexual Wellness Treatment</option>
+                  <option>Intimate Rejuvenation</option>
+                  <option>General Consultation</option>
                 </select>
 
                 {/* Day */}
