@@ -207,34 +207,26 @@ export default function VaginalTreatmentPage() {
                   <span className="text-[#800000] inline">Hymenoplasty</span> <span className="inline">in Gurgaon</span>
                 </h1>
 
-                <p className="text-xl text-[#3b5f4b] max-w-[100%] mx-0 leading-relaxed px-0">
+                {/* <p className="text-lg lg:text-xl text-[#3b5f4b] max-w-[100%] mx-0 leading-relaxed px-0 pb-1">
                   Consult an experienced gynecologist for{" "}
                   <span className="text-[#264231] font-semibold">safe</span>,{" "}
                   <span className="text-[#264231] font-semibold">confidential</span> &{" "}
                   <span className="text-[#264231] font-semibold">advanced</span> intimate
                   treatments
-                </p>
+                </p> */}
 
-                <div className="flex items-center gap-3 justify-start">
-                  <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#800000]"></div>
-                  <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-                </div>
-
-                <div className="flex flex-row flex-wrap gap-2 justify-start w-full">
+                <ul className="flex flex-col gap-2.5 justify-start w-full pl-1 py-1">
                   {[
-                    { icon: <Award size={16} className="text-[#800000]" />, text: "25+ Yrs Experienced Doctor" },
-                    { icon: <ShieldCheck size={16} className="text-[#800000]" />, text: "Advanced Laser & Surgical" },
-                    { icon: <Lock size={16} className="text-[#800000]" />, text: "100% Private Consultation" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-[#264231]/10 rounded-xl px-4 py-2.5 hover:bg-white/90 transition-all duration-300 w-auto text-left">
-                      <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#800000]/10 shrink-0">
-                        {item.icon}
-                      </span>
-                      <span className="text-xs lg:text-[13px] text-[#264231] font-semibold leading-tight">{item.text}</span>
-                    </div>
+                    "25+ Yrs Experienced Doctor",
+                    "Advanced Laser & Surgical",
+                    "100% Private Consultation",
+                  ].map((text, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-[#800000] shrink-0 mt-0.5"></span>
+                      <span className="text-[15px] lg:text-[17px] text-[#264231] font-semibold">{text}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
                 <div className="pt-2 flex flex-row flex-wrap gap-3 justify-start w-full max-w-none">
                   <button
@@ -246,7 +238,7 @@ export default function VaginalTreatmentPage() {
                     <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <div className="flex flex-row gap-3 w-auto">
+                  <div className="hidden md:flex flex-row gap-3 w-auto">
                     <button
                       className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] transition-all duration-300"
                       onClick={() => window.open("tel:+919315991400")}
