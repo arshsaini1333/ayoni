@@ -265,13 +265,13 @@ export default function VaginalTreatmentPage() {
       <section className="block md:hidden bg-[#f5f0e8] px-5 pt-10 pb-10">
         <div className="w-full max-w-md mx-auto space-y-5">
           {/* Top Call Button (Pill shaped, matching color scheme) */}
-          <button
-            onClick={() => window.open("tel:+919315991400")}
-            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors duration-300 hover:bg-[#d4c08f]"
+          <a
+            href="tel:+919315991400"
+            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#d4c08f] appearance-none border-none outline-none shadow-none"
           >
             <PhoneCall className="w-[18px] h-[18px]" />
             Talk to an Expert for Free
-          </button>
+          </a>
 
           {/* Form Card */}
           <div className="bg-[#fcfbf9] rounded-[24px] p-6 border border-[#E6D3A3]/60">
