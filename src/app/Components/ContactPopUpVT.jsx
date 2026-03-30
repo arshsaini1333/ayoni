@@ -15,7 +15,7 @@ export default function AppointmentModalVT({ open, onClose }) {
     name: "",
     email: "",
     phone: "",
-    apointmentType: "Offline Consultation",
+    appointmentType: "Offline Consultation",
     day: "",
     date: "",
     slot: "",
@@ -176,7 +176,7 @@ export default function AppointmentModalVT({ open, onClose }) {
                       type="radio"
                       name="appointmentType"
                       value="Online Consultation"
-                      checked={formData.apointmentType === "Online Consultation"}
+                      checked={formData.appointmentType === "Online Consultation"}
                       onChange={handleChange}
                     />
                     Online Consultation
@@ -187,7 +187,7 @@ export default function AppointmentModalVT({ open, onClose }) {
                       type="radio"
                       name="appointmentType"
                       value="Offline Consultation"
-                      checked={formData.apointmentType === "Offline Consultation"}
+                      checked={formData.appointmentType === "Offline Consultation"}
                       onChange={handleChange}
                     />
                     Offline Consultation
