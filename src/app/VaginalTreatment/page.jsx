@@ -193,7 +193,8 @@ export default function VaginalTreatmentPage() {
             <div className="absolute top-[35%] left-[-30px] w-[180px] h-[180px] rounded-full border border-[#264231]/10"></div>
             <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
-            <div className="relative w-full max-w-7xl mx-auto px-12 lg:px-16 py-16">
+            {/* <div className="relative w-full max-w-7xl mx-auto px-4 lg:px-6 py-16"> */}
+            <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16">
               <div className="max-w-2xl relative z-20 space-y-6 text-left">
                 <div className="inline-flex items-center gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-5 py-2">
                   <Sparkles size={16} className="text-[#800000] w-[16px] h-[16px]" />
@@ -343,7 +344,7 @@ export default function VaginalTreatmentPage() {
       </section>
 
       {/* ═══════════════════════ SPECIALIZED TREATMENTS ═══════════════════════ */}
-      <section className="bg-[#F9F9F6] pt-8 pb-16 md:pt-20 md:pb-24 px-6">
+      <section className="bg-[#F9F9F6] pt-8 pb-16 md:pt-20 md:pb-24 px-6" id="treatments">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-14">
             <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
@@ -428,7 +429,7 @@ export default function VaginalTreatmentPage() {
       </section>
 
       {/* ═══════════════════════ WHY TRUSTED ═══════════════════════ */}
-      <section className="bg-white py-16 md:py-24 px-6">
+      <section className="bg-white py-16 md:py-24 px-6" id="why-ayoni">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left side — heading only */}
@@ -467,63 +468,105 @@ export default function VaginalTreatmentPage() {
       </section>
 
       {/* ═══════════════════════ COST + INTENT SECTION ═══════════════════════ */}
-      <section className="relative bg-gradient-to-br from-[#fdf6e3] via-[#fef9ef] to-[#fff8e7] py-16 md:py-24 px-6 overflow-hidden">
+      <section className="relative bg-[#fcf9f2] py-16 md:py-24 px-6 overflow-hidden" id="cost">
         {/* Decorative elements */}
-        <div className="absolute -top-20 right-10 w-40 h-40 rounded-full bg-[#E6D3A3]/10"></div>
-        <div className="absolute -bottom-10 left-20 w-32 h-32 rounded-full bg-[#264231]/5"></div>
+        <div className="absolute -top-20 right-10 w-64 h-64 rounded-full bg-[#E6D3A3]/20"></div>
+        <div className="absolute -bottom-10 left-[-10%] w-64 h-64 rounded-full bg-[#264231]/5"></div>
 
-        <div className="relative max-w-2xl mx-auto text-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#800000]/10 rounded-full px-4 py-1.5">
-              <IndianRupee size={16} className="text-[#800000]" />
-              <span className="text-sm font-semibold text-[#800000] tracking-wide uppercase">
-                Pricing & Cost
-              </span>
-            </div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#264231] leading-tight">
-              Worried About{" "}
-              <span className="text-[#800000]">Treatment Cost?</span>
-            </h2>
+            {/* Left Side (Desktop) / Entire Content Container (Mobile) */}
+            <div className="text-center space-y-6 md:space-y-8">
+              <div className="inline-flex items-center gap-2 bg-[#800000]/10 rounded-full px-5 py-2">
+                <IndianRupee size={16} className="text-[#800000]" />
+                <span className="text-sm font-bold text-[#800000] tracking-wide uppercase">
+                  Pricing & Cost
+                </span>
+              </div>
 
-            <div className="flex items-center gap-3 justify-center">
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-            </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#264231] leading-tight">
+                Worried About <span className="text-[#800000]">Treatment Cost?</span>
+              </h2>
 
-            <ul className="space-y-3 inline-block text-left">
-              {costPoints.map((point, i) => (
-                <li key={i} className="flex items-start gap-3 group">
-                  <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#264231] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                    <CheckCircle2 size={14} className="text-[#E6D3A3]" />
+              <div className="flex items-center gap-3 justify-center">
+                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+                <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              </div>
+
+              <ul className="space-y-4 inline-block text-left mt-2">
+                {costPoints.map((point, i) => (
+                  <li key={i} className="flex items-center gap-4 group">
+                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#264231] shrink-0 group-hover:scale-110 transition-transform">
+                      <CheckCircle2 size={16} className="text-[#E6D3A3]" />
+                    </span>
+                    <span className="text-base sm:text-[17px] text-[#3b5f4b] font-medium">{point}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Mobile CTA (Hidden on Desktop) */}
+              <div className="md:hidden pt-4 space-y-6">
+                <button
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-8 py-4 rounded-xl font-bold text-[17px] hover:bg-[#660000] transition-all duration-300 group"
+                  onClick={() => setOpen(true)}
+                >
+                  Check Consultation Cost Now
+                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <div className="flex items-center justify-center gap-3 sm:gap-5 text-sm sm:text-[15px] text-[#3b5f4b] font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <Lock size={16} className="text-[#800000]" /> Private
                   </span>
-                  <span className="text-base md:text-lg text-[#3b5f4b] font-medium">{point}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-2">
-              <button
-                className="inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group"
-                onClick={() => setOpen(true)}
-              >
-                Check Consultation Cost Now
-                <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+                  <span className="flex items-center gap-1.5">
+                    <ShieldCheck size={16} className="text-[#800000]" /> Safe
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Smile size={16} className="text-[#800000]" /> No Judgement
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="flex items-center justify-center gap-4 text-sm text-[#3b5f4b]">
-              <span className="flex items-center gap-1">
-                <Lock size={14} className="text-[#800000]" /> Private
-              </span>
-              <span className="flex items-center gap-1">
-                <ShieldCheck size={14} className="text-[#800000]" /> Safe
-              </span>
-              <span className="flex items-center gap-1">
-                <Smile size={14} className="text-[#800000]" /> No Judgement
-              </span>
+            {/* Right Side Card (Hidden on Mobile) */}
+            <div className="hidden md:flex justify-center md:justify-end">
+              <div className="bg-white rounded-[32px] p-8 lg:p-10 w-full max-w-[420px] text-center shadow-lg border border-[#E6D3A3]/30 space-y-6 lg:space-y-7">
+                <div className="w-16 h-16 mx-auto bg-[#264231] rounded-full flex items-center justify-center shadow-sm">
+                  <IndianRupee size={28} className="text-[#E6D3A3]" />
+                </div>
+
+                <h3 className="text-[22px] lg:text-2xl font-bold text-[#264231] px-2 leading-snug">
+                  Get Transparent<br />Consultation Pricing
+                </h3>
+
+                <p className="text-[#3b5f4b] text-[15px] leading-relaxed px-4">
+                  No hidden charges. Know the exact cost before your visit.
+                </p>
+
+                <button
+                  className="w-full flex items-center justify-center gap-3 bg-[#800000] text-white px-6 py-4 rounded-xl font-bold text-[17px] hover:bg-[#660000] transition-all duration-300 group mt-2 shadow-md hover:shadow-lg"
+                  onClick={() => setOpen(true)}
+                >
+                  Check Consultation Cost Now
+                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                <div className="flex items-center justify-center gap-3 lg:gap-4 text-[13px] text-[#3b5f4b] font-medium pt-2">
+                  <span className="flex items-center gap-1 sm:gap-1.5">
+                    <Lock size={14} className="text-[#800000]" /> Private
+                  </span>
+                  <span className="flex items-center gap-1 sm:gap-1.5">
+                    <ShieldCheck size={14} className="text-[#800000]" /> Safe
+                  </span>
+                  <span className="flex items-center gap-1 sm:gap-1.5">
+                    <Smile size={14} className="text-[#800000]" /> No Judgement
+                  </span>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
