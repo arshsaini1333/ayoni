@@ -195,71 +195,65 @@ export default function VaginalTreatmentPage() {
 
             {/* <div className="relative w-full max-w-7xl mx-auto px-4 lg:px-6 py-16"> */}
             <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16">
-              <div className="max-w-2xl relative z-20 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-5 py-2">
-                  <Sparkles size={16} className="text-[#800000] w-[16px] h-[16px]" />
-                  <span className="text-sm font-medium text-[#264231] tracking-wide uppercase">
+              <div className="max-w-3xl lg:max-w-2xl relative z-20 space-y-8 lg:space-y-6 text-left">
+                <div className="inline-flex items-center gap-2.5 lg:gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-7 py-3 lg:px-5 lg:py-2">
+                  <Sparkles className="text-[#800000] w-[22px] h-[22px] lg:w-[16px] lg:h-[16px]" />
+                  <span className="text-[20px] lg:text-sm font-medium text-[#264231] tracking-wide uppercase">
                     Advanced Gynecology Care
                   </span>
                 </div>
 
-                <h1 className="text-[3.2rem] lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
+                <h1 className="text-[4.5rem] lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
                   Best Vaginal Treatment &{" "}
                   <span className="text-[#800000] inline">Hymenoplasty</span> <span className="inline">in Gurgaon</span>
                 </h1>
 
-                {/* <p className="text-lg lg:text-xl text-[#3b5f4b] max-w-[100%] mx-0 leading-relaxed px-0 pb-1">
-                  Consult an experienced gynecologist for{" "}
-                  <span className="text-[#264231] font-semibold">safe</span>,{" "}
-                  <span className="text-[#264231] font-semibold">confidential</span> &{" "}
-                  <span className="text-[#264231] font-semibold">advanced</span> intimate
-                  treatments
-                </p> */}
-
-                <ul className="flex flex-col gap-2.5 justify-start w-full pl-1 py-1">
+                <ul className="flex flex-col gap-4 lg:gap-2.5 justify-start w-full pl-1 py-1">
                   {[
                     "25+ Yrs Experienced Doctor",
                     "Advanced Laser & Surgical",
                     "100% Private Consultation",
                   ].map((text, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#800000] shrink-0 mt-0.5"></span>
-                      <span className="text-[25px] lg:text-[27px] text-[#264231] font-semibold">{text}</span>
+                    <li key={i} className="flex items-center gap-4 lg:gap-3">
+                      <span className="w-3 h-3 lg:w-2 lg:h-2 rounded-full bg-[#800000] shrink-0 mt-1 lg:mt-0.5"></span>
+                      <span className="text-[34px] lg:text-[27px] text-[#264231] font-semibold">{text}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-2 flex flex-row flex-wrap gap-3 justify-start w-full max-w-none">
-                  <button
-                    className="w-auto inline-flex items-center justify-center gap-2.5 bg-[#264231] text-white px-7 py-3.5 rounded-lg font-bold text-sm lg:text-[15px] hover:bg-[#1a2e23] transition-all duration-300 group"
-                    onClick={() => setOpen(true)}
-                  >
-                    <CalendarCheck size={18} />
-                    Book Your Private Consultation
-                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+                <div>
+                  <div className="pt-4 lg:pt-2 flex flex-row flex-wrap gap-3 justify-start w-full max-w-none">
+                    <button
+                      className="w-auto inline-flex items-center justify-center gap-3 lg:gap-2.5 bg-[#264231] text-white px-10 py-5 lg:px-7 lg:py-3.5 rounded-xl lg:rounded-lg font-bold text-[22px] lg:text-[15px] hover:bg-[#1a2e23] transition-all duration-300 group"
+                      onClick={() => setOpen(true)}
+                    >
+                      <CalendarCheck className="w-[24px] h-[24px] lg:w-[18px] lg:h-[18px]" />
+                      Book Your Private Consultation
+                      <ChevronRight className="w-[20px] h-[20px] lg:w-[14px] lg:h-[14px] group-hover:translate-x-1 transition-transform" />
+                    </button>
 
-                  <div className="hidden md:flex flex-row gap-3 w-auto">
-                    <button
-                      className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] transition-all duration-300"
-                      onClick={() => window.open("tel:+919315991400")}
-                    >
-                      <PhoneCall size={16} />
-                      CALL NOW
-                    </button>
-                    <button
-                      className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] transition-all duration-300"
-                      onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
-                    >
-                      <MessageCircle size={15} />
-                      WHATSAPP
-                    </button>
+                    <div className="hidden md:flex flex-row gap-3 w-auto">
+                      <button
+                        className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] transition-all duration-300"
+                        onClick={() => window.open("tel:+919315991400")}
+                      >
+                        <PhoneCall size={16} />
+                        CALL NOW
+                      </button>
+                      <button
+                        className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] transition-all duration-300"
+                        onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20vaginal%20treatment.", "_blank")}
+                      >
+                        <MessageCircle size={15} />
+                        WHATSAPP
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-[#800000] text-sm font-semibold pt-1">
-                  * Consultations by prior appointment only
-                </p>
+                  <p className="text-[#800000] text-[20px] lg:text-sm font-semibold pt-4 lg:pt-2">
+                    * Consultations by prior appointment only
+                  </p>
+                </div>
               </div>
             </div>
           </section>
