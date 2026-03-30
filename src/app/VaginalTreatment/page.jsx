@@ -169,7 +169,7 @@ export default function VaginalTreatmentPage() {
       `}</style>
       <div
         className="w-full bg-[#f5f0e8] overflow-hidden"
-        style={{ height: isClient && heroScale < 1 ? `calc(95vh * ${heroScale})` : 'auto' }}
+        style={{ height: isClient && heroScale < 1 ? `calc(max(95vh, 900px) * ${heroScale})` : 'auto' }}
         suppressHydrationWarning
       >
         <div
@@ -181,8 +181,8 @@ export default function VaginalTreatmentPage() {
           suppressHydrationWarning
         >
           <section
-            className="relative w-full min-h-[95vh] bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
-            style={{ backgroundImage: "url('/vthero2.png')" }}
+            className="relative w-full bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
+            style={{ backgroundImage: "url('/vthero2.png')", minHeight: 'max(95vh, 900px)' }}
           >
             {/* Transparent gradient overlay explicitly set as desktop orientation */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/95 to-transparent pointer-events-none"></div>
@@ -265,13 +265,13 @@ export default function VaginalTreatmentPage() {
       <section className="block md:hidden bg-[#f5f0e8] px-5 pt-10 pb-10">
         <div className="w-full max-w-md mx-auto space-y-5">
           {/* Top Call Button (Pill shaped, matching color scheme) */}
-          <a
-            href="tel:+919315991400"
-            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#d4c08f] appearance-none border-none outline-none shadow-none"
+          <button
+            onClick={() => window.open("tel:+919315991400")}
+            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors duration-300 hover:bg-[#d4c08f]"
           >
             <PhoneCall className="w-[18px] h-[18px]" />
             Talk to an Expert for Free
-          </a>
+          </button>
 
           {/* Form Card */}
           <div className="bg-[#fcfbf9] rounded-[24px] p-6 border border-[#E6D3A3]/60">
