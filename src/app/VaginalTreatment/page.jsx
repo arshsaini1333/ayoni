@@ -223,7 +223,7 @@ export default function VaginalTreatmentPage() {
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <span className="w-2 h-2 rounded-full bg-[#800000] shrink-0 mt-0.5"></span>
-                      <span className="text-[15px] lg:text-[17px] text-[#264231] font-semibold">{text}</span>
+                      <span className="text-[25px] lg:text-[27px] text-[#264231] font-semibold">{text}</span>
                     </li>
                   ))}
                 </ul>
