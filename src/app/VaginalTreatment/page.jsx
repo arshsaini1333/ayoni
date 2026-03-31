@@ -57,7 +57,7 @@ export default function VaginalTreatmentPage() {
   }, []);
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxLx9_2b7arvH3_CWDLvkX1gwSMXc_FY23BLYAn5_nwXcbHhFdXtNNP0IhrQovQtxwhLQ/exec";
+    "https://script.google.com/macros/s/AKfycbzbGwAy-gxBp5_UF2Th6a4kPGJ0m0tl2vj8fcbBHa38ht0PPnJSRH99GEBWHrkNzHkyuA/exec";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -71,16 +71,43 @@ export default function VaginalTreatmentPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = async (e) => {
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setSubmitting(true);
+  //   const postData = new FormData();
+  //   postData.append("name", formData.name);
+  //   postData.append("phone", formData.phone);
+  //   postData.append("msg", formData.treatment);
+  //   fetch(scriptURL, { method: "POST", body: postData, mode: "no-cors" })
+  //     .catch(console.error);
+  //   setSubmitting(false);
+  //   router.push("/thankyouvt");
+  // };
+
+  const handleFormSubmit = async (e, formType) => {
     e.preventDefault();
     setSubmitting(true);
-    const postData = new FormData();
-    postData.append("name", formData.name);
-    postData.append("phone", formData.phone);
-    postData.append("msg", formData.treatment);
-    await fetch(scriptURL, { method: "POST", body: postData, mode: "no-cors" });
+
+    // ✅ Use URLSearchParams instead of FormData — works reliably with no-cors
+    const params = new URLSearchParams();
+    params.append("name", formData.name);
+    params.append("phone", formData.phone);
+    params.append("msg", formType === "Cost Calculator" ? "Cost Inquiry" : formData.treatment);
+    params.append("formType", formType);
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: params,
+        mode: "no-cors", // ✅ REQUIRED for Google Apps Script
+      });
+    } catch (err) {
+      console.error(err);
+    }
+
     setSubmitting(false);
-    router.push("/thankyou");
+    setFormData({ name: "", phone: "", treatment: "" });
+    router.push("/thankyouvt");
   };
 
   useEffect(() => {
@@ -169,7 +196,7 @@ export default function VaginalTreatmentPage() {
       `}</style>
       <div
         className="w-full bg-[#f5f0e8] overflow-hidden"
-        style={{ height: isClient && heroScale < 1 ? `calc(max(85vh, 700px) * ${heroScale})` : 'auto' }}
+        style={{ height: isClient && heroScale < 1 ? `calc(max(85vh, 950px) * ${heroScale})` : 'auto' }}
         suppressHydrationWarning
       >
         <div
@@ -182,7 +209,7 @@ export default function VaginalTreatmentPage() {
         >
           <section
             className="relative w-full bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
-            style={{ backgroundImage: "url('/vthero2.png')", minHeight: 'max(85vh, 700px)' }}
+            style={{ backgroundImage: "url('/vthero2.png')", minHeight: 'max(85vh, 950px)' }}
           >
             {/* Transparent gradient overlay explicitly set as desktop orientation */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/95 to-transparent pointer-events-none"></div>
@@ -279,7 +306,7 @@ export default function VaginalTreatmentPage() {
               Cost Calculator
             </h3>
 
-            <form className="space-y-4" onSubmit={handleFormSubmit}>
+            <form className="space-y-4" onSubmit={(e) => handleFormSubmit(e, "Cost Calculator")}>
               <div>
                 <input
                   type="text"
@@ -709,7 +736,7 @@ export default function VaginalTreatmentPage() {
               <h3 className="text-2xl font-bold text-[#264231] mb-1">Book a Consultation</h3>
               <p className="text-[#3b5f4b] text-sm mb-6">Fill in your details for a private consultation</p>
 
-              <form className="space-y-4" onSubmit={handleFormSubmit}>
+              <form className="space-y-4" onSubmit={(e) => handleFormSubmit(e, "Book Consultation")}>
                 <div>
                   <label className="block text-sm font-semibold text-[#264231] mb-1.5">Your Name</label>
                   <input

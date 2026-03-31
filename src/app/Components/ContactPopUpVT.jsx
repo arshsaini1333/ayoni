@@ -9,8 +9,7 @@ export default function AppointmentModalVT({ open, onClose }) {
   const router = useRouter();
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxLx9_2b7arvH3_CWDLvkX1gwSMXc_FY23BLYAn5_nwXcbHhFdXtNNP0IhrQovQtxwhLQ/exec";
-
+    "https://script.google.com/macros/s/AKfycbzbGwAy-gxBp5_UF2Th6a4kPGJ0m0tl2vj8fcbBHa38ht0PPnJSRH99GEBWHrkNzHkyuA/exec";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -91,25 +90,56 @@ export default function AppointmentModalVT({ open, onClose }) {
     return slots;
   };
 
-  // SUBMIT → UNPAID SHEET
+  // // SUBMIT → UNPAID SHEET
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setSubmitting(true);
+
+  //   const postData = new FormData();
+  //   Object.entries(formData).forEach(([k, v]) =>
+  //     postData.append(k, v)
+  //   );
+
+  //   postData.append("formType", "Appointment");
+  //   await fetch(scriptURL, {
+  //     method: "POST",
+  //     body: postData,
+  //     mode: "no-cors",
+  //   });
+
+  //   setSubmitting(false);
+
+  //   router.push("/thankyouvt");
+  // };
+
+  // ✅ Fixed handleSubmit in ContactPopUpVT.jsx
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
-    const postData = new FormData();
-    Object.entries(formData).forEach(([k, v]) =>
-      postData.append(k, v)
-    );
+    const postData = new URLSearchParams(); // ✅ not FormData
+    postData.append("name", formData.name);
+    postData.append("email", formData.email);
+    postData.append("phone", formData.phone);
+    postData.append("msg", formData.msg);
+    postData.append("formType", "Appointment");
+    postData.append("appointmentType", formData.appointmentType);
+    postData.append("day", formData.day);
+    postData.append("date", formData.date);
+    postData.append("slot", formData.slot);
 
-    await fetch(scriptURL, {
-      method: "POST",
-      body: postData,
-      mode: "no-cors",
-    });
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: postData,
+        mode: "no-cors", // ✅ required
+      });
+    } catch (err) {
+      console.error(err);
+    }
 
     setSubmitting(false);
-
-    router.push("/thankyou");
+    router.push("/thankyouvt");
   };
 
 
