@@ -209,7 +209,10 @@ export default function VaginalTreatmentPage() {
         >
           <section
             className="relative w-full bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
-            style={{ backgroundImage: "url('/vthero2.png')", minHeight: 'max(85vh, 950px)' }}
+            style={{ 
+              backgroundImage: "url('/vthero2.png')", 
+              minHeight: isClient && heroScale === 1 ? '700px' : 'max(85vh, 950px)' 
+            }}
           >
             {/* Transparent gradient overlay explicitly set as desktop orientation */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/95 to-transparent pointer-events-none"></div>
@@ -221,7 +224,7 @@ export default function VaginalTreatmentPage() {
             <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
             {/* <div className="relative w-full max-w-7xl mx-auto px-4 lg:px-6 py-16"> */}
-            <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16 lg:-mt-24">
+            <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16">
               <div className="max-w-3xl lg:max-w-2xl relative z-20 space-y-8 lg:space-y-6 text-left">
                 <div className="inline-flex items-center gap-2.5 lg:gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-7 py-3 lg:px-5 lg:py-2">
                   <Sparkles className="text-[#800000] w-[22px] h-[22px] lg:w-[16px] lg:h-[16px]" />
