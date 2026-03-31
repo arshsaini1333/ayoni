@@ -92,7 +92,7 @@ export default function VaginalTreatmentPage() {
 
   const treatments = [
     {
-      icon: <Zap size={28} className="text-[#E6D3A3]" />,
+      icon: <Image src="/laservaginal.jpeg" alt="Laser Vaginal Tightening" width={400} height={300} className="w-full h-full object-cover" />,
       title: "Laser Vaginal Tightening",
       points: [
         "No Cuts & No Stitches",
@@ -102,7 +102,7 @@ export default function VaginalTreatmentPage() {
       ],
     },
     {
-      icon: <ShieldCheck size={28} className="text-[#E6D3A3]" />,
+      icon: <Image src="/vaginoplasty.jpeg" alt="Surgical Tightening (Vaginoplasty)" width={400} height={300} className="w-full h-full object-cover" />,
       title: "Surgical Tightening (Vaginoplasty)",
       points: [
         "Permanent Tightening Solution",
@@ -112,7 +112,7 @@ export default function VaginalTreatmentPage() {
       ],
     },
     {
-      icon: <Lock size={28} className="text-[#E6D3A3]" />,
+      icon: <Image src="/hymenoplasty.jpeg" alt="Hymen Repair (Hymenoplasty)" width={400} height={300} className="w-full h-full object-cover" />,
       title: "Hymen Repair (Hymenoplasty)",
       points: [
         "100% Confidential Procedure",
@@ -123,7 +123,7 @@ export default function VaginalTreatmentPage() {
       ],
     },
     {
-      icon: <Flame size={28} className="text-[#E6D3A3]" />,
+      icon: <Image src="/sexwellness.jpeg" alt="Sexual Wellness Treatments" width={400} height={300} className="w-full h-full object-cover" />,
       title: "Sexual Wellness Treatments",
       points: [
         "Relieves Dryness & Discomfort",
@@ -133,7 +133,7 @@ export default function VaginalTreatmentPage() {
       ],
     },
     {
-      icon: <Gem size={28} className="text-[#E6D3A3]" />,
+      icon: <Image src="/rejuvenation.jpeg" alt="Intimate Rejuvenation" width={400} height={300} className="w-full h-full object-cover" />,
       title: "Intimate Rejuvenation",
       points: [
         "Improves Tightness & Appearance",
@@ -359,10 +359,12 @@ export default function VaginalTreatmentPage() {
             {treatments.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-7 border border-[#E6D3A3]/30 shadow-sm hover:shadow-xl hover:shadow-[#264231]/8 hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white rounded-2xl p-6 md:p-7 border border-[#E6D3A3]/30 shadow-sm hover:shadow-xl hover:shadow-[#264231]/8 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#264231] mb-5 group-hover:scale-105 transition-transform duration-300">
-                  {t.icon}
+                <div className="w-full h-48 md:h-56 rounded-xl bg-[#f5f0e8] mb-5 overflow-hidden">
+                  <div className="w-full h-full group-hover:scale-105 transition-transform duration-500">
+                    {t.icon}
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-[#264231] mb-4">{t.title}</h3>
                 <ul className="space-y-2.5">
