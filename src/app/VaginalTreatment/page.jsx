@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Navbar from "../Components/Navbar";
 import AppointmentModalVT from "../Components/ContactPopUpVT";
-import Footer from "../Components/Footer";
+import Footervt from "../Components/Footervt";
 import {
   CalendarCheck,
   PhoneCall,
@@ -778,7 +778,7 @@ export default function VaginalTreatmentPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footervt />
 
       {/* Modal */}
       {/* <AppointmentModal open={open} onClose={() => setOpen(false)} /> */}
