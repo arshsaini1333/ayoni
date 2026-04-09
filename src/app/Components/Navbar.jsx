@@ -48,7 +48,7 @@ export default function Navbar() {
         {/* Right (desktop only) */}
         <div className="hidden md:flex flex-1 justify-end">
           <a
-            href="tel:+911234567890"
+            href="tel:+919315991400"
             className="flex items-center gap-2 px-6 py-1.5
                        border border-[#CFAA75]
                        text-[#CFAA75]
