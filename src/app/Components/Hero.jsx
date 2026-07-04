@@ -11,6 +11,7 @@ import {
 export default function Hero({openModal}) {
   return (
     <section
+      id="hero"
       className="relative w-full min-h-[95vh] bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/gyne.jpg')" }}
     >
