@@ -12,7 +12,7 @@ import {
 
 export default function WhyAyoni({openModal}) {
   return (
-    <section className="w-full bg-[#F8FCFC] py-12 md:py-16 px-4" id="why-ayoni">
+    <section className="w-full bg-[#F8FCFC] py-12 md:py-16 px-4" id="whyUS">
       <div className="w-full md:w-[90%] mx-auto">
 
         {/* Heading */}
