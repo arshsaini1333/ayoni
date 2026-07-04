@@ -195,6 +195,7 @@ export default function VaginalTreatmentPage() {
         body { overflow-x: hidden; width: 100%; max-width: 100vw; }
       `}</style>
       <div
+        id="vtHero"
         className="w-full bg-[#f5f0e8] overflow-hidden"
         style={{ height: isClient && heroScale < 1 ? `calc(max(85vh, 950px) * ${heroScale})` : 'auto' }}
         suppressHydrationWarning
