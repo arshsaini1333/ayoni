@@ -37,12 +37,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/VaginalTreatment" className="hover:text-white">Home</Link></li>
-              <li><Link href="#treatments" className="hover:text-white">Specialised treatments</Link></li>
-              <li><Link href="#why-ayoni" className="hover:text-white">Why ayoni clinic ?</Link></li>
-              <li><Link href="#cost" className="hover:text-white">Know Treatment cost</Link></li>
-              <li><Link href="#doctor" className="hover:text-white">Meet your specialist</Link></li>
-              <li><Link href="#contact-form" className="hover:text-white">Contact us</Link></li>
+              <li><Link href="#hero" className="hover:text-white">Home</Link></li>
+              <li><Link href="#ourSpecialist" className="hover:text-white">Meet Your Specialist</Link></li>
+              <li><Link href="#whyUS" className="hover:text-white">Why ayoni clinic ?</Link></li>
+              
+              <li><Link href="#testimonials" className="hover:text-white">Testimonials</Link></li>
+              <li><Link href="#certificates" className="hover:text-white">Certifications & Accreditations</Link></li>
+              <li><Link href="#contactUS" className="hover:text-white">Contact us</Link></li>
             </ul>
           </div>
 
