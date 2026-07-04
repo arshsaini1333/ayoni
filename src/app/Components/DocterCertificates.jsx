@@ -14,7 +14,7 @@ const certificates = [
 
 export default function DoctorCertificates() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-4">
+    <section className="w-full bg-white py-12 md:py-16 px-4" id="certificates">
       <div className="w-full md:w-[90%] mx-auto">
 
         {/* Heading */}
