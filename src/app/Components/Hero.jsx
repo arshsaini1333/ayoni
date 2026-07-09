@@ -5,12 +5,9 @@ import {
   Stethoscope,
   Award,
   GraduationCap,
-
   PhoneCall,
   Building2,
   Laptop,
-
-  PhoneCall
 } from "lucide-react";
 
 export default function Hero({openModal}) {
