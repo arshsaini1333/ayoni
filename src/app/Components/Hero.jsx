@@ -5,13 +5,9 @@ import {
   Stethoscope,
   Award,
   GraduationCap,
-<<<<<<< HEAD
   PhoneCall,
   Building2,
   Laptop
-=======
-  PhoneCall
->>>>>>> 7f650953ea56a357a1406bb85375fff1bd1ea6bf
 } from "lucide-react";
 
 export default function Hero({openModal}) {
@@ -85,7 +81,6 @@ export default function Hero({openModal}) {
             </div>
           </div>
 
-<<<<<<< HEAD
           {/* Consultation Charges Box */}
           <div className="border border-[#800000] rounded-[18px] p-4 bg-[#fdf9f6] max-w-[500px] mx-auto md:mx-0 shadow-sm">
             <h4 className="text-sm md:text-base font-bold text-[#800000] text-left mb-3">
@@ -127,8 +122,7 @@ export default function Hero({openModal}) {
             </div>
           </div>
 
-=======
->>>>>>> 7f650953ea56a357a1406bb85375fff1bd1ea6bf
+
           {/* CTA */}
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button

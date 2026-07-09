@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -74,10 +74,10 @@ export default function UltrasoundPage() {
   ];
 
   const services = [
-    { icon: "🤰", title: "Pregnancy Ultrasound", image: "/Pregnancy-Ultrasound.webp", items: ["Early Pregnancy Scan", "NT Scan", "Level 2 Scan", "Growth Scan", "Fetal Echo"] },
-    { icon: "👩", title: "Women's Health Ultrasound", image: "/health-us.webp", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Study", "Fertility Scan"] },
-    { icon: "🩺", title: "Diagnostic Ultrasound", image: "/diagnostic-us.webp", items: ["Abdomen Scan", "KUB Scan", "Thyroid Scan", "Breast Ultrasound"] },
-    { icon: "❤️", title: "Doppler Ultrasound", image: "/doppler.webp", items: ["Color Doppler", "Carotid Doppler", "Venous Doppler", "Arterial Doppler"] },
+    { title: "Pregnancy Ultrasound", image: "/Pregnancy-Ultrasound.webp", items: ["Early Pregnancy Scan", "NT Scan", "Level 2 Scan", "Growth Scan", "Fetal Echo"] },
+    { title: "Women's Health Ultrasound", image: "/health-us.webp", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Study", "Fertility Scan"] },
+    { title: "Diagnostic Ultrasound", image: "/diagnostic-us.webp", items: ["Abdomen Scan", "KUB Scan", "Thyroid Scan", "Breast Ultrasound"] },
+    { title: "Doppler Ultrasound", image: "/doppler.webp", items: ["Color Doppler", "Carotid Doppler", "Venous Doppler", "Arterial Doppler"] },
   ];
 
   const reviews = [
@@ -117,12 +117,12 @@ export default function UltrasoundPage() {
           <section
             className="relative w-full bg-[#f5f0e8] bg-cover bg-[center_right_-5rem] flex items-center overflow-hidden"
             style={{
-              backgroundImage: "url('/pregnant.jpg')",
+              backgroundImage: "url('/ultrasound-hero.webp')",
               minHeight: isClient && heroScale === 1 ? '700px' : 'max(85vh, 950px)'
             }}
           >
             {/* Transparent gradient overlay explicitly set as desktop orientation */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/95 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e8] via-[#f5f0e8]/60 to-transparent pointer-events-none"></div>
 
             {/* Decorative background elements on the left side */}
             <div className="absolute top-[-80px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#264231]/5"></div>
@@ -431,7 +431,7 @@ export default function UltrasoundPage() {
             <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
               <div className="relative h-72 overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
-                <Image src="/doc2.png" alt="Dr. Rajnish Juneja" fill className="object-cover object-top" />
+                <Image src="/rajniesh.jpeg" alt="Dr. Rajnish Juneja" fill className="object-cover object-[center_20%]" />
               </div>
               <div className="p-7 space-y-4 flex flex-col flex-1">
                 <div>
