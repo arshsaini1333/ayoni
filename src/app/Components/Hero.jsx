@@ -10,7 +10,7 @@ import {
   Laptop
 } from "lucide-react";
 
-export default function Hero({openModal}) {
+export default function Hero({ openModal }) {
   return (
     <section
       id="hero"
