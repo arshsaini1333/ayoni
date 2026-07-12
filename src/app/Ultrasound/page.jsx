@@ -13,7 +13,7 @@ export default function UltrasoundPage() {
   const [isClient, setIsClient] = useState(false);
   const [heroScale, setHeroScale] = useState(1);
   const [openFaq, setOpenFaq] = useState(null);
-  const [formData, setFormData] = useState({ name: "", phone: "", treatment: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", treatment: "", branch: "" });
   const [submitting, setSubmitting] = useState(false);
   const scriptURL = "https://script.google.com/macros/s/AKfycbzbGwAy-gxBp5_UF2Th6a4kPGJ0m0tl2vj8fcbBHa38ht0PPnJSRH99GEBWHrkNzHkyuA/exec";
 
@@ -46,6 +46,7 @@ export default function UltrasoundPage() {
     params.append("name", formData.name);
     params.append("phone", formData.phone);
     params.append("msg", formType === "Cost Calculator" ? "Cost Inquiry" : formData.treatment || "General Inquiry");
+    params.append("branch", formData.branch || "");
     params.append("formType", formType);
     try {
       await fetch(scriptURL, { method: "POST", body: params, mode: "no-cors" });
@@ -53,7 +54,7 @@ export default function UltrasoundPage() {
       console.error(err);
     }
     setSubmitting(false);
-    setFormData({ name: "", phone: "", treatment: "" });
+    setFormData({ name: "", phone: "", treatment: "", branch: "" });
     router.push("/thankyouus");
   };
 
@@ -744,6 +745,99 @@ export default function UltrasoundPage() {
         </div>
       </section>
 
+      {/* ═══════════════════════ OUR LOCATIONS SECTION ═══════════════════════ */}
+      <section className="bg-[#f5f0e8] py-16 md:py-24 px-6" id="locations">
+        <div className="max-w-5xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
+              <MapPin size={16} /> Our Locations
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
+              Visit the Ayoni Diagnostic Centre <span className="text-[#800000]">Nearest to You</span>
+            </h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+            <p className="text-lg text-[#3b5f4b] mt-5 max-w-2xl mx-auto leading-relaxed">
+              With conveniently located centres in Gurgaon and Delhi, we make quality ultrasound and diagnostic imaging easily accessible.
+            </p>
+          </div>
+
+          {/* Location Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Gurgaon Centre */}
+            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-[#800000]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#264231]">Gurgaon Centre</h3>
+              </div>
+              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="space-y-2">
+                <p className="text-base font-bold text-[#264231]">Ayoni Clinic</p>
+                <p className="text-[#3b5f4b] text-sm leading-relaxed">
+                  R2/128, First Floor,<br />
+                  M3M 65th Avenue,<br />
+                  Golf Course Extension Road,<br />
+                  Sector 65, Gurugram – 122102
+                </p>
+              </div>
+              <a
+                href="tel:+919315991400"
+                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
+              >
+                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
+              </a>
+              <a
+                href="https://maps.google.com/?q=R2/128,+First+Floor,+M3M+65th+Avenue,+Golf+Course+Extension+Road,+Sector+65,+Gurugram+122102"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
+              >
+                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+            {/* Delhi Centre */}
+            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-[#800000]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#264231]">Delhi Centre</h3>
+              </div>
+              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="space-y-2">
+                <p className="text-base font-bold text-[#264231]">Ayoni Cure de Jouvence</p>
+                <p className="text-[#3b5f4b] text-sm leading-relaxed">
+                  F14/69, Ground Floor,<br />
+                  Model Town Phase 2,<br />
+                  Delhi – 110033
+                </p>
+              </div>
+              <a
+                href="tel:+919315991400"
+                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
+              >
+                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
+              </a>
+              <a
+                href="https://maps.google.com/?q=F14/69+Ground+Floor,+Model+Town+Phase+2,+Delhi+110033"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
+              >
+                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════════ CONTACT FORM SECTION ═══════════════════════ */}
       <section className="relative bg-gradient-to-br from-[#264231] via-[#1a2e23] to-[#0f1d15] py-16 md:py-24 px-6 overflow-hidden" id="contact-form">
         {/* Decorative elements */}
@@ -820,7 +914,7 @@ export default function UltrasoundPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#264231] mb-1.5">Select Scan Type</label>
+                  <label className="block text-sm font-semibold text-[#264231] mb-1.5">Select Ultrasound Service <span className="text-[#800000]">*</span></label>
                   <select
                     name="treatment"
                     value={formData.treatment}
@@ -828,20 +922,27 @@ export default function UltrasoundPage() {
                     required
                     className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 bg-white text-[#264231] focus:border-[#264231] focus:outline-none transition-colors"
                   >
-                    <option value="">Choose a scan type</option>
-                    <option>Early Pregnancy Scan</option>
-                    <option>NT Scan</option>
-                    <option>Level 2 Scan</option>
-                    <option>Growth Scan</option>
-                    <option>Fetal Echo</option>
-                    <option>TVS Scan</option>
-                    <option>Pelvic Ultrasound</option>
-                    <option>Follicular Study</option>
-                    <option>Abdomen Scan</option>
-                    <option>KUB Scan</option>
-                    <option>Thyroid Scan</option>
-                    <option>Color Doppler</option>
-                    <option>General Inquiry</option>
+                    <option value="">Select a service</option>
+                    <option value="General Diagnostic Ultrasound">General Diagnostic Ultrasound</option>
+                    <option value="Doppler Ultrasound">Doppler Ultrasound</option>
+                    <option value="Women's Health Ultrasound">Women&apos;s Health Ultrasound</option>
+                    <option value="Pregnancy Ultrasound">Pregnancy Ultrasound</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#264231] mb-1.5">Preferred Branch <span className="text-[#800000]">*</span></label>
+                  <select
+                    name="branch"
+                    value={formData.branch}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 bg-white text-[#264231] focus:border-[#264231] focus:outline-none transition-colors"
+                  >
+                    <option value="">Select a branch</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Delhi">Delhi</option>
                   </select>
                 </div>
 

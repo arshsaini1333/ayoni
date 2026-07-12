@@ -10,7 +10,7 @@ import {
   Laptop
 } from "lucide-react";
 
-export default function Hero({ openModal }) {
+export default function Hero({openModal}) {
   return (
     <section
       id="hero"
@@ -121,7 +121,6 @@ export default function Hero({ openModal }) {
               </div>
             </div>
           </div>
-
 
           {/* CTA */}
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
