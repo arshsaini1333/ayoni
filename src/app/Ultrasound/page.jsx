@@ -74,10 +74,11 @@ export default function UltrasoundPage() {
   ];
 
   const services = [
-    { title: "Pregnancy Ultrasound", image: "/Pregnancy-Ultrasound.webp", items: ["Early Pregnancy Scan", "NT Scan", "Level 2 Scan", "Growth Scan", "Fetal Echo"] },
-    { title: "Women's Health Ultrasound", image: "/health-us.webp", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Study", "Fertility Scan"] },
-    { title: "Diagnostic Ultrasound", image: "/diagnostic-us.webp", items: ["Abdomen Scan", "KUB Scan", "Thyroid Scan", "Breast Ultrasound"] },
-    { title: "Doppler Ultrasound", image: "/doppler.webp", items: ["Color Doppler", "Carotid Doppler", "Venous Doppler", "Arterial Doppler"] },
+    { icon: "🤰", title: "Pregnancy Ultrasound", items: ["Early Pregnancy Scan", "NT Scan", "Level II Anomaly Scan", "Fetal Echo", "Growth Scan", "Third Trimester Scan", "Biophysical Profile", "AFI Scan"] },
+    { icon: "👩", title: "Women's Health & Fertility", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Monitoring", "Antral Follicle Count", "Infertility Assessment"] },
+    { icon: "🩺", title: "General Diagnostic Ultrasound", items: ["Whole Abdomen", "Upper Abdomen", "Lower Abdomen", "KUB Scan", "Thyroid Scan", "Breast Ultrasound", "Chest Ultrasound", "Soft Tissue Ultrasound", "Eye Ultrasound"] },
+    { icon: "❤️", title: "Doppler Ultrasound", items: ["Arterial Doppler", "Venous Doppler", "Carotid Doppler", "Renal Doppler", "Portal Doppler", "Pelvic Doppler", "AV Fistula Mapping"] },
+    { icon: "👶👶", title: "Twin Pregnancy Ultrasound", items: ["Twin NT Scan", "Twin Level II Scan", "Twin Growth Scan", "Twin Fetal Echo", "Twin Doppler"] },
   ];
 
   const reviews = [
@@ -87,11 +88,11 @@ export default function UltrasoundPage() {
   ];
 
   const faqs = [
-    { q: "Is ultrasound safe during pregnancy?", a: "Yes, ultrasound is a safe and non-invasive procedure that uses sound waves, not radiation." },
-    { q: "Do I need to book an appointment?", a: "Yes, we recommend booking in advance to ensure your preferred time slot." },
-    { q: "How long does an ultrasound take?", a: "Most ultrasound scans are completed within 15–30 minutes." },
-    { q: "Will I get my reports on the same day?", a: "Yes, most routine ultrasound reports are available on the same day." },
-    { q: "Do I need any preparation before my scan?", a: "Preparation depends on the type of ultrasound. Our team will guide you while booking your appointment." },
+    { q: "Do I need an appointment for an ultrasound?", a: "Yes, all ultrasound services are available on an appointment basis to ensure a smooth and comfortable experience." },
+    { q: "Is ultrasound safe?", a: "Yes, ultrasound is a safe, non-invasive imaging technique that uses sound waves and does not involve radiation." },
+    { q: "Do I need to prepare before my ultrasound?", a: "Preparation depends on the type of ultrasound. Our team will guide you with any instructions when you book your appointment." },
+    { q: "Which ultrasound services do you offer?", a: "We offer a wide range of ultrasound services, including general diagnostic ultrasound, Doppler studies, women's health imaging, fertility scans, and pregnancy ultrasounds." },
+    { q: "Where are your centres located?", a: "We have conveniently located centres in Gurgaon and Delhi. Our team will help you choose the branch that is most convenient for you." },
   ];
 
   return (
@@ -131,64 +132,80 @@ export default function UltrasoundPage() {
             <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
             <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16">
-              <div className="max-w-3xl lg:max-w-2xl relative z-20 space-y-8 lg:space-y-6 text-left">
-                <div className="inline-flex items-center gap-2.5 lg:gap-2 bg-[#264231]/10 border border-[#264231]/20 rounded-full px-7 py-3 lg:px-5 lg:py-2">
-                  <Sparkles className="text-[#800000] w-[22px] h-[22px] lg:w-[16px] lg:h-[16px]" />
-                  <span className="text-[20px] lg:text-sm font-medium text-[#264231] tracking-wide uppercase">
-                    Advanced Diagnostic Imaging
-                  </span>
+              <div className="max-w-7xl relative z-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+                {/* Left Side */}
+                <div className="space-y-8 text-left">
+                  <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
+                    Advanced Ultrasound & Diagnostic Imaging Centre <br className="hidden md:block" />
+                    <span className="text-[#800000]">in Gurgaon & Delhi</span>
+                  </h1>
+
+                  <ul className="space-y-4">
+                    {[
+                      "Advanced Ultrasound Technology",
+                      "Experienced Radiologist",
+                      "Accurate Diagnostic Imaging",
+                      "Appointment-Based Consultations"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-3">
+                        <span className="w-7 h-7 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                          <CheckCircle2 size={18} className="text-[#800000]" />
+                        </span>
+                        <span className="text-xl text-[#264231] font-semibold">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="pt-4">
+                    <button
+                      onClick={() => setOpen(true)}
+                      className="inline-flex items-center gap-3 bg-[#264231] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1a2e23] transition-all duration-300 shadow-lg"
+                    >
+                      <CalendarCheck size={20} /> Book Your TEST Now <ChevronRight size={18} />
+                    </button>
+                  </div>
                 </div>
 
-                <h1 className="text-[4.5rem] lg:text-[3.4rem] font-bold leading-[1.15] text-[#264231]">
-                  Best Ultrasound Centre &{" "}
-                  <span className="text-[#800000] inline">Pregnancy Scans</span> <span className="inline">in Gurgaon</span>
-                </h1>
+                {/* Right Side: Form */}
+                <div className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-[#E6D3A3]/50 w-full relative">
+                  <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#E6D3A3]/20 rounded-full blur-xl z-[-1]"></div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#264231] mb-8 text-center">Request a Callback</h3>
 
-                <ul className="flex flex-col gap-4 lg:gap-2.5 justify-start w-full pl-1 py-1">
-                  {[
-                    "25+ Yrs Experienced Doctor",
-                    "Advanced Ultrasound & Doppler Scan",
-                    "Same-Day Appointment & Reports",
-                  ].map((text, i) => (
-                    <li key={i} className="flex items-center gap-4 lg:gap-3">
-                      <span className="w-3 h-3 lg:w-2 lg:h-2 rounded-full bg-[#800000] shrink-0 mt-1 lg:mt-0.5"></span>
-                      <span className="text-[34px] lg:text-[27px] text-[#264231] font-semibold">{text}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div>
-                  <div className="pt-4 lg:pt-2 flex flex-row flex-wrap gap-3 justify-start w-full max-w-none">
+                  <form onSubmit={(e) => handleFormSubmit(e, "Hero Form")} className="space-y-5">
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleFormChange}
+                        placeholder="Name"
+                        required
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleFormChange}
+                        placeholder="Phone Number"
+                        required
+                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
+                      />
+                    </div>
                     <button
-                      className="w-auto inline-flex items-center justify-center gap-3 lg:gap-2.5 bg-[#264231] text-white px-10 py-5 lg:px-7 lg:py-3.5 rounded-xl lg:rounded-lg font-bold text-[22px] lg:text-[15px] hover:bg-[#1a2e23] transition-all duration-300 group"
-                      onClick={() => setOpen(true)}
+                      type="submit"
+                      disabled={submitting}
+                      className="w-full bg-[#800000] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-colors flex items-center justify-center gap-2 mt-2 shadow-md"
                     >
-                      <CalendarCheck className="w-[24px] h-[24px] lg:w-[18px] lg:h-[18px]" />
-                      Book Your Ultrasound Scan
-                      <ChevronRight className="w-[20px] h-[20px] lg:w-[14px] lg:h-[14px] group-hover:translate-x-1 transition-transform" />
+                      {submitting ? "Submitting..." : "Book Now"}
                     </button>
 
-                    <div className="hidden md:flex flex-row gap-3 w-auto">
-                      <button
-                        className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#800000] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#660000] transition-all duration-300"
-                        onClick={() => window.open("tel:+919315991400")}
-                      >
-                        <PhoneCall size={16} />
-                        CALL NOW
-                      </button>
-                      <button
-                        className="flex-none w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3.5 rounded-lg font-bold text-sm whitespace-nowrap hover:bg-[#1fb855] transition-all duration-300"
-                        onClick={() => window.open("https://wa.me/919315991400?text=Hi%2C%20I%20would%20like%20to%20book%20an%20ultrasound%20scan%20appointment.", "_blank")}
-                      >
-                        <MessageCircle size={15} />
-                        WHATSAPP
-                      </button>
+                    <div className="flex items-center justify-center gap-2 text-sm text-[#3b5f4b] font-medium pt-3">
+                      <Lock size={14} className="text-[#800000]" /> 🔒 Your information is 100% secure and confidential.
                     </div>
-                  </div>
-
-                  <p className="text-[#800000] text-[20px] lg:text-sm font-semibold pt-4 lg:pt-2">
-                    * Consultations by prior appointment only
-                  </p>
+                  </form>
                 </div>
               </div>
             </div>
@@ -312,44 +329,54 @@ export default function UltrasoundPage() {
               <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {services.map((s, i) => (
-              <div
-                key={i}
-                className="relative rounded-2xl overflow-hidden border border-[#E6D3A3]/30 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col min-h-[350px] p-7"
-                style={{
-                  backgroundImage: `url(${s.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                {/* Dark overlay to make text highly readable */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/90 group-hover:from-black/80 group-hover:via-black/70 group-hover:to-black/85 transition-all duration-300"></div>
-
-                <div className="relative z-10 flex flex-col h-full gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl bg-white/10 backdrop-blur-sm p-2 rounded-xl flex items-center justify-center shrink-0">{s.icon}</span>
-                    <h3 className="text-xl font-bold text-white leading-tight">{s.title}</h3>
-                  </div>
-
-                  <ul className="space-y-2.5 mt-2">
-                    {s.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-2.5 text-gray-200">
-                        <CheckCircle2 size={16} className="text-[#E6D3A3] shrink-0" />
-                        <span className="text-sm md:text-base font-medium">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button
-                    onClick={() => setOpen(true)}
-                    className="inline-flex items-center gap-1.5 text-[#E6D3A3] font-bold text-sm hover:gap-3 transition-all duration-300 mt-auto pt-4"
-                  >
-                    Know More <ChevronRight size={16} />
-                  </button>
+          {/* First 4 cards — 2×2 grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {services.slice(0, 4).map((s, i) => (
+              <div key={i} className="bg-white rounded-[2rem] p-10 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                <div className="text-5xl bg-gradient-to-br from-[#fcf9f2] to-white p-5 rounded-full shadow-inner border border-[#E6D3A3]/20 group-hover:scale-110 transition-transform duration-300">
+                  {s.icon}
                 </div>
+                <h3 className="text-xl font-bold text-[#264231] leading-tight">{s.title}</h3>
+                <ul className="space-y-2 w-full text-left">
+                  {s.items.map((item, j) => (
+                    <li key={j} className="flex items-center gap-2.5 text-[#3b5f4b]">
+                      <CheckCircle2 size={15} className="text-[#800000] shrink-0" />
+                      <span className="text-sm font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => setOpen(true)}
+                  className="inline-flex items-center gap-2 text-[#800000] font-bold text-sm mt-auto bg-[#800000]/5 px-5 py-2.5 rounded-full hover:bg-[#800000]/10 transition-all duration-300 hover:gap-3"
+                >
+                  Know More <ChevronRight size={16} />
+                </button>
               </div>
             ))}
+          </div>
+
+          {/* 5th card — Twin Pregnancy, centered below */}
+          <div className="flex justify-center mt-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-[2rem] p-10 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group w-full sm:w-[calc(50%-1rem)]">
+              <div className="text-5xl bg-gradient-to-br from-[#fcf9f2] to-white p-5 rounded-full shadow-inner border border-[#E6D3A3]/20 group-hover:scale-110 transition-transform duration-300">
+                {services[4].icon}
+              </div>
+              <h3 className="text-xl font-bold text-[#264231] leading-tight">{services[4].title}</h3>
+              <ul className="space-y-2 w-full text-left">
+                {services[4].items.map((item, j) => (
+                  <li key={j} className="flex items-center gap-2.5 text-[#3b5f4b]">
+                    <CheckCircle2 size={15} className="text-[#800000] shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setOpen(true)}
+                className="inline-flex items-center gap-2 text-[#800000] font-bold text-sm mt-auto bg-[#800000]/5 px-5 py-2.5 rounded-full hover:bg-[#800000]/10 transition-all duration-300 hover:gap-3"
+              >
+                Know More <ChevronRight size={16} />
+              </button>
+            </div>
           </div>
           <div className="flex justify-center mt-12">
             <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
@@ -459,6 +486,39 @@ export default function UltrasoundPage() {
             <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
               👉 Consult Our Specialists <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CREDENTIALS SECTION */}
+      <section className="bg-[#f5f0e8] py-16 md:py-24 px-6" id="credentials">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
+              <GraduationCap size={16} /> Credentials
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
+              Qualifications &amp; Professional <span className="text-[#800000]">Credentials</span>
+            </h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+            <p className="text-lg text-[#3b5f4b] mt-6 max-w-3xl mx-auto leading-relaxed">
+              Our experienced specialists are backed by recognized medical qualifications, advanced training, and decades of expertise in diagnostic imaging and women&apos;s healthcare.
+            </p>
+          </div>
+
+          {/* Degree Photos Placeholder */}
+          <div className="bg-white rounded-3xl border-2 border-dashed border-[#E6D3A3] p-10 md:p-16 flex flex-col items-center justify-center gap-5 text-center min-h-[260px]">
+            <div className="w-16 h-16 rounded-full bg-[#800000]/10 flex items-center justify-center">
+              <GraduationCap size={32} className="text-[#800000]" />
+            </div>
+            <p className="text-[#264231] font-bold text-xl">Degree & Certificate Photos</p>
+            <p className="text-[#3b5f4b] text-base max-w-sm">
+              Photos of the doctors&apos; degrees and professional certificates will be displayed here.
+            </p>
           </div>
         </div>
       </section>
