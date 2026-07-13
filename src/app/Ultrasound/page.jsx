@@ -70,7 +70,7 @@ export default function UltrasoundPage() {
     { icon: "🖥️", title: "Advanced Ultrasound Technology", desc: "High-quality imaging for accurate diagnosis" },
     { icon: "👩‍⚕️", title: "Expert Medical Guidance", desc: "Reports explained by experienced specialists" },
     { icon: "🔒", title: "Private & Comfortable Care", desc: "Safe, hygienic, and patient-friendly environment" },
-    { icon: "⚡", title: "Same-Day Appointments", desc: "Quick scheduling with minimal waiting" },
+    { icon: "⚡", title: "Ultrasound Scan by Appointment Only", desc: "Dedicated time slots ensuring focused, quality care for every patient" },
     { icon: "📍", title: "Convenient Gurgaon Location", desc: "Located at M3M 65th Avenue, Sector 65" },
   ];
 
@@ -277,7 +277,7 @@ export default function UltrasoundPage() {
               { icon: <Users className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "10,000+", label: "Happy Patients" },
               { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "25+", label: "Years Experience" },
               { icon: <Heart className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "100%", label: "Accurate Reports" },
-              { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Same-Day", label: "Appointments" },
+              { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Advanced", label: "Technology" },
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center text-center group px-0.5">
                 <div className="w-9 h-9 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-[#E6D3A3]/15 mb-2 md:mb-3 text-[#E6D3A3] group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
@@ -400,7 +400,7 @@ export default function UltrasoundPage() {
             <span className="text-[#E6D3A3]">|</span>
             <span className="flex items-center gap-1.5"><ShieldCheck size={16} className="text-[#E6D3A3]" /> Accurate</span>
             <span className="text-[#E6D3A3]">|</span>
-            <span className="flex items-center gap-1.5"><Zap size={16} className="text-[#E6D3A3]" /> Same-Day Reports</span>
+            <span className="flex items-center gap-1.5"><Zap size={16} className="text-[#E6D3A3]" /> Advanced Technology</span>
           </div>
           <div className="pt-4 flex flex-row gap-3 sm:gap-4 justify-center">
             <button className="flex-1 inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#800000] text-white px-2 sm:px-10 py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-lg hover:bg-[#660000] transition-all duration-300 whitespace-nowrap"
@@ -485,7 +485,7 @@ export default function UltrasoundPage() {
           </div>
           <div className="flex justify-center mt-12">
             <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
-              👉 Consult Our Specialists <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              👉 Consult Our Specialist <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
@@ -705,139 +705,6 @@ export default function UltrasoundPage() {
         </div>
       </section>
 
-      {/* SECTION 7 – EXPLORE MORE SERVICES */}
-      <section className="relative bg-gradient-to-br from-[#264231] via-[#1a2e23] to-[#0f1d15] py-16 md:py-24 px-6 overflow-hidden" id="explore">
-        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[#E6D3A3]/5"></div>
-        <div className="absolute bottom-10 left-10 w-44 h-44 rounded-full bg-[#800000]/8"></div>
-        <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-10 md:mb-14">
-            <span className="inline-flex items-center gap-2 bg-[#E6D3A3]/20 border border-[#E6D3A3]/30 rounded-full px-5 py-2 mb-4">
-              <HeartPulse size={16} className="text-[#E6D3A3]" />
-              <span className="text-sm font-medium text-[#E6D3A3] tracking-wide uppercase">More Services</span>
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">Explore More Women&apos;s <span className="text-[#E6D3A3]">Healthcare Services</span></h2>
-            <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">Looking for More Than an Ultrasound? Ayoni Clinic offers complete women&apos;s healthcare under one roof.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Card 1 */}
-            <div className="bg-white/10 backdrop-blur-sm border border-[#E6D3A3]/20 rounded-2xl p-8 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-              <span className="text-4xl">👩‍⚕️</span>
-              <div>
-                <h3 className="text-xl font-bold text-white">Gynecologist Consultation</h3>
-                <p className="text-gray-300 text-sm mt-2 leading-relaxed">Get expert care for PCOS, irregular periods, pregnancy planning, menopause, infections, and overall women's health.</p>
-              </div>
-              <a href="/" className="inline-flex items-center gap-2 bg-[#E6D3A3] text-[#1a2e23] px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#d4c08f] transition-all duration-300 group mt-auto w-fit">
-                Book a Consultation <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-            {/* Card 2 */}
-            <div className="bg-white/10 backdrop-blur-sm border border-[#E6D3A3]/20 rounded-2xl p-8 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-              <span className="text-4xl">🌸</span>
-              <div>
-                <h3 className="text-xl font-bold text-white">Vaginal Tightening Treatment</h3>
-                <p className="text-gray-300 text-sm mt-2 leading-relaxed">Restore confidence with safe, advanced, and non-surgical vaginal rejuvenation treatments performed by experienced specialists.</p>
-              </div>
-              <a href="/VaginalTreatment" className="inline-flex items-center gap-2 bg-[#800000] text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#660000] transition-all duration-300 group mt-auto w-fit">
-                Learn More <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ OUR LOCATIONS SECTION ═══════════════════════ */}
-      <section className="bg-[#f5f0e8] py-16 md:py-24 px-6" id="locations">
-        <div className="max-w-5xl mx-auto">
-          {/* Heading */}
-          <div className="text-center mb-10 md:mb-14">
-            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
-              <MapPin size={16} /> Our Locations
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
-              Visit the Ayoni Diagnostic Centre <span className="text-[#800000]">Nearest to You</span>
-            </h2>
-            <div className="flex items-center gap-3 justify-center mt-5">
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-            </div>
-            <p className="text-lg text-[#3b5f4b] mt-5 max-w-2xl mx-auto leading-relaxed">
-              With conveniently located centres in Gurgaon and Delhi, we make quality ultrasound and diagnostic imaging easily accessible.
-            </p>
-          </div>
-
-          {/* Location Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Gurgaon Centre */}
-            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
-                  <MapPin size={20} className="text-[#800000]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#264231]">Gurgaon Centre</h3>
-              </div>
-              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="space-y-2">
-                <p className="text-base font-bold text-[#264231]">Ayoni Clinic</p>
-                <p className="text-[#3b5f4b] text-sm leading-relaxed">
-                  R2/128, First Floor,<br />
-                  M3M 65th Avenue,<br />
-                  Golf Course Extension Road,<br />
-                  Sector 65, Gurugram – 122102
-                </p>
-              </div>
-              <a
-                href="tel:+919315991400"
-                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
-              >
-                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
-              </a>
-              <a
-                href="https://maps.google.com/?q=R2/128,+First+Floor,+M3M+65th+Avenue,+Golf+Course+Extension+Road,+Sector+65,+Gurugram+122102"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
-              >
-                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-
-            {/* Delhi Centre */}
-            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
-                  <MapPin size={20} className="text-[#800000]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#264231]">Delhi Centre</h3>
-              </div>
-              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="space-y-2">
-                <p className="text-base font-bold text-[#264231]">Ayoni Cure de Jouvence</p>
-                <p className="text-[#3b5f4b] text-sm leading-relaxed">
-                  F14/69, Ground Floor,<br />
-                  Model Town Phase 2,<br />
-                  Delhi – 110033
-                </p>
-              </div>
-              <a
-                href="tel:+919315991400"
-                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
-              >
-                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
-              </a>
-              <a
-                href="https://maps.google.com/?q=F14/69+Ground+Floor,+Model+Town+Phase+2,+Delhi+110033"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
-              >
-                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════ CONTACT FORM SECTION ═══════════════════════ */}
       <section className="relative bg-gradient-to-br from-[#264231] via-[#1a2e23] to-[#0f1d15] py-16 md:py-24 px-6 overflow-hidden" id="contact-form">
         {/* Decorative elements */}
@@ -959,6 +826,100 @@ export default function UltrasoundPage() {
                   )}
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════════════ OUR LOCATIONS SECTION ═══════════════════════ */}
+      <section className="bg-[#f5f0e8] py-16 md:py-24 px-6" id="locations">
+        <div className="max-w-5xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
+              <MapPin size={16} /> Our Locations
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
+              Visit the Ayoni Diagnostic Centre <span className="text-[#800000]">Nearest to You</span>
+            </h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+            <p className="text-lg text-[#3b5f4b] mt-5 max-w-2xl mx-auto leading-relaxed">
+              With conveniently located centres in Gurgaon and Delhi, we make quality ultrasound and diagnostic imaging easily accessible.
+            </p>
+          </div>
+
+          {/* Location Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Gurgaon Centre */}
+            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-[#800000]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#264231]">Gurgaon Centre</h3>
+              </div>
+              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="space-y-2">
+                <p className="text-base font-bold text-[#264231]">Ayoni Clinic</p>
+                <p className="text-[#3b5f4b] text-sm leading-relaxed">
+                  R2/128, First Floor,<br />
+                  M3M 65th Avenue,<br />
+                  Golf Course Extension Road,<br />
+                  Sector 65, Gurugram – 122102
+                </p>
+              </div>
+              <a
+                href="tel:+919315991400"
+                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
+              >
+                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
+              </a>
+              <a
+                href="https://maps.google.com/?q=R2/128,+First+Floor,+M3M+65th+Avenue,+Golf+Course+Extension+Road,+Sector+65,+Gurugram+122102"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
+              >
+                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+            {/* Delhi Centre */}
+            <div className="bg-white rounded-3xl p-8 border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-[#800000]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#264231]">Delhi Centre</h3>
+              </div>
+              <div className="w-12 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="space-y-2">
+                <p className="text-base font-bold text-[#264231]">Ayoni Cure de Jouvence</p>
+                <p className="text-[#3b5f4b] text-sm leading-relaxed">
+                  F14/69, Ground Floor,<br />
+                  Model Town Phase 2,<br />
+                  Delhi – 110033
+                </p>
+              </div>
+              <a
+                href="tel:+919315991400"
+                className="inline-flex items-center gap-2 text-[#264231] font-semibold text-sm hover:text-[#800000] transition-colors"
+              >
+                <PhoneCall size={16} className="text-[#800000]" /> +91 93159 91400
+              </a>
+              <a
+                href="https://maps.google.com/?q=F14/69+Ground+Floor,+Model+Town+Phase+2,+Delhi+110033"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#264231] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1a2e23] transition-all duration-300 group w-fit mt-auto"
+              >
+                <MapPin size={16} /> Get Directions <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </div>
