@@ -75,10 +75,10 @@ export default function UltrasoundPage() {
   ];
 
   const services = [
+    { icon: "🏥", title: "General Diagnostic Ultrasound", items: ["Whole Abdomen", "Upper Abdomen", "Lower Abdomen", "KUB Scan", "Thyroid Scan", "Breast Ultrasound", "Chest Ultrasound", "Soft Tissue Ultrasound", "Eye Ultrasound"] },
+    { icon: "❤️", title: "Doppler Ultrasound", items: ["Arterial Doppler", "Venous Doppler", "Carotid Doppler", "Renal Doppler", "Portal Doppler", "Pelvic Doppler", "AV Fistula Mapping"] },
     { icon: "🤰", title: "Pregnancy Ultrasound", items: ["Early Pregnancy Scan", "NT Scan", "Level II Anomaly Scan", "Fetal Echo", "Growth Scan", "Third Trimester Scan", "Biophysical Profile", "AFI Scan"] },
     { icon: "👩", title: "Women's Health & Fertility", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Monitoring", "Antral Follicle Count", "Infertility Assessment"] },
-    { icon: "🩺", title: "General Diagnostic Ultrasound", items: ["Whole Abdomen", "Upper Abdomen", "Lower Abdomen", "KUB Scan", "Thyroid Scan", "Breast Ultrasound", "Chest Ultrasound", "Soft Tissue Ultrasound", "Eye Ultrasound"] },
-    { icon: "❤️", title: "Doppler Ultrasound", items: ["Arterial Doppler", "Venous Doppler", "Carotid Doppler", "Renal Doppler", "Portal Doppler", "Pelvic Doppler", "AV Fistula Mapping"] },
     { icon: "👶👶", title: "Twin Pregnancy Ultrasound", items: ["Twin NT Scan", "Twin Level II Scan", "Twin Growth Scan", "Twin Fetal Echo", "Twin Doppler"] },
   ];
 
@@ -218,15 +218,6 @@ export default function UltrasoundPage() {
       {/* This form is explicitly hidden on tablet/desktop devices (md:hidden) */}
       <section className="block md:hidden bg-[#f5f0e8] px-5 pt-10 pb-10">
         <div className="w-full max-w-md mx-auto space-y-5">
-          {/* Top Call Button (Pill shaped, matching color scheme) */}
-          <button
-            onClick={() => window.open("tel:+919315991400")}
-            className="w-full bg-[#E6D3A3] text-[#1a2e23] font-bold text-[15px] py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors duration-300 hover:bg-[#d4c08f]"
-          >
-            <PhoneCall className="w-[18px] h-[18px]" />
-            Talk to an Expert for Free
-          </button>
-
           {/* Form Card */}
           <div className="bg-[#fcfbf9] rounded-[24px] p-6 border border-[#E6D3A3]/60">
             <h3 className="text-xl font-bold text-center text-[#264231] mb-5">
