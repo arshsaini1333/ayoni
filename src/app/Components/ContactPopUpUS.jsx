@@ -64,7 +64,7 @@ export default function AppointmentModalUS({ open, onClose }) {
           <div className="grid md:grid-cols-2">
             <div className="relative hidden md:block">
               <Image
-                src="/doc1.png"
+                src="/Pregnancy-Ultrasound.webp"
                 alt="Ultrasound Specialist Consultation"
                 fill
                 className="object-cover"

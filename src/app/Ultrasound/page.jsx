@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -68,7 +68,7 @@ export default function UltrasoundPage() {
   const features = [
     { icon: "🩺", title: "25+ Years of Experience", desc: "Experienced Women's Health Specialist" },
     { icon: "🖥️", title: "Advanced Ultrasound Technology", desc: "High-quality imaging for accurate diagnosis" },
-    { icon: "👩‍⚕️", title: "Expert Medical Guidance", desc: "Reports explained by experienced specialists" },
+    { icon: "👩‍⚕️", title: "30+ Years Experience", desc: "Reports explained by experienced specialists" },
     { icon: "🔒", title: "Private & Comfortable Care", desc: "Safe, hygienic, and patient-friendly environment" },
     { icon: "⚡", title: "Ultrasound Scan by Appointment Only", desc: "Dedicated time slots ensuring focused, quality care for every patient" },
     { icon: "📍", title: "Convenient Gurgaon Location", desc: "Located at M3M 65th Avenue, Sector 65" },
@@ -133,80 +133,88 @@ export default function UltrasoundPage() {
             <div className="absolute top-[10%] left-[30%] w-20 h-20 rotate-45 bg-[#E6D3A3]/10 rounded-xl"></div>
 
             <div className="relative w-full max-w-9xl mx-auto pl-6 lg:pl-10 pr-4 py-16">
-              <div className="max-w-7xl relative z-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-                {/* Left Side */}
-                <div className="space-y-8 text-left">
-                  <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
-                    Advanced Ultrasound & Diagnostic Imaging Centre <br className="hidden md:block" />
-                    <span className="text-[#800000]">in Gurgaon & Delhi</span>
-                  </h1>
+              <div className="max-w-7xl relative z-20 mx-auto">
+                {/* Responsive Two-Column Layout */}
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
+                  
+                  {/* Left Column - Hero Content (55-60% width) */}
+                  <div className="w-full lg:w-[58%] space-y-8 text-left">
+                    <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
+                      Advanced Ultrasound & Diagnostic Imaging Centre <br className="hidden md:block" />
+                      <span className="text-[#800000]">in Gurgaon & Delhi</span>
+                    </h1>
 
-                  <ul className="space-y-4">
-                    {[
-                      "Advanced Ultrasound Technology",
-                      "Experienced Radiologist",
-                      "Accurate Diagnostic Imaging",
-                      "Appointment-Based Consultations"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <span className="w-7 h-7 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
-                          <CheckCircle2 size={18} className="text-[#800000]" />
-                        </span>
-                        <span className="text-xl text-[#264231] font-semibold">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-4">
+                      {[
+                        "Advanced Ultrasound Technology",
+                        "Experienced Radiologist",
+                        "Accurate Diagnostic Imaging",
+                        "Appointment-Based Consultations"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <span className="w-7 h-7 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                            <CheckCircle2 size={18} className="text-[#800000]" />
+                          </span>
+                          <span className="text-xl text-[#264231] font-semibold">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <div className="pt-4">
-                    <button
-                      onClick={() => setOpen(true)}
-                      className="inline-flex items-center gap-3 bg-[#264231] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1a2e23] transition-all duration-300 shadow-lg"
-                    >
-                      <CalendarCheck size={20} /> Book Your TEST Now <ChevronRight size={18} />
-                    </button>
+                    <div className="pt-4">
+                      <button
+                        onClick={() => setOpen(true)}
+                        className="inline-flex items-center gap-3 bg-[#264231] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1a2e23] transition-all duration-300 shadow-lg"
+                      >
+                        <CalendarCheck size={20} /> Book Your APPOINTMENT Now <ChevronRight size={18} />
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                {/* Right Side: Form */}
-                <div className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-[#E6D3A3]/50 w-full relative">
-                  <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#E6D3A3]/20 rounded-full blur-xl z-[-1]"></div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#264231] mb-8 text-center">Request a Callback</h3>
+                  {/* Right Column - Request Callback Form (40-45% width) */}
+                  <div className="w-full lg:w-[42%] flex justify-center lg:justify-end">
+                    <div className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-[#E6D3A3]/50 w-full max-w-md relative">
+                      <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#E6D3A3]/20 rounded-full blur-xl z-[-1]"></div>
+                      
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#264231] mb-8 text-center">Request a Callback</h3>
 
-                  <form onSubmit={(e) => handleFormSubmit(e, "Hero Form")} className="space-y-5">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleFormChange}
-                        placeholder="Name"
-                        required
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleFormChange}
-                        placeholder="Phone Number"
-                        required
-                        className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="w-full bg-[#800000] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-colors flex items-center justify-center gap-2 mt-2 shadow-md"
-                    >
-                      {submitting ? "Submitting..." : "Book Now"}
-                    </button>
+                      <form onSubmit={(e) => handleFormSubmit(e, "Hero Form")} className="space-y-5">
+                        <div>
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleFormChange}
+                            placeholder="Name"
+                            required
+                            className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
+                          />
+                        </div>
+                        <div>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleFormChange}
+                            placeholder="Phone Number"
+                            required
+                            className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 focus:border-[#264231] outline-none transition-colors bg-white text-[#264231] text-base font-medium"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={submitting}
+                          className="w-full bg-[#800000] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-colors flex items-center justify-center gap-2 mt-2 shadow-md"
+                        >
+                          {submitting ? "Submitting..." : "Book Now"}
+                        </button>
 
-                    <div className="flex items-center justify-center gap-2 text-sm text-[#3b5f4b] font-medium pt-3">
-                      <Lock size={14} className="text-[#800000]" /> 🔒 Your information is 100% secure and confidential.
+                        <div className="flex items-center justify-center gap-2 text-sm text-[#3b5f4b] font-medium pt-3">
+                          <Lock size={14} className="text-[#800000]" /> 🔒 Your information is 100% secure and confidential.
+                        </div>
+                      </form>
                     </div>
-                  </form>
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -266,7 +274,7 @@ export default function UltrasoundPage() {
           <div className="grid grid-cols-4 gap-1.5 sm:gap-6 md:gap-8">
             {[
               { icon: <Users className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "10,000+", label: "Happy Patients" },
-              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "25+", label: "Years Experience" },
+              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "30+", label: "Years Experience" },
               { icon: <Heart className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "100%", label: "Accurate Reports" },
               { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Advanced", label: "Technology" },
             ].map((s, i) => (
@@ -321,9 +329,9 @@ export default function UltrasoundPage() {
               <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
             </div>
           </div>
-          {/* First 4 cards — 2×2 grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {services.slice(0, 4).map((s, i) => (
+          {/* All 5 cards in responsive grid - 3 cards per row on large screens */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {services.map((s, i) => (
               <div key={i} className="bg-white rounded-[2rem] p-10 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group">
                 <div className="text-5xl bg-gradient-to-br from-[#fcf9f2] to-white p-5 rounded-full shadow-inner border border-[#E6D3A3]/20 group-hover:scale-110 transition-transform duration-300">
                   {s.icon}
@@ -345,30 +353,6 @@ export default function UltrasoundPage() {
                 </button>
               </div>
             ))}
-          </div>
-
-          {/* 5th card — Twin Pregnancy, centered below */}
-          <div className="flex justify-center mt-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-[2rem] p-10 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group w-full sm:w-[calc(50%-1rem)]">
-              <div className="text-5xl bg-gradient-to-br from-[#fcf9f2] to-white p-5 rounded-full shadow-inner border border-[#E6D3A3]/20 group-hover:scale-110 transition-transform duration-300">
-                {services[4].icon}
-              </div>
-              <h3 className="text-xl font-bold text-[#264231] leading-tight">{services[4].title}</h3>
-              <ul className="space-y-2 w-full text-left">
-                {services[4].items.map((item, j) => (
-                  <li key={j} className="flex items-center gap-2.5 text-[#3b5f4b]">
-                    <CheckCircle2 size={15} className="text-[#800000] shrink-0" />
-                    <span className="text-sm font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setOpen(true)}
-                className="inline-flex items-center gap-2 text-[#800000] font-bold text-sm mt-auto bg-[#800000]/5 px-5 py-2.5 rounded-full hover:bg-[#800000]/10 transition-all duration-300 hover:gap-3"
-              >
-                Know More <ChevronRight size={16} />
-              </button>
-            </div>
           </div>
           <div className="flex justify-center mt-12">
             <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
