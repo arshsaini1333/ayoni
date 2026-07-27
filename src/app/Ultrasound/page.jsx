@@ -103,7 +103,7 @@ export default function UltrasoundPage() {
 
       {/* HERO */}
       <div
-        id="usHero"
+        id="vtHero"
         className="w-full bg-[#f5f0e8] overflow-hidden"
         style={{ height: isClient && heroScale < 1 ? `calc(max(85vh, 950px) * ${heroScale})` : 'auto' }}
         suppressHydrationWarning
@@ -139,7 +139,7 @@ export default function UltrasoundPage() {
                   
                   {/* Left Column - Hero Content (55-60% width) */}
                   <div className="w-full lg:w-[58%] space-y-8 text-left">
-                    <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
+                    <h1 className="text-[4.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
                       Advanced Ultrasound & Diagnostic Imaging Centre <br className="hidden md:block" />
                       <span className="text-[#800000]">in Gurgaon & Delhi</span>
                     </h1>
@@ -151,11 +151,11 @@ export default function UltrasoundPage() {
                         "Accurate Diagnostic Imaging",
                         "Appointment-Based Consultations"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <span className="w-7 h-7 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
-                            <CheckCircle2 size={18} className="text-[#800000]" />
+                        <li key={i} className="flex items-center gap-4 md:gap-3">
+                          <span className="w-10 h-10 md:w-7 md:h-7 rounded-full bg-[#800000]/10 flex items-center justify-center shrink-0">
+                            <CheckCircle2 size={18} className="w-[24px] h-[24px] md:w-[18px] md:h-[18px] text-[#800000]" />
                           </span>
-                          <span className="text-xl text-[#264231] font-semibold">{item}</span>
+                          <span className="text-[34px] md:text-xl text-[#264231] font-semibold">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -163,9 +163,9 @@ export default function UltrasoundPage() {
                     <div className="pt-4">
                       <button
                         onClick={() => setOpen(true)}
-                        className="inline-flex items-center gap-3 bg-[#264231] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1a2e23] transition-all duration-300 shadow-lg"
+                        className="inline-flex items-center gap-4 md:gap-3 bg-[#264231] text-white px-10 py-5 md:px-8 md:py-4 rounded-xl font-bold text-[22px] md:text-lg hover:bg-[#1a2e23] transition-all duration-300 shadow-lg"
                       >
-                        <CalendarCheck size={20} /> Book Your APPOINTMENT Now <ChevronRight size={18} />
+                        <CalendarCheck size={20} className="w-[24px] h-[24px] md:w-[20px] md:h-[20px]" /> Book Your APPOINTMENT Now <ChevronRight size={18} className="w-[22px] h-[22px] md:w-[18px] md:h-[18px]" />
                       </button>
                     </div>
                   </div>
@@ -322,7 +322,7 @@ export default function UltrasoundPage() {
       </section>
 
       {/* SECTION 3 – SERVICES */}
-      <section className="bg-white py-16 md:py-24 px-6" id="services">
+      <section className="bg-white py-16 md:py-24 px-6" id="treatments">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-14">
             <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3"><Stethoscope size={16} /> What We Offer</span>
@@ -395,7 +395,7 @@ export default function UltrasoundPage() {
       </section>
 
       {/* SECTION 4 – MEET OUR EXPERTS */}
-      <section className="bg-white pt-6 pb-16 md:pt-8 md:pb-24 px-6" id="doctors">
+      <section className="bg-white pt-6 pb-16 md:pt-8 md:pb-24 px-6" id="doctor">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Meet Our <span className="text-[#800000]">Experts</span></h2>
