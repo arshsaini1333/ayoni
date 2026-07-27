@@ -411,7 +411,7 @@ export default function UltrasoundPage() {
             <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
               <div className="relative h-72 md:h-96 overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
-                <Image src="/doctor image.JPEG" alt="Dr. Gaayatri Bala Juneja" fill className="object-cover object-[center_80%]" />
+                <Image src="/doctor image.JPEG" alt="Dr. Gaayatri Bala Juneja" fill className="object-cover object-[center_30%]" />
               </div>
               <div className="p-7 space-y-4 flex flex-col flex-1">
                 <div>
