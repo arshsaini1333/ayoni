@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -170,8 +170,8 @@ export default function UltrasoundPage() {
                     </div>
                   </div>
 
-                  {/* Right Column - Request Callback Form (40-45% width) */}
-                  <div className="w-full lg:w-[42%] flex justify-center lg:justify-end">
+                  {/* Right Column - Request Callback Form (40-45% width) — hidden on mobile, replaced by Cost Calculator below */}
+                  <div className="w-full lg:w-[42%] hidden md:flex justify-center lg:justify-end">
                     <div className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-[#E6D3A3]/50 w-full max-w-md relative">
                       <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#E6D3A3]/20 rounded-full blur-xl z-[-1]"></div>
                       
@@ -229,7 +229,7 @@ export default function UltrasoundPage() {
           {/* Form Card */}
           <div className="bg-[#fcfbf9] rounded-[24px] p-6 border border-[#E6D3A3]/60">
             <h3 className="text-xl font-bold text-center text-[#264231] mb-5">
-              Cost Calculator
+              Request a Callback
             </h3>
 
             <form className="space-y-4" onSubmit={(e) => handleFormSubmit(e, "Cost Calculator")}>
@@ -261,8 +261,12 @@ export default function UltrasoundPage() {
                 disabled={submitting}
                 className="w-full bg-[#800000] text-white py-4 rounded-full font-bold text-[15px] hover:bg-[#660000] transition-colors duration-300 mt-2 disabled:opacity-60"
               >
-                {submitting ? "Submitting..." : "Get Cost Estimate Now"}
+                {submitting ? "Submitting..." : "Book Now"}
               </button>
+
+              <div className="flex items-center justify-center gap-1.5 text-xs text-[#3b5f4b] font-medium pt-3 whitespace-nowrap">
+                🔒 Your information is 100% secure and confidential.
+              </div>
             </form>
           </div>
         </div>
@@ -407,7 +411,7 @@ export default function UltrasoundPage() {
             <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
               <div className="relative h-72 overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
-                <Image src="/doc1.png" alt="Dr. Gaayatri Bala Juneja" fill className="object-cover object-top" />
+                <Image src="/doctor image.JPEG" alt="Dr. Gaayatri Bala Juneja" fill className="object-cover object-[center_80%]" />
               </div>
               <div className="p-7 space-y-4 flex flex-col flex-1">
                 <div>
@@ -486,15 +490,27 @@ export default function UltrasoundPage() {
             </p>
           </div>
 
-          {/* Degree Photos Placeholder */}
-          <div className="bg-white rounded-3xl border-2 border-dashed border-[#E6D3A3] p-10 md:p-16 flex flex-col items-center justify-center gap-5 text-center min-h-[260px]">
-            <div className="w-16 h-16 rounded-full bg-[#800000]/10 flex items-center justify-center">
-              <GraduationCap size={32} className="text-[#800000]" />
-            </div>
-            <p className="text-[#264231] font-bold text-xl">Degree & Certificate Photos</p>
-            <p className="text-[#3b5f4b] text-base max-w-sm">
-              Photos of the doctors&apos; degrees and professional certificates will be displayed here.
-            </p>
+          {/* Degree & Certificate Photos */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { src: "/c1.webp", alt: "Certificate 1" },
+              { src: "/c2.webp", alt: "Certificate 2" },
+              { src: "/c3.webp", alt: "Certificate 3" },
+              { src: "/c4.webp", alt: "Certificate 4" },
+              { src: "/c5.webp", alt: "Certificate 5" },
+              { src: "/c6.webp", alt: "Certificate 6" },
+              { src: "/c7.webp", alt: "Certificate 7" },
+              { src: "/c8.jpeg", alt: "Certificate 8" },
+            ].map((cert, i) => (
+              <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 group bg-white">
+                <Image
+                  src={cert.src}
+                  alt={cert.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -524,11 +540,11 @@ export default function UltrasoundPage() {
             ))}
           </div>
           {/* Trust strip */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm md:text-base font-medium text-[#264231]">
+          <div className="mt-12 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-center md:gap-10 text-sm md:text-base font-medium text-[#264231]">
             <span className="flex items-center gap-2"><Star size={16} className="text-[#E6B800] fill-[#E6B800]" /> 4.9/5 Patient Rating</span>
-            <span className="text-[#E6D3A3]">|</span>
+            <span className="text-[#E6D3A3] hidden md:inline">|</span>
             <span className="flex items-center gap-2"><HeartPulse size={16} className="text-[#800000]" /> Experienced Specialists</span>
-            <span className="text-[#E6D3A3]">|</span>
+            <span className="text-[#E6D3A3] hidden md:inline">|</span>
             <span className="flex items-center gap-2"><Stethoscope size={16} className="text-[#800000]" /> Advanced Ultrasound Technology</span>
           </div>
           <div className="flex justify-center mt-10">
