@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -499,6 +499,14 @@ export default function UltrasoundPage() {
               { src: "/certificates_doctor_page-0004.jpg", alt: "Certificate 4" },
               { src: "/certificates_doctor_page-0005.jpg", alt: "Certificate 5" },
               { src: "/certificates_doctor_page-0006.jpg", alt: "Certificate 6" },
+              { src: "/c1.webp", alt: "Certificate 7" },
+              { src: "/c2.webp", alt: "Certificate 8" },
+              { src: "/c3.webp", alt: "Certificate 9" },
+              { src: "/c4.webp", alt: "Certificate 10" },
+              { src: "/c5.webp", alt: "Certificate 11" },
+              { src: "/c6.webp", alt: "Certificate 12" },
+              { src: "/c7.webp", alt: "Certificate 13" },
+              { src: "/c8.jpeg", alt: "Certificate 14" },
             ].map((cert, i) => (
               <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 group bg-white">
                 <Image
