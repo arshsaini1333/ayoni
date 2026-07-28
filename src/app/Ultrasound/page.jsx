@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -136,7 +136,7 @@ export default function UltrasoundPage() {
               <div className="max-w-7xl relative z-20 mx-auto">
                 {/* Responsive Two-Column Layout */}
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
-                  
+
                   {/* Left Column - Hero Content (55-60% width) */}
                   <div className="w-full lg:w-[58%] space-y-8 text-left">
                     <h1 className="text-[4.5rem] md:text-[3.5rem] font-bold leading-tight text-[#264231]">
@@ -174,7 +174,7 @@ export default function UltrasoundPage() {
                   <div className="w-full lg:w-[42%] hidden md:flex justify-center lg:justify-end">
                     <div className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-[#E6D3A3]/50 w-full max-w-md relative">
                       <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#E6D3A3]/20 rounded-full blur-xl z-[-1]"></div>
-                      
+
                       <h3 className="text-2xl md:text-3xl font-bold text-[#264231] mb-8 text-center">Request a Callback</h3>
 
                       <form onSubmit={(e) => handleFormSubmit(e, "Hero Form")} className="space-y-5">
@@ -214,7 +214,7 @@ export default function UltrasoundPage() {
                       </form>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -493,14 +493,12 @@ export default function UltrasoundPage() {
           {/* Degree & Certificate Photos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              { src: "/c1.webp", alt: "Certificate 1" },
-              { src: "/c2.webp", alt: "Certificate 2" },
-              { src: "/c3.webp", alt: "Certificate 3" },
-              { src: "/c4.webp", alt: "Certificate 4" },
-              { src: "/c5.webp", alt: "Certificate 5" },
-              { src: "/c6.webp", alt: "Certificate 6" },
-              { src: "/c7.webp", alt: "Certificate 7" },
-              { src: "/c8.jpeg", alt: "Certificate 8" },
+              { src: "/certificates_doctor_page-0001.jpg", alt: "Certificate 1" },
+              { src: "/certificates_doctor_page-0002.jpg", alt: "Certificate 2" },
+              { src: "/certificates_doctor_page-0003.jpg", alt: "Certificate 3" },
+              { src: "/certificates_doctor_page-0004.jpg", alt: "Certificate 4" },
+              { src: "/certificates_doctor_page-0005.jpg", alt: "Certificate 5" },
+              { src: "/certificates_doctor_page-0006.jpg", alt: "Certificate 6" },
             ].map((cert, i) => (
               <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 group bg-white">
                 <Image
