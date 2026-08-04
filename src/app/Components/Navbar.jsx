@@ -2,21 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, Star } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ showRating = false }) {
   return (
     <nav className="w-full bg-[#264231] px-4 z-50">
       <div className="max-w-7xl mx-auto relative flex items-center justify-center md:justify-between">
 
         {/* Left (desktop only) */}
         <div className="hidden md:flex flex-1 justify-start">
-          <Link
-            href="#why-ayoni"
-            className="text-[#CFAA75] text-lg font-bold hover:opacity-80 transition"
-          >
-            Trusted by 10 Lakh+ Women
-          </Link>
+          {showRating ? (
+            <div className="text-[#CFAA75] text-lg font-bold flex items-center gap-1.5">
+              <Star size={18} className="text-[#CFAA75] fill-[#CFAA75]" />
+              <span>4.9 Rating</span>
+            </div>
+          ) : (
+            <Link
+              href="#why-ayoni"
+              className="text-[#CFAA75] text-lg font-bold hover:opacity-80 transition"
+            >
+              Trusted by 10 Lakh+ Women
+            </Link>
+          )}
         </div>
 
         {/* Center Logo (mobile + desktop) */}

@@ -75,11 +75,36 @@ export default function UltrasoundPage() {
   ];
 
   const services = [
-    { icon: "🏥", title: "General Diagnostic Ultrasound", items: ["Whole Abdomen", "Upper Abdomen", "Lower Abdomen", "KUB Scan", "Thyroid Scan", "Breast Ultrasound", "Chest Ultrasound", "Soft Tissue Ultrasound", "Eye Ultrasound"] },
-    { icon: "❤️", title: "Doppler Ultrasound", items: ["Arterial Doppler", "Venous Doppler", "Carotid Doppler", "Renal Doppler", "Portal Doppler", "Pelvic Doppler", "AV Fistula Mapping"] },
-    { icon: "🤰", title: "Pregnancy Ultrasound", items: ["Early Pregnancy Scan", "NT Scan", "Level II Anomaly Scan", "Fetal Echo", "Growth Scan", "Third Trimester Scan", "Biophysical Profile", "AFI Scan"] },
-    { icon: "👩", title: "Women's Health & Fertility", items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Monitoring", "Antral Follicle Count", "Infertility Assessment"] },
-    { icon: "👶👶", title: "Twin Pregnancy Ultrasound", items: ["Twin NT Scan", "Twin Level II Scan", "Twin Growth Scan", "Twin Fetal Echo", "Twin Doppler"] },
+    {
+      icon: "🏥",
+      image: "/genericusayoni.jpeg",
+      title: "General Diagnostic Ultrasound",
+      items: ["Whole Abdomen", "Upper Abdomen", "Lower Abdomen", "KUB Scan", "Thyroid Scan", "Breast Ultrasound", "Chest Ultrasound", "Soft Tissue Ultrasound", "Eye Ultrasound"]
+    },
+    {
+      icon: "❤️",
+      image: "/dopplerayoni.jpeg",
+      title: "Doppler Ultrasound",
+      items: ["Arterial Doppler", "Venous Doppler", "Carotid Doppler", "Renal Doppler", "Portal Doppler", "Pelvic Doppler", "AV Fistula Mapping"]
+    },
+    {
+      icon: "🤰",
+      image: "/preganancyayoni.jpeg",
+      title: "Pregnancy Ultrasound",
+      items: ["Early Pregnancy Scan", "NT Scan", "Level II Anomaly Scan", "Fetal Echo", "Growth Scan", "Third Trimester Scan", "Biophysical Profile", "AFI Scan"]
+    },
+    {
+      icon: "👩",
+      image: "/womenhealthandfertilityayoni.jpeg",
+      title: "Women's Health & Fertility",
+      items: ["TVS Scan", "Pelvic Ultrasound", "Follicular Monitoring", "Antral Follicle Count", "Infertility Assessment"]
+    },
+    {
+      icon: "👶👶",
+      image: "/doublepreganancy.jpeg",
+      title: "Twin Pregnancy Ultrasound",
+      items: ["Twin NT Scan", "Twin Level II Scan", "Twin Growth Scan", "Twin Fetal Echo", "Twin Doppler"]
+    },
   ];
 
   const reviews = [
@@ -98,7 +123,7 @@ export default function UltrasoundPage() {
 
   return (
     <>
-      <Navbar openModal={() => setOpen(true)} />
+      <Navbar openModal={() => setOpen(true)} showRating={true} />
       <style>{`body { overflow-x: hidden; width: 100%; max-width: 100vw; }`}</style>
 
       {/* HERO */}
@@ -292,6 +317,56 @@ export default function UltrasoundPage() {
         </div>
       </section>
 
+      {/* SECTION 3 – SERVICES */}
+      <section className="bg-white py-16 md:py-24 px-6" id="treatments">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3"><Stethoscope size={16} /> What We Offer</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Comprehensive Ultrasound Services <br className="hidden md:block" /><span className="text-[#800000]">Under One Roof</span></h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+          </div>
+          {/* All 5 cards in responsive grid - 3 cards per row on large screens */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {services.map((s, i) => (
+              <div key={i} className="bg-white rounded-[2rem] p-6 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                <div className="w-full h-48 relative rounded-2xl overflow-hidden">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-[#264231] leading-tight mt-2">{s.title}</h3>
+                <ul className="space-y-2 w-full text-left">
+                  {s.items.map((item, j) => (
+                    <li key={j} className="flex items-center gap-2.5 text-[#3b5f4b]">
+                      <CheckCircle2 size={15} className="text-[#800000] shrink-0" />
+                      <span className="text-sm font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => setOpen(true)}
+                  className="inline-flex items-center gap-2 text-[#800000] font-bold text-sm mt-auto bg-[#800000]/5 px-5 py-2.5 rounded-full hover:bg-[#800000]/10 transition-all duration-300 hover:gap-3"
+                >
+                  Know More <ChevronRight size={16} />
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-12">
+            <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
+              👉 Find the Right Scan for You <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2 – WHY CHOOSE AYONI */}
       <section className="bg-[#F9F9F6] pt-8 pb-16 md:pt-20 md:pb-24 px-6" id="why-ayoni">
         <div className="max-w-6xl mx-auto">
@@ -316,51 +391,6 @@ export default function UltrasoundPage() {
           <div className="flex justify-center mt-12">
             <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#264231] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#1a2e23] transition-all duration-300 group">
               Talk to Our Expert Today <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3 – SERVICES */}
-      <section className="bg-white py-16 md:py-24 px-6" id="treatments">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10 md:mb-14">
-            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3"><Stethoscope size={16} /> What We Offer</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Comprehensive Ultrasound Services <br className="hidden md:block" /><span className="text-[#800000]">Under One Roof</span></h2>
-            <div className="flex items-center gap-3 justify-center mt-5">
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-            </div>
-          </div>
-          {/* All 5 cards in responsive grid - 3 cards per row on large screens */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {services.map((s, i) => (
-              <div key={i} className="bg-white rounded-[2rem] p-10 border border-[#E6D3A3]/40 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center gap-5 group">
-                <div className="text-5xl bg-gradient-to-br from-[#fcf9f2] to-white p-5 rounded-full shadow-inner border border-[#E6D3A3]/20 group-hover:scale-110 transition-transform duration-300">
-                  {s.icon}
-                </div>
-                <h3 className="text-xl font-bold text-[#264231] leading-tight">{s.title}</h3>
-                <ul className="space-y-2 w-full text-left">
-                  {s.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-2.5 text-[#3b5f4b]">
-                      <CheckCircle2 size={15} className="text-[#800000] shrink-0" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => setOpen(true)}
-                  className="inline-flex items-center gap-2 text-[#800000] font-bold text-sm mt-auto bg-[#800000]/5 px-5 py-2.5 rounded-full hover:bg-[#800000]/10 transition-all duration-300 hover:gap-3"
-                >
-                  Know More <ChevronRight size={16} />
-                </button>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-12">
-            <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
-              👉 Find the Right Scan for You <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
@@ -394,22 +424,23 @@ export default function UltrasoundPage() {
         </div>
       </section>
 
-      {/* SECTION 4 – MEET OUR EXPERTS */}
-      <section className="bg-white pt-6 pb-16 md:pt-8 md:pb-24 px-6" id="doctor">
+      {/* DR. GAAYATRI BALA JUNEJA SECTION */}
+      <section className="bg-white py-16 md:py-24 px-6 border-b border-[#E6D3A3]/20" id="doctor">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Meet Our <span className="text-[#800000]">Experts</span></h2>
-            <p className="text-lg text-[#3b5f4b] mt-3 font-medium">Experienced Specialists in Gurgaon</p>
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3"><Stethoscope size={16} /> Gynecological Expert</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Meet <span className="text-[#800000]">Dr. Gaayatri Bala Juneja</span></h2>
             <div className="flex items-center gap-3 justify-center mt-5">
               <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
               <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Doctor 1 */}
-            <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-72 md:h-96 overflow-hidden">
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            {/* Left Column: Doctor Profile Card (5 cols) */}
+            <div className="lg:col-span-5 bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+              <div className="relative h-72 md:h-96 lg:h-[600px] overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
                 <Image src="/doctor image.JPEG" alt="Dr. Gaayatri Bala Juneja" fill className="object-cover object-[center_30%]" />
               </div>
@@ -434,9 +465,58 @@ export default function UltrasoundPage() {
                 </div>
               </div>
             </div>
-            {/* Doctor 2 */}
-            <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-72 md:h-96 overflow-hidden">
+
+            {/* Right Column: Certifications (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <GraduationCap className="text-[#800000] w-6 h-6" />
+                <h3 className="text-xl md:text-2xl font-bold text-[#264231]">Professional Certifications</h3>
+              </div>
+              <p className="text-[#3b5f4b] text-sm md:text-base leading-relaxed">
+                Accredited certifications and training in advanced obstetrics, gynecology, and clinical care.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { src: "/c1.webp", alt: "Dr. Gaayatri Certificate 1" },
+                  { src: "/c2.webp", alt: "Dr. Gaayatri Certificate 2" },
+                  { src: "/c3.webp", alt: "Dr. Gaayatri Certificate 3" },
+                  { src: "/c4.webp", alt: "Dr. Gaayatri Certificate 4" },
+                  { src: "/c5.webp", alt: "Dr. Gaayatri Certificate 5" },
+                  { src: "/c6.webp", alt: "Dr. Gaayatri Certificate 6" },
+                  { src: "/c7.webp", alt: "Dr. Gaayatri Certificate 7" },
+                ].map((cert, i) => (
+                  <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
+                    <Image
+                      src={cert.src}
+                      alt={cert.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DR. RAJNISH JUNEJA SECTION */}
+      <section className="bg-[#f5f0e8]/50 py-16 md:py-24 px-6 border-b border-[#E6D3A3]/20" id="doctor-rajnish">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3"><Award size={16} /> Radiodiagnosis Specialist</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">Meet <span className="text-[#800000]">Dr. Rajnish Juneja</span></h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            {/* Left Column: Doctor Profile Card (5 cols) */}
+            <div className="lg:col-span-5 bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+              <div className="relative h-72 md:h-96 lg:h-[600px] overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
                 <Image src="/rajniesh.jpeg" alt="Dr. Rajnish Juneja" fill className="object-cover object-[center_20%]" />
               </div>
@@ -461,62 +541,37 @@ export default function UltrasoundPage() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex justify-center mt-12">
-            <button onClick={() => setOpen(true)} className="inline-flex items-center gap-3 bg-[#800000] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#660000] transition-all duration-300 group">
-              👉 Consult Our Specialist <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
 
-      {/* CREDENTIALS SECTION */}
-      <section className="bg-[#f5f0e8] py-16 md:py-24 px-6" id="credentials">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
-              <GraduationCap size={16} /> Credentials
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
-              Qualifications &amp; Professional <span className="text-[#800000]">Credentials</span>
-            </h2>
-            <div className="flex items-center gap-3 justify-center mt-5">
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
-              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
-            </div>
-            <p className="text-lg text-[#3b5f4b] mt-6 max-w-3xl mx-auto leading-relaxed">
-              Our experienced specialists are backed by recognized medical qualifications, advanced training, and decades of expertise in diagnostic imaging and women&apos;s healthcare.
-            </p>
-          </div>
-
-          {/* Degree & Certificate Photos */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { src: "/certificates_doctor_page-0001.jpg", alt: "Certificate 1" },
-              { src: "/certificates_doctor_page-0002.jpg", alt: "Certificate 2" },
-              { src: "/certificates_doctor_page-0003.jpg", alt: "Certificate 3" },
-              { src: "/certificates_doctor_page-0004.jpg", alt: "Certificate 4" },
-              { src: "/certificates_doctor_page-0005.jpg", alt: "Certificate 5" },
-              { src: "/certificates_doctor_page-0006.jpg", alt: "Certificate 6" },
-              { src: "/c1.webp", alt: "Certificate 7" },
-              { src: "/c2.webp", alt: "Certificate 8" },
-              { src: "/c3.webp", alt: "Certificate 9" },
-              { src: "/c4.webp", alt: "Certificate 10" },
-              { src: "/c5.webp", alt: "Certificate 11" },
-              { src: "/c6.webp", alt: "Certificate 12" },
-              { src: "/c7.webp", alt: "Certificate 13" },
-              { src: "/c8.jpeg", alt: "Certificate 14" },
-            ].map((cert, i) => (
-              <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 group bg-white">
-                <Image
-                  src={cert.src}
-                  alt={cert.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+            {/* Right Column: Qualifications & Credentials (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <GraduationCap className="text-[#800000] w-6 h-6" />
+                <h3 className="text-xl md:text-2xl font-bold text-[#264231]">Qualifications &amp; Accreditations</h3>
               </div>
-            ))}
+              <p className="text-[#3b5f4b] text-sm md:text-base leading-relaxed">
+                Credentials, degree certificates, and clinical training accreditations in advanced radiodiagnosis and diagnostic imaging.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { src: "/certificates_doctor_page-0001.jpg", alt: "Dr. Rajnish Certificate 1" },
+                  { src: "/certificates_doctor_page-0002.jpg", alt: "Dr. Rajnish Certificate 2" },
+                  { src: "/certificates_doctor_page-0003.jpg", alt: "Dr. Rajnish Certificate 3" },
+                  { src: "/certificates_doctor_page-0004.jpg", alt: "Dr. Rajnish Certificate 4" },
+                  { src: "/certificates_doctor_page-0005.jpg", alt: "Dr. Rajnish Certificate 5" },
+                  { src: "/certificates_doctor_page-0006.jpg", alt: "Dr. Rajnish Certificate 6" },
+                  { src: "/c8.jpeg", alt: "Dr. Rajnish Certificate 7" },
+                ].map((cert, i) => (
+                  <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
+                    <Image
+                      src={cert.src}
+                      alt={cert.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
