@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -66,7 +66,7 @@ export default function UltrasoundPage() {
   ];
 
   const features = [
-    { icon: "🩺", title: "25+ Years of Experience", desc: "Experienced Women's Health Specialist" },
+    { icon: "🩺", title: "30+ Years of Experience", desc: "Experienced Women's Health Specialist" },
     { icon: "🖥️", title: "Advanced Ultrasound Technology", desc: "High-quality imaging for accurate diagnosis" },
     { icon: "👩‍⚕️", title: "30+ Years Experience", desc: "Reports explained by experienced specialists" },
     { icon: "🔒", title: "Private & Comfortable Care", desc: "Safe, hygienic, and patient-friendly environment" },
@@ -554,12 +554,10 @@ export default function UltrasoundPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {[
                   { src: "/certificates_doctor_page-0001.jpg", alt: "Dr. Rajnish Certificate 1" },
-                  { src: "/certificates_doctor_page-0002.jpg", alt: "Dr. Rajnish Certificate 2" },
                   { src: "/certificates_doctor_page-0003.jpg", alt: "Dr. Rajnish Certificate 3" },
                   { src: "/certificates_doctor_page-0004.jpg", alt: "Dr. Rajnish Certificate 4" },
                   { src: "/certificates_doctor_page-0005.jpg", alt: "Dr. Rajnish Certificate 5" },
                   { src: "/certificates_doctor_page-0006.jpg", alt: "Dr. Rajnish Certificate 6" },
-                  { src: "/c8.jpeg", alt: "Dr. Rajnish Certificate 7" },
                 ].map((cert, i) => (
                   <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-md transition-all duration-300 group bg-white">
                     <Image
