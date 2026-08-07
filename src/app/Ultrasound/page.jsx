@@ -15,7 +15,7 @@ export default function UltrasoundPage() {
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({ name: "", phone: "", treatment: "", branch: "" });
   const [submitting, setSubmitting] = useState(false);
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzbGwAy-gxBp5_UF2Th6a4kPGJ0m0tl2vj8fcbBHa38ht0PPnJSRH99GEBWHrkNzHkyuA/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbx3IXhfZspOj9mF9ZC28jrRmODgfpFYeD7SQkN-J3t4Z6qJbBu5HTOAEZ-7PJOFBuqc/exec"; // Replace with your actual Web App URL
 
   useEffect(() => {
     setIsClient(true);
@@ -42,20 +42,28 @@ export default function UltrasoundPage() {
   const handleFormSubmit = async (e, formType) => {
     e.preventDefault();
     setSubmitting(true);
+    
+    // Prepare form data
     const params = new URLSearchParams();
     params.append("name", formData.name);
     params.append("phone", formData.phone);
     params.append("msg", formType === "Cost Calculator" ? "Cost Inquiry" : formData.treatment || "General Inquiry");
     params.append("branch", formData.branch || "");
     params.append("formType", formType);
-    try {
-      await fetch(scriptURL, { method: "POST", body: params, mode: "no-cors" });
-    } catch (err) {
-      console.error(err);
-    }
-    setSubmitting(false);
-    setFormData({ name: "", phone: "", treatment: "", branch: "" });
-    router.push("/thankyouus");
+    
+    // Send data to Google Script (don't wait for response)
+    fetch(scriptURL, { 
+      method: "POST", 
+      body: params, 
+      mode: "no-cors" 
+    }).catch(err => console.error(err));
+    
+    // Quick redirect without waiting
+    setTimeout(() => {
+      setSubmitting(false);
+      setFormData({ name: "", phone: "", treatment: "", branch: "" });
+      router.push("/thankyouus");
+    }, 500); // Just 500ms delay for better UX
   };
 
   const costPoints = [
