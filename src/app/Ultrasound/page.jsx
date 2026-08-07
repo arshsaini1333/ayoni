@@ -42,7 +42,7 @@ export default function UltrasoundPage() {
   const handleFormSubmit = async (e, formType) => {
     e.preventDefault();
     setSubmitting(true);
-    
+
     // Prepare form data
     const params = new URLSearchParams();
     params.append("name", formData.name);
@@ -50,14 +50,14 @@ export default function UltrasoundPage() {
     params.append("msg", formType === "Cost Calculator" ? "Cost Inquiry" : formData.treatment || "General Inquiry");
     params.append("branch", formData.branch || "");
     params.append("formType", formType);
-    
+
     // Send data to Google Script (don't wait for response)
-    fetch(scriptURL, { 
-      method: "POST", 
-      body: params, 
-      mode: "no-cors" 
+    fetch(scriptURL, {
+      method: "POST",
+      body: params,
+      mode: "no-cors"
     }).catch(err => console.error(err));
-    
+
     // Quick redirect without waiting
     setTimeout(() => {
       setSubmitting(false);
@@ -526,7 +526,7 @@ export default function UltrasoundPage() {
             <div className="lg:col-span-5 bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
               <div className="relative h-72 md:h-96 lg:h-[600px] overflow-hidden">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 rounded-t-3xl z-10"></div>
-                <Image src="/rajniesh.jpeg" alt="Dr. Rajnish Juneja" fill className="object-cover object-[center_20%]" />
+                <Image src="/rajnish_juneja_photo.jpeg" alt="Dr. Rajnish Juneja" fill className="object-cover object-[center_20%]" />
               </div>
               <div className="p-7 space-y-4 flex flex-col flex-1">
                 <div>
