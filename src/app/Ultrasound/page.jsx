@@ -563,7 +563,7 @@ export default function UltrasoundPage() {
                 {[
                   { src: "/certificates_doctor_page-0001.jpg", alt: "Dr. Rajnish Certificate 1" },
                   { src: "/certificates_doctor_page-0003.jpg", alt: "Dr. Rajnish Certificate 3" },
-                  { src: "/certificates_doctor_page-0004.jpg", alt: "Dr. Rajnish Certificate 4" },
+                  { src: "/rajnish_juneja_degree.jpeg", alt: "Dr. Rajnish Certificate 4" },
                   { src: "/certificates_doctor_page-0005.jpg", alt: "Dr. Rajnish Certificate 5" },
                   { src: "/certificates_doctor_page-0006.jpg", alt: "Dr. Rajnish Certificate 6" },
                 ].map((cert, i) => (
