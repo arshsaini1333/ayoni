@@ -48,18 +48,41 @@ export default function Footer() {
           </div>
 
           {/* Map */}
-          <div className="md:col-span-1">
-            <h4 className="text-white font-semibold mb-4">Our Location</h4>
-            <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.44913864288!2d77.06523880000002!3d28.4057015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d230c54e29edf%3A0xacdb209ab3a6424e!2sAyoni%20Clinic!5e0!3m2!1sen!2sin!4v1768747725151!5m2!1sen!2sin"
-                className="absolute inset-0 w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-          </div>
+<div className="md:col-span-1">
+  <h4 className="text-white font-semibold mb-4">Our Locations</h4>
+
+  <div className="space-y-4">
+    {/* Location 1 */}
+    <div>
+      <p className="text-gray-300 text-sm mb-2">Location 1</p>
+
+      <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
+        <iframe
+          src="YOUR_FIRST_LOCATION_EMBED_URL"
+          className="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </div>
+    </div>
+
+    {/* Location 2 */}
+    <div>
+      <p className="text-gray-300 text-sm mb-2">Location 2</p>
+
+      <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
+        <iframe
+          src="YOUR_SECOND_LOCATION_EMBED_URL"
+          className="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Contact + Social */}
           <div>
