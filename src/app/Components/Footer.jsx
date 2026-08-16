@@ -48,38 +48,25 @@ export default function Footer() {
           </div>
 
           {/* Map */}
-<div className="md:col-span-1">
+        <div className="md:col-span-1">
   <h4 className="text-white font-semibold mb-4">Our Locations</h4>
 
-  <div className="space-y-4">
-    {/* Location 1 */}
+  <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
     <div>
-      <p className="text-gray-300 text-sm mb-2">Location 1</p>
-
-      <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
-        <iframe
-          src="YOUR_FIRST_LOCATION_EMBED_URL"
-          className="absolute inset-0 w-full h-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
+      <p className="font-medium text-white mb-1">Delhi</p>
+      <p>
+        F14/69 Ground Floor, Model Town Phase 2,
+        Delhi, 110033
+      </p>
     </div>
 
-    {/* Location 2 */}
     <div>
-      <p className="text-gray-300 text-sm mb-2">Location 2</p>
-
-      <div className="relative w-full overflow-hidden rounded-lg aspect-[4/3]">
-        <iframe
-          src="YOUR_SECOND_LOCATION_EMBED_URL"
-          className="absolute inset-0 w-full h-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
+      <p className="font-medium text-white mb-1">Gurugram</p>
+      <p>
+        R2, M3M 65th Avenue, First Floor, 128,
+        Golf Course Ext Rd, Gurugram,
+        Haryana 122102
+      </p>
     </div>
   </div>
 </div>
