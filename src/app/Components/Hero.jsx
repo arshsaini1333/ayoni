@@ -48,7 +48,7 @@ export default function Hero({openModal}) {
 
           <h2 className="text-base sm:text-lg md:text-xl font-medium text-[#800000] mx-auto md:mx-0">
             Consult a <b>Senior Gynecologist</b> for appointment-based care in <br />
-            M3M 65th Avenue Sector 65, Gurugram
+            M3M 65th Avenue Sector 65, Gurugram & Delhi
           </h2>
 
           {/* Doctor Info */}
