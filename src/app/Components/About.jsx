@@ -37,7 +37,7 @@ export default function About() {
           <div className="w-full md:w-1/2 space-y-6 text-left">
             <p className="text-[#1C2B39]/80 text-base md:text-lg leading-relaxed">
               <b>Dr. Gaayatri Juneja</b> is a Third-Generation Gynecologist in
-              Gurgaon, carrying forward the legacy of her mother,
+              Gurgaon & Delhi, carrying forward the legacy of her mother,
               <b> Dr. Indu Bala Chhabra</b>, who founded
               <b> Gaayatri Nursing Home Pvt. Ltd.</b> in 1975.
               <br /><br />
