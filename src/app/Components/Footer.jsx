@@ -53,8 +53,8 @@ export default function Footer() {
 
   <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
     <div>
-      <p className="font-medium text-white mb-1 text-[#E6D3A3]/80">Delhi</p>
-      <p>
+      <p className="font-medium text-white mb-1 ">Delhi</p>
+      <p className="text-[#E6D3A3]/80">
         F14/69 Ground Floor, Model Town Phase 2,
         Delhi, 110033
       </p>
@@ -62,7 +62,7 @@ export default function Footer() {
 
     <div>
       <p className="font-medium text-white mb-1 text-[#E6D3A3]/80">Gurugram</p>
-      <p>
+      <p className="text-[#E6D3A3]/80">
         R2, M3M 65th Avenue, First Floor, 128,
         Golf Course Ext Rd, Gurugram,
         Haryana 122102
