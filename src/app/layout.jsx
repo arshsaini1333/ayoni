@@ -1,0 +1,55 @@
+import { Lato } from "next/font/google";
+import "./globals.css";
+import Script from "next/script";
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
+});
+
+export const metadata = {
+  title: "Best Gynaecologist in Gurgaon  | 25+ Years Experience | Ayoni Clinic in sec 65 Gurgaon",
+  description: "Get expert women’s care from a 3rd generation gynaecologist in Gurgaon. 25+ years experience in pregnancy & PCOS treatment at Ayoni Clinic, Sector 65. Book today.",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={lato.className}>
+      
+      {/* Google Tag Manager */}
+      <Script
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-W5GMMZ9F"
+        strategy="afterInteractive"
+      />
+
+      {/* Google Ads */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17857789550"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-ads-gtag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17857789550');
+        `}
+      </Script>
+
+      <body className="antialiased">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W5GMMZ9F"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        {children}
+      </body>
+    </html>
+  );
+}
