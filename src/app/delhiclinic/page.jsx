@@ -146,28 +146,22 @@ export default function AyoniClinicDelhiPage() {
       {/* ---------------- HERO ---------------- */}
       <section
         id="hero"
-        className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-[#F9F9F6]"
+        className="relative w-full flex items-center overflow-hidden bg-[#FFF6DD] md:bg-[#F9F9F6] md:min-h-[90vh]"
       >
-        {/* Delhi background image */}
-        <div className="pointer-events-none absolute inset-0">
-          <Image
-            src="/delhibgmob.JPEG"
-            alt=""
-            fill
-            priority
-            className="object-cover block md:hidden opacity-30"
-          />
+        {/* Delhi background image (desktop only, same as before) */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
           <Image
             src="/delhibackground.png"
             alt=""
             fill
             priority
-            className="object-cover hidden md:block"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#F9F9F6] via-transparent to-transparent" />
         </div>
 
-        <div className="relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div className="relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 flex flex-col items-center md:block">
+          {/* Content */}
           <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">
             <span className="inline-flex items-center gap-2 bg-[#264231] text-[#E6D3A3] text-xs md:text-sm font-semibold px-4 py-2 rounded-full">
               <Award size={16} />
@@ -203,6 +197,18 @@ export default function AyoniClinicDelhiPage() {
             <p className="mt-5 text-sm md:text-base text-[#3b5f4b] font-medium">
               Senior Gynecologist &bull; 25+ Years Experience &bull; Delhi
             </p>
+          </div>
+
+          {/* Image card below content (mobile only) */}
+          <div className="mt-10 w-full max-w-2xl rounded-3xl overflow-hidden shadow-xl border-4 border-white md:hidden">
+            <Image
+              src="/delhibgmob.JPEG"
+              alt="Ayoni Clinic Delhi"
+              width={4000}
+              height={4736}
+              priority
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
