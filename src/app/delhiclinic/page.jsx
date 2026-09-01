@@ -75,17 +75,22 @@ export default function AyoniClinicDelhiPage() {
       {/* ---------------- HERO ---------------- */}
       <section
         id="hero"
-        className="relative w-full overflow-hidden bg-[#F9F9F6]"
+        className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-[#F9F9F6]"
       >
-        {/* Subtle clinic background */}
+        {/* Delhi background image */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 -left-24 w-72 h-72 md:w-[420px] md:h-[420px] rounded-full bg-[#E6D3A3]/40 blur-3xl" />
-          <div className="absolute -bottom-24 right-0 w-72 h-72 md:w-[420px] md:h-[420px] rounded-full bg-[#264231]/10 blur-3xl" />
+          <Image
+            src="/delhibackground.png"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F9F9F6] via-transparent to-transparent" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Left content */}
-          <div className="text-center md:text-left">
+        <div className="relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
+          <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">
             <span className="inline-flex items-center gap-2 bg-[#264231] text-[#E6D3A3] text-xs md:text-sm font-semibold px-4 py-2 rounded-full">
               <Award size={16} />
               25+ Years of Experience
@@ -121,40 +126,27 @@ export default function AyoniClinicDelhiPage() {
               Senior Gynecologist &bull; 25+ Years Experience &bull; Delhi
             </p>
           </div>
-
-          {/* Right doctor image */}
-          <div className="flex justify-center md:justify-end">
-            <div className="relative w-[260px] h-[320px] sm:w-[320px] sm:h-[390px] md:w-[380px] md:h-[460px] rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-              <Image
-                src="/doc3.jpeg"
-                alt="Senior Gynecologist at Ayoni Clinic Delhi"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
         </div>
+      </section>
 
-        {/* Trust strip */}
-        <div className="relative max-w-7xl mx-auto px-4 pb-14 md:pb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: <Award size={28} />, big: "25+", small: "Years of Experience" },
-              { icon: <Users size={28} />, big: "6 lakh+", small: "Happy Patients" },
-              { icon: <Star size={28} />, big: "4.9★", small: "Patient Rating" },
-              { icon: <Lock size={28} />, big: "100%", small: "Confidential Care" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-2 border-2 border-[#264231] bg-white p-4 rounded-lg text-center text-[#264231]"
-              >
-                {item.icon}
-                <span className="text-lg md:text-2xl font-bold">{item.big}</span>
-                <span className="text-xs md:text-sm font-medium">{item.small}</span>
-              </div>
-            ))}
-          </div>
+      {/* ---------------- TRUST STRIP ---------------- */}
+      <section className="w-full bg-[#F9F9F6] py-10 md:py-14 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { icon: <Award size={28} />, big: "25+", small: "Years of Experience" },
+            { icon: <Users size={28} />, big: "6 lakh+", small: "Happy Patients" },
+            { icon: <Star size={28} />, big: "5★", small: "Patient Rating" },
+            { icon: <Lock size={28} />, big: "100%", small: "Confidential Care" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-2 border-2 border-[#264231] bg-white p-4 rounded-lg text-center text-[#264231]"
+            >
+              {item.icon}
+              <span className="text-lg md:text-2xl font-bold">{item.big}</span>
+              <span className="text-xs md:text-sm font-medium">{item.small}</span>
+            </div>
+          ))}
         </div>
       </section>
 
