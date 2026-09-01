@@ -14,7 +14,7 @@ export default function Navbar({ showRating = false }) {
           {showRating ? (
             <div className="text-[#CFAA75] text-lg font-bold flex items-center gap-1.5">
               <Star size={18} className="text-[#CFAA75] fill-[#CFAA75]" />
-              <span>4.9 Rating</span>
+              <span>5 Rating</span>
             </div>
           ) : (
             <Link

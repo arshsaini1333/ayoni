@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Navbar from "../Components/Navbar";
-import About from "../Components/About";
+import About from "../Components/AboutDelhi";
 import ServicesInclude from "../Components/TreatmentAreas";
 import Footer from "../Components/Footer";
-import AppointmentModal from "../Components/ContactPopUp";
+import AppointmentModal from "../Components/ContactPopUpDelhi";
 import {
   CalendarCheck,
   PhoneCall,
@@ -19,6 +19,7 @@ import {
   Stethoscope,
   Baby,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 
 export default function AyoniClinicDelhiPage() {
@@ -32,40 +33,110 @@ export default function AyoniClinicDelhiPage() {
   }, []);
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxLx9_2b7arvH3_CWDLvkX1gwSMXc_FY23BLYAn5_nwXcbHhFdXtNNP0IhrQovQtxwhLQ/exec";
+    "https://script.google.com/macros/s/AKfycbzjwte2F02JEShSakHwFPu87KFc6qP9bJ6IcmiyaUyynJ6D1g9-7bHU_g0d2atef7c/exec";
 
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
-    concern: "",
-    preferredDateTime: "",
+    appointmentType: "Offline Consultation",
+    day: "",
+    date: "",
+    slot: "",
+    msg: "",
   });
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "day") {
+      const nextDate = getNextDateForDay(value);
+      setFormData((prev) => ({
+        ...prev,
+        day: value,
+        date: nextDate,
+        slot: "",
+      }));
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Get next date (Sunday removed)
+  const getNextDateForDay = (selectedDay) => {
+    const daysMap = {
+      Monday: 1,
+      Tuesday: 2,
+      Wednesday: 3,
+      Thursday: 4,
+      Friday: 5,
+      Saturday: 6,
+    };
+
+    const today = new Date();
+    let diff = daysMap[selectedDay] - today.getDay();
+    if (diff < 0) diff += 7;
+
+    const d = new Date(today);
+    d.setDate(today.getDate() + diff);
+    return d.toISOString().split("T")[0];
+  };
+
+  const formatTo12Hour = (hour, minute = 0) => {
+    const period = hour >= 12 ? "PM" : "AM";
+    const h = hour % 12 === 0 ? 12 : hour % 12;
+    return `${h}:${minute.toString().padStart(2, "0")} ${period}`;
+  };
+
+  // Slot logic
+  const getSlotsForDay = (day) => {
+    if (!day) return [];
+    let slots = [];
+
+    const add = (start, end) => {
+      for (let i = start; i < end; i++) {
+        slots.push(`${formatTo12Hour(i)} - ${formatTo12Hour(i + 1)}`);
+      }
+    };
+
+    if (day === "Monday" || day === "Wednesday") add(9, 14);
+    if (day === "Friday") add(12, 14);
+
+    slots.push(`${formatTo12Hour(18, 30)} - ${formatTo12Hour(19, 30)}`);
+    slots.push(`${formatTo12Hour(19, 30)} - ${formatTo12Hour(20)}`);
+
+    return slots;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
-    const postData = new FormData();
+    const postData = new URLSearchParams();
     postData.append("name", formData.name);
+    postData.append("email", formData.email);
     postData.append("phone", formData.phone);
-    postData.append("msg", formData.concern);
-    postData.append("preferredDateTime", formData.preferredDateTime);
+    postData.append("appointmentType", formData.appointmentType);
+    postData.append("day", formData.day);
+    postData.append("date", formData.date);
+    postData.append("slot", formData.slot);
+    postData.append("msg", formData.msg);
     postData.append("formType", "Ayoni Clinic Delhi - Talk to Our Gynecologist");
 
-    await fetch(scriptURL, {
-      method: "POST",
-      body: postData,
-      mode: "no-cors",
-    });
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: postData,
+        mode: "no-cors",
+      });
+    } catch (err) {
+      console.error(err);
+    }
 
     setSubmitting(false);
-    router.push("/thankyou");
+    router.push("/thankyoudelhi");
   };
 
   return (
@@ -80,11 +151,18 @@ export default function AyoniClinicDelhiPage() {
         {/* Delhi background image */}
         <div className="pointer-events-none absolute inset-0">
           <Image
+            src="/delhibgmob.JPEG"
+            alt=""
+            fill
+            priority
+            className="object-cover block md:hidden opacity-30"
+          />
+          <Image
             src="/delhibackground.png"
             alt=""
             fill
             priority
-            className="object-cover"
+            className="object-cover hidden md:block"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#F9F9F6] via-transparent to-transparent" />
         </div>
@@ -219,78 +297,214 @@ export default function AyoniClinicDelhiPage() {
       {/* ---------------- ABOUT THE DOCTOR (same as main page) ---------------- */}
       <About />
 
+      {/* ---------------- DR. RAJNISH JUNEJA ---------------- */}
+      <section className="relative bg-[#f5f0e8]/50 py-16 md:py-24 px-4 overflow-hidden border-t border-[#E6D3A3]/20" id="doctor-rajnish">
+        <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[#E6D3A3]/20" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-[#264231]/5" />
+
+        <div className="relative max-w-4xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 text-[#800000] text-sm font-semibold tracking-wider uppercase mb-3">
+              <Award size={16} /> Radiodiagnosis Specialist
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#264231] leading-tight">
+              Meet <span className="text-[#800000]">Dr. Rajnish Juneja</span>
+            </h2>
+            <div className="flex items-center gap-3 justify-center mt-5">
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#800000]"></div>
+              <div className="w-10 h-[2px] bg-[#E6D3A3]"></div>
+            </div>
+          </div>
+
+          <div className="bg-[#f5f0e8] rounded-3xl overflow-hidden border border-[#E6D3A3]/40 shadow-sm hover:shadow-xl transition-all duration-300 grid grid-cols-1 sm:grid-cols-2">
+            <div className="relative h-80 sm:h-full min-h-[320px] overflow-hidden">
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#E6D3A3]/40 via-transparent to-[#264231]/20 z-10" />
+              <Image
+                src="/rajnish_juneja_photo.jpeg"
+                alt="Dr. Rajnish Juneja"
+                fill
+                className="object-cover object-[center_20%]"
+              />
+            </div>
+
+            <div className="p-7 md:p-9 space-y-4 flex flex-col justify-center">
+              <div>
+                <h3 className="text-2xl font-bold text-[#264231]">Dr. Rajnish Juneja</h3>
+                <p className="text-[#800000] font-semibold mt-1">
+                  Senior Radiologist | 30+ Years of Experience
+                </p>
+              </div>
+              <div className="w-12 h-[3px] bg-[#E6D3A3]"></div>
+              <ul className="space-y-2.5">
+                {[
+                  "DNB (Radiodiagnosis)",
+                  "Expert in Ultrasound & Doppler Studies",
+                  "Pelvic Doppler & Infertility Specialist",
+                  "Trusted for Accurate Diagnostic Imaging",
+                ].map((p, i) => (
+                  <li key={i} className="flex items-center gap-2.5 text-[#3b5f4b]">
+                    <CheckCircle2 size={16} className="text-[#800000] shrink-0" />
+                    <span className="text-sm md:text-base font-medium">{p}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-2">
+                <button
+                  onClick={() => setOpen(true)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#264231] text-white px-6 py-3.5 rounded-xl font-bold text-base hover:bg-[#1a2e23] transition-all duration-300 group"
+                >
+                  <CalendarCheck size={18} /> Request a Call Back
+                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ---------------- TYPES OF SCANS ---------------- */}
       <section className="w-full bg-[#F8FCFC] py-12 md:py-16 px-4" id="scans">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#800000]">
-              Types of Gynaecology Scan Available in Ayoni Clinic, Delhi
+              Types of Ultrasound &amp; Gynaecology Scans Available in Ayoni Clinic, Delhi
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
-            {/* Image */}
-            <div className="relative w-full h-[260px] sm:h-[320px] md:h-full rounded-2xl overflow-hidden order-1 md:order-none">
-              <Image
-                src="/diagnostic-us.webp"
-                alt="Gynaecology Scans at Ayoni Clinic Delhi"
-                fill
-                className="object-cover"
-              />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+            <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231]">
+                  <Stethoscope size={20} />
+                </span>
+                <h3 className="text-lg md:text-xl font-semibold text-[#264231]">
+                  Women&rsquo;s Health &amp; Fertility
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {[
+                  "TVS Scan",
+                  "Pelvic Ultrasound",
+                  "Follicular Monitoring",
+                  "Antral Follicle Count",
+                  "Infertility Assessment",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
+                    <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Scan lists */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231]">
-                    <Stethoscope size={20} />
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-[#264231]">
-                    Women&rsquo;s Health
-                  </h3>
-                </div>
-                <ul className="space-y-2">
-                  {[
-                    "TVS Scan",
-                    "Pelvic Ultrasound",
-                    "Follicular Monitoring",
-                    "Antral Follicle Count",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
-                      <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231]">
+                  <Baby size={20} />
+                </span>
+                <h3 className="text-lg md:text-xl font-semibold text-[#264231]">
+                  Pregnancy Scans
+                </h3>
               </div>
+              <ul className="space-y-2">
+                {[
+                  "Early Pregnancy Scan",
+                  "NT Scan",
+                  "Level II Anomaly Scan",
+                  "Fetal Echo",
+                  "Growth Scan",
+                  "Third Trimester Scan",
+                  "Biophysical Profile",
+                  "AFI Scan",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
+                    <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231]">
-                    <Baby size={20} />
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-[#264231]">
-                    Pregnancy Scans
-                  </h3>
-                </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {[
-                    "Early Pregnancy Scan",
-                    "NT Scan",
-                    "Level II Anomaly Scan",
-                    "Fetal Echo",
-                    "Growth Scan",
-                    "Doppler Scan",
-                    "Biophysical Profile",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
-                      <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231]">
+                  <Users size={20} />
+                </span>
+                <h3 className="text-lg md:text-xl font-semibold text-[#264231]">
+                  Twin Pregnancy Ultrasound
+                </h3>
               </div>
+              <ul className="space-y-2">
+                {[
+                  "Twin NT Scan",
+                  "Twin Level II Scan",
+                  "Twin Growth Scan",
+                  "Twin Fetal Echo",
+                  "Twin Doppler",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
+                    <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231] text-lg">
+                  🏥
+                </span>
+                <h3 className="text-lg md:text-xl font-semibold text-[#264231]">
+                  General Diagnostic Ultrasound
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {[
+                  "Whole Abdomen",
+                  "Upper Abdomen",
+                  "Lower Abdomen",
+                  "KUB Scan",
+                  "Thyroid Scan",
+                  "Breast Ultrasound",
+                  "Chest Ultrasound",
+                  "Soft Tissue Ultrasound",
+                  "Eye Ultrasound",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
+                    <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl border border-[#CFAA75]/30 shadow-sm p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E6D3A3] text-[#264231] text-lg">
+                  ❤️
+                </span>
+                <h3 className="text-lg md:text-xl font-semibold text-[#264231]">
+                  Doppler Ultrasound
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {[
+                  "Arterial Doppler",
+                  "Venous Doppler",
+                  "Carotid Doppler",
+                  "Renal Doppler",
+                  "Portal Doppler",
+                  "Pelvic Doppler",
+                  "AV Fistula Mapping",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1C2B39]/80">
+                    <CheckCircle2 size={18} className="text-[#264231] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -335,7 +549,17 @@ export default function AyoniClinicDelhiPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Full Name"
+                  placeholder="Name"
+                  required
+                  className="w-full border rounded-lg px-4 py-3 bg-white"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
                   required
                   className="w-full border rounded-lg px-4 py-3 bg-white"
                 />
@@ -345,34 +569,82 @@ export default function AyoniClinicDelhiPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone Number"
+                  placeholder="Phone"
                   required
                   className="w-full border rounded-lg px-4 py-3 bg-white"
                 />
 
-                <textarea
-                  name="concern"
-                  value={formData.concern}
-                  onChange={handleChange}
-                  placeholder="Your Concern"
-                  required
-                  rows={3}
-                  className="w-full border rounded-lg px-4 py-3 bg-white resize-none"
-                />
-
-                <div>
-                  <label className="block text-sm text-[#264231]/70 mb-1">
-                    Preferred Date &amp; Time
+                {/* Appointment Type */}
+                <div className="flex gap-6 text-sm text-[#264231]">
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="appointmentType"
+                      value="Online Consultation"
+                      checked={formData.appointmentType === "Online Consultation"}
+                      onChange={handleChange}
+                    />
+                    Online Consultation
                   </label>
-                  <input
-                    type="datetime-local"
-                    name="preferredDateTime"
-                    value={formData.preferredDateTime}
-                    onChange={handleChange}
-                    required
-                    className="w-full border rounded-lg px-4 py-3 bg-white"
-                  />
+
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="appointmentType"
+                      value="Offline Consultation"
+                      checked={formData.appointmentType === "Offline Consultation"}
+                      onChange={handleChange}
+                    />
+                    Offline Consultation
+                  </label>
                 </div>
+
+                {/* Concern */}
+                <select
+                  name="msg"
+                  value={formData.msg}
+                  onChange={handleChange}
+                  required
+                  className="w-full border rounded-lg px-4 py-3 bg-white text-[#264231]"
+                >
+                  <option value="">Select Your Concern</option>
+                  <option>PCOS / Irregular Periods</option>
+                  <option>Pregnancy Care</option>
+                  <option>Menopause Issues</option>
+                  <option>Hormonal Imbalance</option>
+                  <option>General Gynaecology Consultation</option>
+                </select>
+
+                {/* Day */}
+                <select
+                  name="day"
+                  value={formData.day}
+                  onChange={handleChange}
+                  required
+                  className="w-full border rounded-lg px-4 py-3 bg-white text-[#264231]"
+                >
+                  <option value="">Select Day</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                </select>
+
+                {/* Slot */}
+                <select
+                  name="slot"
+                  value={formData.slot}
+                  onChange={handleChange}
+                  required
+                  className="w-full border rounded-lg px-4 py-3 bg-white text-[#264231]"
+                >
+                  <option value="">Select Slot</option>
+                  {getSlotsForDay(formData.day).map((s, i) => (
+                    <option key={i}>{s}</option>
+                  ))}
+                </select>
 
                 <button
                   type="submit"
