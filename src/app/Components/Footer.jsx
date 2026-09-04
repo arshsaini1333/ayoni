@@ -11,7 +11,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({
+  showTestimonials = true,
+  showCertificates = true,
+  contactHref = "#contactUS",
+}) {
   return (
     <footer className="bg-[#1F3F2B] text-[#E6D3A3]">
       <div className="max-w-7xl mx-auto px-4 py-14">
@@ -40,10 +44,14 @@ export default function Footer() {
               <li><Link href="#hero" className="hover:text-white">Home</Link></li>
               <li><Link href="#ourSpecialist" className="hover:text-white">Meet Your Specialist</Link></li>
               <li><Link href="#whyUS" className="hover:text-white">Why ayoni clinic ?</Link></li>
-              
-              <li><Link href="#testimonials" className="hover:text-white">Testimonials</Link></li>
-              <li><Link href="#certificates" className="hover:text-white">Certifications & Accreditations</Link></li>
-              <li><Link href="#contactUS" className="hover:text-white">Contact us</Link></li>
+
+              {showTestimonials && (
+                <li><Link href="#testimonials" className="hover:text-white">Testimonials</Link></li>
+              )}
+              {showCertificates && (
+                <li><Link href="#certificates" className="hover:text-white">Certifications & Accreditations</Link></li>
+              )}
+              <li><Link href={contactHref} className="hover:text-white">Contact us</Link></li>
             </ul>
           </div>
 

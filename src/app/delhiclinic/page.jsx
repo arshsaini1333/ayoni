@@ -669,7 +669,11 @@ export default function AyoniClinicDelhiPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer
+        showTestimonials={false}
+        showCertificates={false}
+        contactHref="#talk-to-us"
+      />
 
       <AppointmentModal open={open} onClose={() => setOpen(false)} />
     </>
