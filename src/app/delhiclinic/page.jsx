@@ -673,6 +673,7 @@ export default function AyoniClinicDelhiPage() {
         showTestimonials={false}
         showCertificates={false}
         contactHref="#talk-to-us"
+        whyUsHref="#why-choose"
       />
 
       <AppointmentModal open={open} onClose={() => setOpen(false)} />

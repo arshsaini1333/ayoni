@@ -15,6 +15,7 @@ export default function Footer({
   showTestimonials = true,
   showCertificates = true,
   contactHref = "#contactUS",
+  whyUsHref = "#whyUS",
 }) {
   return (
     <footer className="bg-[#1F3F2B] text-[#E6D3A3]">
@@ -43,7 +44,7 @@ export default function Footer({
             <ul className="space-y-2 text-sm">
               <li><Link href="#hero" className="hover:text-white">Home</Link></li>
               <li><Link href="#ourSpecialist" className="hover:text-white">Meet Your Specialist</Link></li>
-              <li><Link href="#whyUS" className="hover:text-white">Why ayoni clinic ?</Link></li>
+              <li><Link href={whyUsHref} className="hover:text-white">Why ayoni clinic ?</Link></li>
 
               {showTestimonials && (
                 <li><Link href="#testimonials" className="hover:text-white">Testimonials</Link></li>
