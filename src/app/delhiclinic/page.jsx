@@ -101,11 +101,7 @@ export default function AyoniClinicDelhiPage() {
       }
     };
 
-    if (day === "Monday" || day === "Wednesday") add(9, 14);
-    if (day === "Friday") add(12, 14);
-
-    slots.push(`${formatTo12Hour(18, 30)} - ${formatTo12Hour(19, 30)}`);
-    slots.push(`${formatTo12Hour(19, 30)} - ${formatTo12Hour(20)}`);
+    if (day === "Tuesday" || day === "Thursday" || day === "Saturday") add(8, 11);
 
     return slots;
   };
@@ -630,11 +626,8 @@ export default function AyoniClinicDelhiPage() {
                   className="w-full border rounded-lg px-4 py-3 bg-white text-[#264231]"
                 >
                   <option value="">Select Day</option>
-                  <option>Monday</option>
                   <option>Tuesday</option>
-                  <option>Wednesday</option>
                   <option>Thursday</option>
-                  <option>Friday</option>
                   <option>Saturday</option>
                 </select>
 

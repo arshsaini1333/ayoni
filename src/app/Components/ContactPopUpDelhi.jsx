@@ -80,11 +80,7 @@ export default function AppointmentModalDelhi({ open, onClose }) {
       }
     };
 
-    if (day === "Monday" || day === "Wednesday") add(9, 14);
-    if (day === "Friday") add(12, 14);
-
-    slots.push(`${formatTo12Hour(18, 30)} - ${formatTo12Hour(19, 30)}`);
-    slots.push(`${formatTo12Hour(19, 30)} - ${formatTo12Hour(20)}`);
+    if (day === "Tuesday" || day === "Thursday" || day === "Saturday") add(8, 11);
 
     return slots;
   };
@@ -231,11 +227,8 @@ export default function AppointmentModalDelhi({ open, onClose }) {
                   className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-[#264231] focus:border-[#264231] focus:outline-none transition-colors"
                 >
                   <option value="">Select Day</option>
-                  <option>Monday</option>
                   <option>Tuesday</option>
-                  <option>Wednesday</option>
                   <option>Thursday</option>
-                  <option>Friday</option>
                   <option>Saturday</option>
                 </select>
 
