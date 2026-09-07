@@ -33,10 +33,10 @@ export default function Navbar({ showRating = false }) {
           flex 
           justify-center 
           items-center
-          w-32 
+          w-32
           h-16
           top-6
-          md:w-40 
+          md:w-40
           md:h-20
           bg-[#264231]
           rounded-xl
