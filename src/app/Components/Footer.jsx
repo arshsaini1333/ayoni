@@ -16,6 +16,7 @@ export default function Footer({
   showCertificates = true,
   contactHref = "#contactUS",
   whyUsHref = "#whyUS",
+  phone = "9315991400",
 }) {
   return (
     <footer className="bg-[#1F3F2B] text-[#E6D3A3]">
@@ -87,8 +88,8 @@ export default function Footer({
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Phone size={16} />
-                <a href="tel:+919315991400" className="hover:text-white">
-                  +91 9315991400
+                <a href={`tel:+91${phone}`} className="hover:text-white">
+                  +91 {phone}
                 </a>
               </div>
 

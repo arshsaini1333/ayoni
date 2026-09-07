@@ -137,7 +137,7 @@ export default function AyoniClinicDelhiPage() {
 
   return (
     <>
-      <Navbar openModal={() => setOpen(true)} showRating={true} />
+      <Navbar openModal={() => setOpen(true)} showRating={true} phone="8920884466" />
 
       {/* ---------------- HERO ---------------- */}
       <section
@@ -182,7 +182,7 @@ export default function AyoniClinicDelhiPage() {
               </button>
 
               <button
-                onClick={() => window.open("tel:+919315991400")}
+                onClick={() => window.open("tel:+918920884466")}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#800000] text-white px-8 py-3 rounded-md font-medium hover:bg-[#660000] transition"
               >
                 <PhoneCall size={18} />
@@ -667,6 +667,7 @@ export default function AyoniClinicDelhiPage() {
         showCertificates={false}
         contactHref="#talk-to-us"
         whyUsHref="#why-choose"
+        phone="8920884466"
       />
 
       <AppointmentModal open={open} onClose={() => setOpen(false)} />

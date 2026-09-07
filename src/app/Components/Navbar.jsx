@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Star } from "lucide-react";
 
-export default function Navbar({ showRating = false }) {
+export default function Navbar({ showRating = false, phone = "9315991400" }) {
   return (
     <nav className="w-full bg-[#264231] px-4 z-50">
       <div className="max-w-7xl mx-auto relative flex items-center justify-center md:justify-between">
@@ -55,7 +55,7 @@ export default function Navbar({ showRating = false }) {
         {/* Right (desktop only) */}
         <div className="hidden md:flex flex-1 justify-end">
           <a
-            href="tel:+919315991400"
+            href={`tel:+91${phone}`}
             className="flex items-center gap-2 px-6 py-1.5
                        border border-[#CFAA75]
                        text-[#CFAA75]
