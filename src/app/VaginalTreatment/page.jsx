@@ -172,7 +172,7 @@ export default function VaginalTreatmentPage() {
   ];
 
   const trustedReasons = [
-    "Experienced Gynecologist with 25+ Years Practice",
+    "Experienced Gynecologist with 33+ Years Practice",
     "Advanced Laser & Surgical Treatments",
     "Highly Rated Clinic with Positive Patient Reviews",
     "Affordable Consultation & Treatment Options",
@@ -241,7 +241,7 @@ export default function VaginalTreatmentPage() {
 
                 <ul className="flex flex-col gap-4 lg:gap-2.5 justify-start w-full pl-1 py-1">
                   {[
-                    "25+ Yrs Experienced Doctor",
+                    "33+ Yrs Experienced Doctor",
                     "Advanced Laser & Surgical",
                     "100% Private Consultation",
                   ].map((text, i) => (
@@ -352,7 +352,7 @@ export default function VaginalTreatmentPage() {
           <div className="grid grid-cols-4 gap-1.5 sm:gap-6 md:gap-8">
             {[
               { icon: <Users className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "10,000+", label: "Happy Patients" },
-              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "25+", label: "Years Experience" },
+              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "33+", label: "Years Experience" },
               { icon: <Heart className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "100%", label: "Confidential Care" },
               { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Advanced", label: "Laser Treatments" },
             ].map((stat, i) => (
@@ -474,7 +474,7 @@ export default function VaginalTreatmentPage() {
             {/* Right side — visual stats (original) */}
             <div className="bg-gradient-to-br from-[#264231] to-[#1a2e23] rounded-3xl p-8 md:p-10 space-y-6">
               {[
-                { icon: <Award size={24} />, value: "25+ Years", desc: "of Expert Practice" },
+                { icon: <Award size={24} />, value: "33+ Years", desc: "of Expert Practice" },
                 { icon: <Users size={24} />, value: "10,000+", desc: "Happy Patients" },
                 { icon: <Star size={24} />, value: "4.9 ★", desc: "Patient Rating" },
                 { icon: <Lock size={24} />, value: "100%", desc: "Privacy Guaranteed" },
@@ -658,7 +658,7 @@ export default function VaginalTreatmentPage() {
 
               <ul className="space-y-4">
                 {[
-                  { icon: <Award size={20} className="text-[#E6D3A3]" />, text: "25+ Years of Experience in women's health & gynecology" },
+                  { icon: <Award size={20} className="text-[#E6D3A3]" />, text: "33+ Years of Experience in women's health & gynecology" },
                   { icon: <HeartPulse size={20} className="text-[#E6D3A3]" />, text: "Third-Generation Gynecologist with legacy since 1975" },
                   { icon: <GraduationCap size={20} className="text-[#E6D3A3]" />, text: "Highly Qualified – MBBS, DGO, DNB, MRCOG (UK)" },
                   { icon: <UserCheck size={20} className="text-[#E6D3A3]" />, text: "Compassionate & Patient-Centric Approach" },

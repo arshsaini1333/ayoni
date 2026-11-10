@@ -23,7 +23,7 @@ export default function QuickTrustBar() {
           <div className="flex flex-col items-center gap-2 border-2 border-[#264231] p-4 rounded-lg text-center bg-[#E6D3A3]">
             <Stethoscope size={36} />
             <span className="text-sm md:text-2xl font-bold">
-              25+ Years Experience
+              33+ Years Experience
             </span>
           </div>
 

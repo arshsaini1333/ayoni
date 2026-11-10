@@ -19,7 +19,7 @@ export default function ThankYouUSPage() {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-white leading-relaxed">
-          You will be consulting with experienced specialists with 25+ years of
+          You will be consulting with experienced specialists with 33+ years of
           diagnostic imaging expertise. <br />
           Our team will contact you shortly to confirm your appointment.
         </p>

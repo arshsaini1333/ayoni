@@ -32,7 +32,7 @@ export default function WhyAyoni({openModal}) {
           <div className="space-y-5 md:space-y-6">
 
             {[
-              { icon: <Stethoscope size={20} />, text: "25+ Years of Experience in Gynecology & Women’s Wellness" },
+              { icon: <Stethoscope size={20} />, text: "33+ Years of Experience in Gynecology & Women’s Wellness" },
               { icon: <Users size={20} />, text: "Trusted gynecologist in Gurgaon & Delhi for over 5,000+ patients" },
               { icon: <Sparkles size={20} />, text: "Laser (non-surgical) and surgical intimate treatments" },
               { icon: <ShieldCheck size={20} />, text: "Advanced Laser Technology – Safe & Effective" },

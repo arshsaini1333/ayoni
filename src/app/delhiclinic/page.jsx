@@ -161,7 +161,7 @@ export default function AyoniClinicDelhiPage() {
           <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">
             <span className="inline-flex items-center gap-2 bg-[#264231] text-[#E6D3A3] text-xs md:text-sm font-semibold px-4 py-2 rounded-full">
               <Award size={16} />
-              25+ Years of Experience
+              33+ Years of Experience
             </span>
 
             <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-[#264231]">
@@ -191,7 +191,7 @@ export default function AyoniClinicDelhiPage() {
             </div>
 
             <p className="mt-5 text-sm md:text-base text-[#3b5f4b] font-medium">
-              Senior Gynecologist &bull; 25+ Years Experience &bull; Delhi
+              Senior Gynecologist &bull; 33+ Years Experience &bull; Delhi
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function AyoniClinicDelhiPage() {
       <section className="w-full bg-[#F9F9F6] py-10 md:py-14 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { icon: <Award size={28} />, big: "25+", small: "Years of Experience" },
+            { icon: <Award size={28} />, big: "33+", small: "Years of Experience" },
             { icon: <Users size={28} />, big: "6 lakh+", small: "Happy Patients" },
             { icon: <Star size={28} />, big: "5★", small: "Patient Rating" },
             { icon: <Lock size={28} />, big: "100%", small: "Confidential Care" },
@@ -240,7 +240,7 @@ export default function AyoniClinicDelhiPage() {
 
             <div className="mt-8 space-y-5">
               {[
-                { icon: <Award size={20} />, text: "25+ Years of Experience — Decades of expertise in women's healthcare." },
+                { icon: <Award size={20} />, text: "33+ Years of Experience — Decades of expertise in women's healthcare." },
                 { icon: <Users size={20} />, text: "10 Lakh+ Patients Treated — Trusted by women across generations." },
                 { icon: <Star size={20} />, text: "5★ Google Rating — Loved and trusted by our patients." },
                 { icon: <Stethoscope size={20} />, text: "Zero Infection Rate — High standards of hygiene and safety." },
@@ -334,7 +334,7 @@ export default function AyoniClinicDelhiPage() {
               <div>
                 <h3 className="text-2xl font-bold text-[#264231]">Dr. Rajnish Juneja</h3>
                 <p className="text-[#800000] font-semibold mt-1">
-                  Senior Radiologist | 30+ Years of Experience
+                  Senior Radiologist | 33+ Years of Experience
                 </p>
               </div>
               <div className="w-12 h-[3px] bg-[#E6D3A3]"></div>

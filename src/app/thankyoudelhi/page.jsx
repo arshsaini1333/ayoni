@@ -19,7 +19,7 @@ export default function ThankYouDelhiPage() {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-white leading-relaxed">
-          You will be consulting with a senior gynecologist at Ayoni Clinic, Delhi with over 25+ years of clinical experience. <br />
+          You will be consulting with a senior gynecologist at Ayoni Clinic, Delhi with over 33+ years of clinical experience. <br />
           Please check your email for your appointment details and confirmation. <br />
           Our team will contact you shortly.
         </p>

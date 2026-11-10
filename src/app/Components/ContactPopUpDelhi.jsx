@@ -137,7 +137,7 @@ export default function AppointmentModalDelhi({ open, onClose }) {
               <div className="absolute inset-0 bg-gradient-to-t from-[#264231]/80 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 text-[#E6D3A3]">
                 <p className="text-xs font-semibold tracking-wide">AYONI CLINIC &bull; DELHI</p>
-                <p className="text-sm mt-1">25+ Years of Experience in Women&rsquo;s Healthcare</p>
+                <p className="text-sm mt-1">33+ Years of Experience in Women&rsquo;s Healthcare</p>
               </div>
             </div>
 

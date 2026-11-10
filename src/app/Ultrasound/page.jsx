@@ -74,9 +74,9 @@ export default function UltrasoundPage() {
   ];
 
   const features = [
-    { icon: "🩺", title: "30+ Years of Experience", desc: "Experienced Women's Health Specialist" },
+    { icon: "🩺", title: "33+ Years of Experience", desc: "Experienced Women's Health Specialist" },
     { icon: "🖥️", title: "Advanced Ultrasound Technology", desc: "High-quality imaging for accurate diagnosis" },
-    { icon: "👩‍⚕️", title: "30+ Years Experience", desc: "Reports explained by experienced specialists" },
+    { icon: "👩‍⚕️", title: "33+ Years Experience", desc: "Reports explained by experienced specialists" },
     { icon: "🔒", title: "Private & Comfortable Care", desc: "Safe, hygienic, and patient-friendly environment" },
     { icon: "⚡", title: "Ultrasound Scan by Appointment Only", desc: "Dedicated time slots ensuring focused, quality care for every patient" },
     { icon: "📍", title: "Convenient Gurgaon Location", desc: "Located at M3M 65th Avenue, Sector 65" },
@@ -311,7 +311,7 @@ export default function UltrasoundPage() {
           <div className="grid grid-cols-4 gap-1.5 sm:gap-6 md:gap-8">
             {[
               { icon: <Users className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "10,000+", label: "Happy Patients" },
-              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "30+", label: "Years Experience" },
+              { icon: <Clock className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "33+", label: "Years Experience" },
               { icon: <Heart className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "100%", label: "Accurate Reports" },
               { icon: <Zap className="w-5 h-5 md:w-[26px] md:h-[26px]" />, value: "Advanced", label: "Technology" },
             ].map((s, i) => (
@@ -459,7 +459,7 @@ export default function UltrasoundPage() {
                 </div>
                 <div className="w-12 h-[3px] bg-[#E6D3A3]"></div>
                 <ul className="space-y-2.5">
-                  {["25+ Years of Experience", "Pregnancy & Women's Health Expert", "High-Risk Pregnancy Care", "Personalized Patient Care"].map((p, i) => (
+                  {["33+ Years of Experience", "Pregnancy & Women's Health Expert", "High-Risk Pregnancy Care", "Personalized Patient Care"].map((p, i) => (
                     <li key={i} className="flex items-center gap-2.5 text-[#3b5f4b]">
                       <CheckCircle2 size={16} className="text-[#800000] shrink-0" />
                       <span className="text-sm md:text-base font-medium">{p}</span>
@@ -531,7 +531,7 @@ export default function UltrasoundPage() {
               <div className="p-7 space-y-4 flex flex-col flex-1">
                 <div>
                   <h3 className="text-2xl font-bold text-[#264231]">Dr. Rajnish Juneja</h3>
-                  <p className="text-[#800000] font-semibold mt-1">Senior Radiologist | 30+ Years of Experience</p>
+                  <p className="text-[#800000] font-semibold mt-1">Senior Radiologist | 33+ Years of Experience</p>
                 </div>
                 <div className="w-12 h-[3px] bg-[#E6D3A3]"></div>
                 <ul className="space-y-2.5">

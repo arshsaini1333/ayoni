@@ -69,7 +69,7 @@ export default function Hero({openModal}) {
                 <span className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-[#E6D3A3]">
                   <Award size={16} className="text-[#264231]" />
                 </span>
-                25+ Years Experience
+                33+ Years Experience
               </div>
 
               <div className="flex items-center gap-3">
